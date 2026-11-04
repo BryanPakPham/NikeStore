@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|d:\\laptrinhweb\\nikestore\\nikestore\\nikestore\\views\\customer\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\views\\customer\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -249,10 +253,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
-      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -262,37 +262,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Home.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Home.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Customer\\Home.cshtml",
               "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Home.cshtml",
               "RelativeToolTip": "NikeStore\\Views\\Customer\\Home.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACgAAABnAAAAAAAAAA==",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAAAK4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-11-03T16:29:40.781Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "OrderDetails.cshtml",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\OrderDetails.cshtml",
-              "RelativeDocumentMoniker": "NikeStore\\Views\\Customer\\OrderDetails.cshtml",
-              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\OrderDetails.cshtml",
-              "RelativeToolTip": "NikeStore\\Views\\Customer\\OrderDetails.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:30:54.594Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\_ViewStart.cshtml",
@@ -305,7 +292,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Employee\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Employee\\_ViewStart.cshtml",
@@ -318,7 +305,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "_CustomerLayout.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Shared\\_CustomerLayout.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Shared\\_CustomerLayout.cshtml",
@@ -331,7 +318,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "_ManagementLayout.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Shared\\_ManagementLayout.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Shared\\_ManagementLayout.cshtml",
@@ -344,20 +331,45 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Customer.css",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Content\\Customer.css",
               "RelativeDocumentMoniker": "NikeStore\\Content\\Customer.css",
               "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Content\\Customer.css",
               "RelativeToolTip": "NikeStore\\Content\\Customer.css",
-              "ViewState": "AgIAAKsAAAAAAAAAAAAUwJcBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEoBAAAAAAAAAAAUwGQBAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2026-11-03T16:54:33.163Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Model1.edmx [Diagram1]",
+              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Models\\Model1.edmx",
+              "RelativeDocumentMoniker": "NikeStore\\Models\\Model1.edmx",
+              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Models\\Model1.edmx [Diagram1]",
+              "RelativeToolTip": "NikeStore\\Models\\Model1.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2026-11-03T15:57:37.318Z",
+              "EditorCaption": " [Diagram1]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "OrderDetails.cshtml",
+              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\OrderDetails.cshtml",
+              "RelativeDocumentMoniker": "NikeStore\\Views\\Customer\\OrderDetails.cshtml",
+              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\OrderDetails.cshtml",
+              "RelativeToolTip": "NikeStore\\Views\\Customer\\OrderDetails.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-03T16:30:54.594Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "BundleConfig.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\App_Start\\BundleConfig.cs",
               "RelativeDocumentMoniker": "NikeStore\\App_Start\\BundleConfig.cs",
@@ -369,7 +381,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "CartController.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Customer\\CartController.cs",
               "RelativeDocumentMoniker": "NikeStore\\Controllers\\Customer\\CartController.cs",
@@ -381,7 +393,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "bootstrap.min.css",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Content\\bootstrap.min.css",
               "RelativeDocumentMoniker": "NikeStore\\Content\\bootstrap.min.css",
@@ -393,7 +405,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "RouteConfig.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\App_Start\\RouteConfig.cs",
               "RelativeDocumentMoniker": "NikeStore\\App_Start\\RouteConfig.cs",
@@ -405,7 +417,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "bootstrap.rtl.min.css",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Content\\bootstrap.rtl.min.css",
               "RelativeDocumentMoniker": "NikeStore\\Content\\bootstrap.rtl.min.css",
@@ -417,7 +429,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Customer\\HomeController.cs",
               "RelativeDocumentMoniker": "NikeStore\\Controllers\\Customer\\HomeController.cs",
@@ -429,7 +441,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\_ViewStart.cshtml",
@@ -441,7 +453,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "CustomerController.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Employee\\CustomerController.cs",
               "RelativeDocumentMoniker": "NikeStore\\Controllers\\Employee\\CustomerController.cs",
@@ -453,7 +465,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "OrderController.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Employee\\OrderController.cs",
               "RelativeDocumentMoniker": "NikeStore\\Controllers\\Employee\\OrderController.cs",
@@ -465,7 +477,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "DashboardController.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Employee\\DashboardController.cs",
               "RelativeDocumentMoniker": "NikeStore\\Controllers\\Employee\\DashboardController.cs",
@@ -477,7 +489,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "AccountController.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Customer\\AccountController.cs",
               "RelativeDocumentMoniker": "NikeStore\\Controllers\\Customer\\AccountController.cs",
@@ -489,7 +501,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "OrderController.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Customer\\OrderController.cs",
               "RelativeDocumentMoniker": "NikeStore\\Controllers\\Customer\\OrderController.cs",
@@ -501,7 +513,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "CheckoutController.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Customer\\CheckoutController.cs",
               "RelativeDocumentMoniker": "NikeStore\\Controllers\\Customer\\CheckoutController.cs",
@@ -513,7 +525,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "ProductController.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Customer\\ProductController.cs",
               "RelativeDocumentMoniker": "NikeStore\\Controllers\\Customer\\ProductController.cs",
@@ -525,7 +537,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "InventoryController.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Admin\\InventoryController.cs",
               "RelativeDocumentMoniker": "NikeStore\\Controllers\\Admin\\InventoryController.cs",
@@ -537,7 +549,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "CouponController.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Admin\\CouponController.cs",
               "RelativeDocumentMoniker": "NikeStore\\Controllers\\Admin\\CouponController.cs",
@@ -549,7 +561,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "OrderController.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Admin\\OrderController.cs",
               "RelativeDocumentMoniker": "NikeStore\\Controllers\\Admin\\OrderController.cs",
@@ -561,7 +573,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "UserController.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Admin\\UserController.cs",
               "RelativeDocumentMoniker": "NikeStore\\Controllers\\Admin\\UserController.cs",
@@ -573,7 +585,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "CategoryController.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Admin\\CategoryController.cs",
               "RelativeDocumentMoniker": "NikeStore\\Controllers\\Admin\\CategoryController.cs",
@@ -585,7 +597,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "DashboardController.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Admin\\DashboardController.cs",
               "RelativeDocumentMoniker": "NikeStore\\Controllers\\Admin\\DashboardController.cs",
@@ -597,7 +609,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "ProductController.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Admin\\ProductController.cs",
               "RelativeDocumentMoniker": "NikeStore\\Controllers\\Admin\\ProductController.cs",
@@ -609,7 +621,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "Global.asax.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Global.asax.cs",
               "RelativeDocumentMoniker": "NikeStore\\Global.asax.cs",
@@ -621,7 +633,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "CouponCreate.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\CouponCreate.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\CouponCreate.cshtml",
@@ -633,7 +645,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "Site.css",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Content\\Site.css",
               "RelativeDocumentMoniker": "NikeStore\\Content\\Site.css",
@@ -645,7 +657,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "CouponEdit.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\CouponEdit.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\CouponEdit.cshtml",
@@ -657,7 +669,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "OrderDetails.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\OrderDetails.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\OrderDetails.cshtml",
@@ -669,7 +681,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "UserEdit.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\UserEdit.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\UserEdit.cshtml",
@@ -681,7 +693,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "ProductEdit.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\ProductEdit.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\ProductEdit.cshtml",
@@ -693,7 +705,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "Categories.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\Categories.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\Categories.cshtml",
@@ -705,7 +717,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "UserCreate.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\UserCreate.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\UserCreate.cshtml",
@@ -717,7 +729,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "CategoryEdit.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\CategoryEdit.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\CategoryEdit.cshtml",
@@ -729,7 +741,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "CategoryCreate.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\CategoryCreate.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\CategoryCreate.cshtml",
@@ -741,7 +753,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "ProductDetails.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\ProductDetails.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\ProductDetails.cshtml",
@@ -753,7 +765,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "Inventory.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\Inventory.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\Inventory.cshtml",
@@ -765,7 +777,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "Coupons.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\Coupons.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\Coupons.cshtml",
@@ -777,7 +789,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 43,
               "Title": "Orders.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\Orders.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\Orders.cshtml",
@@ -789,7 +801,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 44,
               "Title": "Users.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\Users.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\Users.cshtml",
@@ -801,7 +813,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 45,
               "Title": "ProductCreate.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\ProductCreate.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\ProductCreate.cshtml",
@@ -813,7 +825,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 46,
               "Title": "Products.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\Products.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\Products.cshtml",
@@ -825,7 +837,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 47,
               "Title": "Dashboard.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\Dashboard.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\Dashboard.cshtml",
@@ -837,7 +849,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 48,
               "Title": "CustomerDetails.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Employee\\CustomerDetails.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Employee\\CustomerDetails.cshtml",
@@ -849,7 +861,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 49,
               "Title": "OrderDetails.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Employee\\OrderDetails.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Employee\\OrderDetails.cshtml",
@@ -861,7 +873,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 50,
               "Title": "Orders.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Employee\\Orders.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Employee\\Orders.cshtml",
@@ -873,7 +885,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 51,
               "Title": "Dashboard.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Employee\\Dashboard.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Employee\\Dashboard.cshtml",
@@ -885,7 +897,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 52,
               "Title": "Register.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Register.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Customer\\Register.cshtml",
@@ -897,7 +909,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 53,
               "Title": "Login.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Login.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Customer\\Login.cshtml",
@@ -909,7 +921,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 54,
               "Title": "Orders.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Orders.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Customer\\Orders.cshtml",
@@ -921,7 +933,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 55,
               "Title": "Checkout.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Checkout.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Customer\\Checkout.cshtml",
@@ -933,7 +945,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 56,
               "Title": "Cart.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Cart.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Customer\\Cart.cshtml",
@@ -945,7 +957,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 57,
               "Title": "ProductDetails.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\ProductDetails.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Customer\\ProductDetails.cshtml",
@@ -957,7 +969,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 58,
               "Title": "Products.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Products.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Customer\\Products.cshtml",
@@ -969,7 +981,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 59,
               "Title": "Error.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Shared\\Error.cshtml",
@@ -981,7 +993,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 60,
               "Title": "order.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Models\\order.cs",
               "RelativeDocumentMoniker": "NikeStore\\Models\\order.cs",
@@ -993,7 +1005,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 61,
               "Title": "color.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Models\\color.cs",
               "RelativeDocumentMoniker": "NikeStore\\Models\\color.cs",
@@ -1005,7 +1017,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 62,
               "Title": "category.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Models\\category.cs",
               "RelativeDocumentMoniker": "NikeStore\\Models\\category.cs",
@@ -1014,17 +1026,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-03T15:59:41.489Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 62,
-              "Title": "Model1.edmx [Diagram1]",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Models\\Model1.edmx",
-              "RelativeDocumentMoniker": "NikeStore\\Models\\Model1.edmx",
-              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Models\\Model1.edmx [Diagram1]",
-              "RelativeToolTip": "NikeStore\\Models\\Model1.edmx [Diagram1]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
-              "WhenOpened": "2026-11-03T15:57:37.318Z"
             },
             {
               "$type": "Bookmark",

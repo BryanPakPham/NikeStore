@@ -229,9 +229,11 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Customer.css" />
     <Content Include="Content\Images\shoesforgirl.jpg" />
-    <Content Include="Content\Images\shoesforkids.jpg" />
+    <Content Include="Content\Images\shoesforkid.jpg" />
     <Content Include="Content\Images\shoesformen.jpg" />
     <Content Include="Content\Videos\Introduce1.mp4" />
+    <Content Include="Content\Videos\Introduce2.mp4" />
+    <Content Include="Content\Videos\Introduce4.mp4" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
