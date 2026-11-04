@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="817e2dca30ae47f4a4831c3e2e262b94" Name="Diagram1">
+        <EntityTypeShape EntityType="NikeStoreDBModel.cart_details" Width="1.5" PointX="7.5" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NikeStoreDBModel.cart" Width="1.5" PointX="5.25" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NikeStoreDBModel.category" Width="1.5" PointX="1.5" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NikeStoreDBModel.color" Width="1.5" PointX="3.75" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NikeStoreDBModel.coupon" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NikeStoreDBModel.inventory_transactions" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NikeStoreDBModel.order_details" Width="1.5" PointX="7.5" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NikeStoreDBModel.order" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="NikeStoreDBModel.product_colors" Width="1.5" PointX="6" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NikeStoreDBModel.product_images" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NikeStoreDBModel.product_variants" Width="1.5" PointX="3" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NikeStoreDBModel.product" Width="1.5" PointX="0.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NikeStoreDBModel.role" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NikeStoreDBModel.size" Width="1.5" PointX="0.75" PointY="26.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NikeStoreDBModel.user" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="NikeStoreDBModel.cart_details_cart_id_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="NikeStoreDBModel.cart_details_variant_id_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="NikeStoreDBModel.carts_user_id_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="NikeStoreDBModel.product_colors_color_id_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="NikeStoreDBModel.orders_coupon_id_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="NikeStoreDBModel.inventory_transactions_order_id_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="NikeStoreDBModel.inventory_transactions_user_id_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="NikeStoreDBModel.inventory_transactions_variant_id_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="NikeStoreDBModel.order_details_order_id_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="NikeStoreDBModel.order_details_variant_id_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="NikeStoreDBModel.orders_customer_id_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="NikeStoreDBModel.orders_handled_by_user_id_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="NikeStoreDBModel.product_colors_product_id_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="NikeStoreDBModel.product_variants_product_id_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="NikeStoreDBModel.product_variants_size_id_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="NikeStoreDBModel.users_role_id_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="NikeStoreDBModel.product_categories" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

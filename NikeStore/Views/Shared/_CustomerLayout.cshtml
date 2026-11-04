@@ -1,0 +1,114 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title - Nike Store</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="@Url.Content("~/Content/Customer.css")" />
+
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg customer-navbar">
+        <div class="container-fluid px-4 px-lg-5">
+            <a class="navbar-brand nike-logo" href="@Url.Action("Home", "Home")">NIKE<span>.</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#customerNavbar" aria-controls="customerNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="customerNavbar">
+                <!-- CENTER MENU -->
+                <ul class="navbar-nav mx-auto customer-nav-links">
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Home", "Home")">HOME</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">PRODUCTS</a>
+                        <ul class="dropdown-menu customer-dropdown" aria-labelledby="productsDropdown">
+                            <li><a class="dropdown-item" href="@Url.Action("Products", "Product")">All Shoes</a></li>
+                            <li><a class="dropdown-item" href="#">Men Shoes</a></li>
+                            <li><a class="dropdown-item" href="#">Women Shoes</a></li>
+                            <li><a class="dropdown-item" href="#">Running</a></li>
+                            <li><a class="dropdown-item" href="#">Jordan</a></li>
+                            <li><a class="dropdown-item" href="#">Lifestyle</a></li>
+                            <li><a class="dropdown-item" href="#">Kids Shoes</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Collections", "Product")">COLLECTION</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("About", "Home")">CONTACT / ABOUT</a>
+                    </li>
+                </ul>
+                <!-- RIGHT MENU -->
+                <ul class="navbar-nav customer-account-links">
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Login", "Account")">LOGIN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Register", "Account")">REGISTER</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cart-link" href="@Url.Action("Cart", "Cart")">
+                            CART <span class="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- MAIN CONTENT -->
+    <main class="customer-main">
+        @RenderBody()
+    </main>
+    <!-- FOOTER -->
+    <footer class="customer-footer">
+        <div class="container py-5">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6">
+                    <h3 class="footer-logo">NIKE<span>.</span></h3>
+                    <p class="footer-description">Discover your style and push your limits. Find the perfect shoes for every step of your journey.</p>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="footer-title">QUICK LINKS</h5>
+                    <ul class="footer-links">
+                        <li><a href="@Url.Action("Home", "Home")">Home</a></li>
+                        <li><a href="@Url.Action("Products", "Product")">Products</a></li>
+                        <li><a href="#">Collections</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">CUSTOMER SERVICE</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping Information</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">FOLLOW US</h5>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Facebook">FB</a>
+                        <a href="#" aria-label="Instagram">IG</a>
+                        <a href="#" aria-label="YouTube">YT</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© @DateTime.Now.Year NIKE STORE. ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- SCRIPTS -->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="@Url.Content("~/Scripts/Customer/Customer.js")"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

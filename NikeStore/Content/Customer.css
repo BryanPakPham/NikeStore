@@ -1,0 +1,409 @@
+﻿body {
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #ffffff;
+	color: #111111;
+}
+
+/* NAVBAR */
+.customer-navbar {
+	background-color: #000000;
+	min-height: 85px;
+	padding: 15px 0;
+}
+
+.nike-logo {
+	color: #ffffff !important;
+	font-size: 32px;
+	font-weight: 900;
+	letter-spacing: -2px;
+}
+
+	.nike-logo span,
+	.footer-logo span {
+		color: #999999;
+	}
+
+.customer-navbar .navbar-collapse {
+	flex-grow: 1;
+}
+
+.customer-nav-links {
+	gap: 25px;
+}
+
+.customer-account-links {
+	gap: 15px;
+}
+
+.customer-navbar .nav-link {
+	color: #ffffff !important;
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	transition: color 0.3s ease;
+}
+
+	.customer-navbar .nav-link:hover {
+		color: #999999 !important;
+	}
+
+/* PRODUCTS DROPDOWN */
+.customer-dropdown {
+	background-color: #111111;
+	border: 1px solid #333333;
+	border-radius: 0;
+	padding: 10px 0;
+}
+
+	.customer-dropdown .dropdown-item {
+		color: #ffffff;
+		font-size: 13px;
+		padding: 10px 20px;
+	}
+
+		.customer-dropdown .dropdown-item:hover {
+			background-color: #333333;
+			color: #ffffff;
+		}
+
+/* CART */
+.cart-link {
+	display: flex;
+	align-items: center;
+	gap: 7px;
+}
+
+.cart-count {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 20px;
+	height: 20px;
+	background-color: #ffffff;
+	color: #000000;
+	border-radius: 50%;
+	font-size: 11px;
+}
+
+/* MOBILE NAVBAR */
+.customer-navbar .navbar-toggler {
+	border-color: #ffffff;
+}
+
+.customer-navbar .navbar-toggler-icon {
+	filter: invert(1);
+}
+
+/* MAIN CONTENT */
+.customer-main {
+	min-height: 60vh;
+}
+
+/* FOOTER */
+.customer-footer {
+	background-color: #000000;
+	color: #ffffff;
+}
+
+.footer-logo {
+	font-size: 32px;
+	font-weight: 900;
+	letter-spacing: -2px;
+	margin-bottom: 20px;
+}
+
+.footer-description {
+	color: #999999;
+	font-size: 14px;
+	line-height: 1.8;
+	max-width: 300px;
+}
+
+.footer-title {
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	margin-bottom: 22px;
+}
+
+.footer-links {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+	.footer-links li {
+		margin-bottom: 13px;
+	}
+
+	.footer-links a {
+		color: #999999;
+		text-decoration: none;
+		font-size: 13px;
+		transition: color 0.3s ease;
+	}
+
+		.footer-links a:hover {
+			color: #ffffff;
+		}
+
+/* SOCIAL LINKS */
+.footer-socials {
+	display: flex;
+	gap: 12px;
+}
+
+	.footer-socials a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 38px;
+		height: 38px;
+		border: 1px solid #555555;
+		border-radius: 50%;
+		color: #ffffff;
+		text-decoration: none;
+		font-size: 11px;
+		transition: all 0.3s ease;
+	}
+
+		.footer-socials a:hover {
+			background-color: #ffffff;
+			color: #000000;
+		}
+
+/* COPYRIGHT */
+.footer-bottom {
+	border-top: 1px solid #333333;
+	margin-top: 40px;
+	padding-top: 22px;
+	text-align: center;
+}
+
+	.footer-bottom p {
+		color: #777777;
+		font-size: 11px;
+		letter-spacing: 1px;
+		margin: 0;
+	}
+
+/* RESPONSIVE */
+@media (max-width: 991.98px) {
+	.customer-nav-links,
+	.customer-account-links {
+		gap: 5px;
+		margin-top: 15px;
+	}
+
+	.customer-nav-links {
+		align-items: flex-start;
+	}
+
+	.customer-account-links {
+		align-items: flex-start;
+		border-top: 1px solid #333333;
+		padding-top: 10px;
+	}
+}
+
+
+/* ================= HOME PAGE ================= */
+
+/* 1. HERO BANNER */
+.home-hero {
+	position: relative;
+	width: 100%;
+	height: 650px;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	padding: 60px 8%;
+	background-color: #171717;
+	color: white;
+}
+
+/* Video nền */
+.hero-video {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	object-fit: cover;
+}
+
+/* Nội dung Hero */
+.home-hero-content {
+	position: relative;
+	z-index: 2;
+	max-width: 600px;
+	color: white;
+}
+
+	.home-hero-content h1 {
+		font-size: clamp(50px, 8vw, 100px);
+		font-weight: 900;
+		margin: 15px 0;
+		color: white;
+	}
+
+	.home-hero-content p {
+		color: white;
+	}
+
+.hero-subtitle {
+	letter-spacing: 4px;
+	font-weight: 600;
+}
+
+/* Lớp phủ tối trên video */
+.home-hero::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.4);
+	z-index: 1;
+}
+
+
+/* 2. SECTION HEADING */
+.home-section-heading {
+	margin-bottom: 30px;
+}
+
+	.home-section-heading h2 {
+		font-size: 32px;
+		font-weight: 800;
+	}
+
+	.home-section-heading p {
+		color: #777;
+	}
+
+
+/* 3. FEATURED CATEGORIES */
+.category-card {
+	display: block;
+	text-decoration: none;
+	color: #111;
+}
+
+.category-image {
+	height: 650px;
+	background-color: #e9e9e9;
+	background-size:cover;
+	background-position: center;
+	background-repeat:no-repeat;
+	transition: 0.3s;
+}
+
+.category-card:hover .category-image {
+	transform: scale(1.02);
+}
+
+.category-card h3 {
+	font-size: 24px;
+	font-weight: 800;
+	margin-top: 18px;
+}
+
+.category-card span {
+	color: #555;
+}
+
+
+/* 4. NEW ARRIVALS */
+.product-image {
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	background-color: #eee;
+	background-size: cover;
+	background-position: center;
+}
+
+.home-product-card h5 {
+	font-size: 16px;
+	font-weight: 700;
+	margin-top: 15px;
+}
+
+.home-product-card p {
+	color: #777;
+	margin-bottom: 5px;
+}
+
+.home-product-card strong {
+	font-size: 15px;
+}
+
+
+/* 5. TRENDING PRODUCTS */
+.home-trending {
+	background-color: #f5f5f5;
+}
+
+.trending-card {
+	background-color: white;
+	overflow: hidden;
+}
+
+/* Video Trending */
+.trending-video {
+	width: 100%;
+	height: 450px;
+	object-fit: cover;
+	display: block;
+}
+
+.trending-content {
+	padding: 25px;
+}
+
+	.trending-content h3 {
+		font-weight: 800;
+	}
+
+/* 6. PROMOTIONAL BANNER */
+.home-promotion {
+	min-height: 450px;
+	background-color: #171717;
+	background-size: cover;
+	background-position: center;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 50px 20px;
+}
+
+.promotion-content h2 {
+	font-size: clamp(32px, 5vw, 60px);
+	font-weight: 900;
+}
+
+.promotion-content p {
+	margin: 15px 0;
+}
+
+
+/* 7. RESPONSIVE - MOBILE */
+@media (max-width: 768px) {
+
+	.home-hero {
+		height: 450px;
+		padding: 40px 25px;
+	}
+
+	.category-image {
+		height: 280px;
+	}
+
+	.trending-image {
+		height: 250px;
+	}
+}

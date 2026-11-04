@@ -1,0 +1,175 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+
+<!-- 1. HERO BANNER -->
+<section class="home-hero">
+
+    <!-- VIDEO CHỈ NẰM TRONG HERO -->
+    <video class="hero-video" autoplay muted loop playsinline>
+        <source src="@Url.Content("~/Content/Videos/Introduce1.mp4")"
+                type="video/mp4" />
+    </video>
+    <!-- NỘI DUNG HERO -->
+    <div class="home-hero-content">
+        <p class="hero-subtitle">NIKE COLLECTION</p>
+        <h1>JUST DO IT.</h1>
+        <p>Discover your potential. Push beyond your limits.</p>
+
+        <a href="#" class="btn btn-light rounded-0 px-4 py-2">
+            SHOP NOW
+        </a>
+    </div>
+
+</section>
+
+
+<!-- 2. FEATURED CATEGORIES -->
+<div class="row g-4 mt-2">
+
+    <div class="col-12 col-md-4">
+        <a href="#" class="category-card">
+            <div class="category-image"
+                 style="background-image: url('@Url.Content("~/Content/Images/shoesformen.jpg")')">
+            </div>
+            <h3>MEN</h3>
+            <span>Shop Now</span>
+        </a>
+    </div>
+
+    <div class="col-12 col-md-4">
+        <a href="#" class="category-card">
+            <div class="category-image"
+                 style="background-image: url('@Url.Content("~/Content/Images/shoesforkid.jpg")')">
+            </div>
+            <h3>KIDS</h3>
+            <span>Shop Now</span>
+        </a>
+    </div>
+
+    <div class="col-12 col-md-4">
+        <a href="#" class="category-card">
+            <div class="category-image"
+                 style="background-image: url('@Url.Content("~/Content/Images/shoesforgirl.jpg")')">
+            </div>
+            <h3>WOMEN</h3>
+            <span>Shop Now</span>
+        </a>
+    </div>
+</div>
+
+
+<!-- 3. NEW ARRIVALS -->
+<section class="home-new-arrivals container py-5">
+    <div class="home-section-heading">
+        <h2>NEW ARRIVALS</h2>
+        <p>Discover the latest additions to Nike.</p>
+    </div>
+
+    <div class="row g-4">
+
+        <!-- TODO: Sau này lấy danh sách sản phẩm mới từ Database -->
+
+        <div class="col-6 col-md-3">
+            <div class="home-product-card">
+                <!-- TODO: Thêm ảnh sản phẩm 1 -->
+                <div class="product-image"></div>
+                <h5>Product Name</h5>
+                <p>Men's Shoes</p>
+                <strong>$120</strong>
+            </div>
+        </div>
+
+        <div class="col-6 col-md-3">
+            <div class="home-product-card">
+                <!-- TODO: Thêm ảnh sản phẩm 2 -->
+                <div class="product-image"></div>
+                <h5>Product Name</h5>
+                <p>Women's Shoes</p>
+                <strong>$110</strong>
+            </div>
+        </div>
+
+        <div class="col-6 col-md-3">
+            <div class="home-product-card">
+                <!-- TODO: Thêm ảnh sản phẩm 3 -->
+                <div class="product-image"></div>
+                <h5>Product Name</h5>
+                <p>Running Shoes</p>
+                <strong>$130</strong>
+            </div>
+        </div>
+
+        <div class="col-6 col-md-3">
+            <div class="home-product-card">
+                <!-- TODO: Thêm ảnh sản phẩm 4 -->
+                <div class="product-image"></div>
+                <h5>Product Name</h5>
+                <p>Sportswear</p>
+                <strong>$100</strong>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- 4. TRENDING PRODUCTS -->
+<section class="home-trending py-5">
+    <div class="container-fluid">
+        <div class="home-section-heading">
+            <h2>TRENDING NOW</h2>
+            <p>Styles everyone is talking about.</p>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-12 col-md-6">
+                <div class="trending-card">
+
+                    <!-- Video Trending 1 -->
+                    <video class="trending-video" autoplay muted loop playsinline>
+                        <source src="@Url.Content("~/Content/Videos/Introduce2.mp4")"
+                                type="video/mp4" />
+                    </video>
+                    <div class="trending-content">
+                        <p>NEW SEASON</p>
+                        <h3>RUN YOUR WORLD</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="trending-card">
+                    <!-- Video Trending 2 -->
+                    <video class="trending-video" autoplay muted loop playsinline>
+                        <source src="@Url.Content("~/Content/Videos/Introduce4.mp4")"
+                                type="video/mp4" />
+                    </video>
+                    <div class="trending-content">
+                        <p>NIKE SPORTSWEAR</p>
+                        <h3>OWN YOUR STYLE</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- 5. PROMOTIONAL BANNER -->
+<section class="home-promotion">
+    <!-- TODO: Thêm ảnh hoặc video quảng cáo tại đây -->
+
+    <div class="promotion-content">
+        <p>NIKE SPORTSWEAR</p>
+        <h2>MAKE EVERY MOVE COUNT.</h2>
+        <p>Gear up and take your performance to the next level.</p>
+
+        <a href="#" class="btn btn-light rounded-0 px-4 py-2">
+            SHOP NOW
+        </a>
+    </div>
+</section>
+
