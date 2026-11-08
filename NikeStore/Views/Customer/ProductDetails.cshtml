@@ -1,8 +1,136 @@
 ﻿
+@model NikeStore.Models.product
+@using System.Linq
+@using System.Collections.Generic
 @{
-    ViewBag.Title = "ProductDetails";
+    ViewBag.Title = "Product Details";
     Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+    var danhSachMau = ViewBag.DanhSachMau as IEnumerable<NikeStore.Models.product_colors> ?? new List<NikeStore.Models.product_colors>();
+    var danhSachAnh = ViewBag.DanhSachAnh as IEnumerable<NikeStore.Models.product_images> ?? new List<NikeStore.Models.product_images>();
+    var danhSachSize = ViewBag.DanhSachSize as IEnumerable<NikeStore.Models.product_variants> ?? new List<NikeStore.Models.product_variants>();
+    var mauMacDinh = danhSachMau.FirstOrDefault(m => danhSachAnh.Any(a => a.product_color_id == m.product_color_id && a.image_angle == "Side"));
+    var anhSide = mauMacDinh == null ? null : danhSachAnh.FirstOrDefault(a => a.product_color_id == mauMacDinh.product_color_id && a.image_angle == "Side");
+    var anhTop = mauMacDinh == null ? null : danhSachAnh.FirstOrDefault(a => a.product_color_id == mauMacDinh.product_color_id && a.image_angle == "Top");
+    var danhSachKichThuoc = danhSachSize.Where(v => v.size != null && (v.stock_quantity ?? 0) > 0).GroupBy(v => v.size_id).Select(g => g.First()).OrderBy(v => v.size.size_value).ToList();
 }
-
-<h2>ProductDetails</h2>
-
+<div class="container py-5">
+    <div class="mb-4">
+        <a href="@Url.Content("~/Customer/Product/Index")" class="text-decoration-none text-muted">All Shoes</a>
+        <span class="text-muted"> / @Model.product_name</span>
+    </div>
+    @if (TempData["ThongBao"] != null)
+    {
+        <div class="alert alert-info">@TempData["ThongBao"]</div>
+    }
+    <div class="row g-4">
+        <!-- HÌNH ẢNH SẢN PHẨM -->
+        <div class="col-lg-7">
+            <div class="position-relative bg-light rounded overflow-hidden">
+                @if (anhSide != null)
+                {
+                    <img id="anhSanPhamChinh" src="@Url.Content(anhSide.image_url)" class="img-fluid w-100" style="height:550px;object-fit:contain;" alt="@Model.product_name" />
+                }
+                else
+                {
+                    <div class="d-flex justify-content-center align-items-center" style="height:550px;">IMAGE NOT AVAILABLE</div>
+                }
+                <button type="button" onclick="chuyenAnh(-1)" class="btn btn-dark position-absolute top-50 start-0 translate-middle-y ms-3 rounded-circle">‹</button>
+                <button type="button" onclick="chuyenAnh(1)" class="btn btn-dark position-absolute top-50 end-0 translate-middle-y me-3 rounded-circle">›</button>
+            </div>
+            <p class="text-center text-muted small mt-2" id="tenGocAnh">SIDE VIEW</p>
+        </div>
+        <!-- THÔNG TIN SẢN PHẨM -->
+        <div class="col-lg-5">
+            <h2 class="fw-bold">@Model.product_name</h2>
+            <h4 class="fw-bold my-3">@String.Format("{0:N0}₫", Model.price)</h4>
+            <p class="text-muted small">Product Code: @Model.product_code</p>
+            <p>@Model.description</p>
+            <hr />
+            <!-- FORM CHỌN MÀU, SIZE VÀ THÊM GIỎ HÀNG -->
+            <form method="post" action="@Url.Action("AddToCart", "Cart")">
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="productId" value="@Model.product_id" />
+                <input type="hidden" name="productColorId" id="productColorId" value="@(mauMacDinh == null ? 0 : mauMacDinh.product_color_id)" />
+                <!-- CHỌN MÀU -->
+                <h6 class="fw-bold mb-3">Available Colors: <span class="text-muted fw-normal" id="tenMau">@(mauMacDinh != null && mauMacDinh.color != null ? mauMacDinh.color.color_name : "")</span></h6>
+                <div class="row row-cols-3 g-2">
+                    @foreach (var mau in danhSachMau)
+                    {
+                        var anhMauSide = danhSachAnh.FirstOrDefault(a => a.product_color_id == mau.product_color_id && a.image_angle == "Side");
+                        var anhMauTop = danhSachAnh.FirstOrDefault(a => a.product_color_id == mau.product_color_id && a.image_angle == "Top");
+                        var sizes = String.Join(",", danhSachSize.Where(v => v.product_color_id == mau.product_color_id && v.size != null && (v.stock_quantity ?? 0) > 0).Select(v => v.size_id.ToString()).Distinct().ToArray());
+                        if (anhMauSide != null && mau.color != null)
+                        {
+                            <div class="col">
+                                <button type="button" class="btn border p-1 w-100 color-option @(mauMacDinh != null && mau.product_color_id == mauMacDinh.product_color_id ? "border-dark" : "")" onclick="chonMau(this)" data-color-id="@mau.product_color_id" data-side="@Url.Content(anhMauSide.image_url)" data-top="@(anhMauTop == null ? "" : Url.Content(anhMauTop.image_url))" data-color-name="@mau.color.color_name" data-sizes="@sizes">
+                                    <img src="@Url.Content(anhMauSide.image_url)" class="img-fluid w-100" style="height:85px;object-fit:contain;" alt="@mau.color.color_name" />
+                                    <span class="small">@mau.color.color_name</span>
+                                </button>
+                            </div>
+                        }
+                    }
+                </div>
+                <hr />
+                <!-- CHỌN SIZE -->
+                <h6 class="fw-bold mb-3">Select Size (EU)</h6>
+                <div class="d-flex flex-wrap gap-2" id="danhSachSize">
+                    @foreach (var size in danhSachKichThuoc)
+                    {
+                        <div>
+                            <input type="radio" class="btn-check size-option" name="sizeId" id="size_@size.size_id" value="@size.size_id" required />
+                            <label class="btn btn-outline-dark" for="size_@size.size_id">@size.size.size_value</label>
+                        </div>
+                    }
+                </div>
+                <hr />
+                <button type="submit" class="btn btn-dark w-100 py-3">ADD TO CART</button>
+            </form>
+            <a href="@Url.Content("~/Customer/Product/Index")" class="btn btn-outline-dark w-100 mt-3">CONTINUE SHOPPING</a>
+        </div>
+    </div>
+</div>
+@section scripts {
+    <script>
+    var danhSachAnh = [];
+    var viTriAnh = 0;
+    var anhSide = "@(anhSide == null ? "" : Url.Content(anhSide.image_url))";
+    var anhTop = "@(anhTop == null ? "" : Url.Content(anhTop.image_url))";
+    if (anhSide != "") danhSachAnh.push(anhSide);
+    if (anhTop != "") danhSachAnh.push(anhTop);
+    // Chuyển ảnh Side và Top
+    function chuyenAnh(huong) {
+        if (danhSachAnh.length < 2) return;
+        viTriAnh = (viTriAnh + huong + danhSachAnh.length) % danhSachAnh.length;
+        document.getElementById("anhSanPhamChinh").src = danhSachAnh[viTriAnh];
+        document.getElementById("tenGocAnh").innerText = viTriAnh == 0 ? "SIDE VIEW" : "TOP VIEW";
+    }
+    // Chọn màu và cập nhật size
+    function chonMau(button) {
+        danhSachAnh = [button.getAttribute("data-side")];
+        var anhTop = button.getAttribute("data-top");
+        if (anhTop != "") danhSachAnh.push(anhTop);
+        viTriAnh = 0;
+        document.getElementById("anhSanPhamChinh").src = danhSachAnh[0];
+        document.getElementById("tenGocAnh").innerText = "SIDE VIEW";
+        document.getElementById("tenMau").innerText = button.getAttribute("data-color-name");
+        document.getElementById("productColorId").value = button.getAttribute("data-color-id");
+        // Đánh dấu màu đang chọn
+        document.querySelectorAll(".color-option").forEach(function(item) {
+            item.classList.remove("border-dark");
+        });
+        button.classList.add("border-dark");
+        // Chỉ cho chọn size còn hàng của màu đó
+        var sizes = button.getAttribute("data-sizes").split(",");
+        document.querySelectorAll(".size-option").forEach(function(item) {
+            item.checked = false;
+            item.disabled = !sizes.includes(item.value);
+            item.nextElementSibling.classList.toggle("disabled", item.disabled);
+        });
+    }
+    // Chọn màu mặc định khi mở trang
+    var mauMacDinhButton = document.querySelector(".color-option.border-dark");
+    if (mauMacDinhButton != null) {
+        chonMau(mauMacDinhButton);
+    }
+    </script>
+}

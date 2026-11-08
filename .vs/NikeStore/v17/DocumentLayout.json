@@ -3,20 +3,116 @@
   "WorkspaceRootPath": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
-      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|d:\\laptrinhweb\\nikestore\\nikestore\\nikestore\\views\\customer\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\views\\customer\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\content\\customer.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\content\\customer.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\views\\customer\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\views\\customer\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\views\\customer\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\views\\customer\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\controllers\\customer\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\controllers\\customer\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\views\\shared\\_customerlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\views\\shared\\_customerlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|d:\\laptrinhweb\\nikestore\\nikestore\\nikestore\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|d:\\laptrinhweb\\nikestore\\nikestore\\nikestore\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\views\\customer\\products.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\views\\customer\\products.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\views\\customer\\productdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\views\\customer\\productdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\views\\customer\\orders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\views\\customer\\orders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\views\\customer\\collections.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\views\\customer\\collections.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\views\\customer\\contact_about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\views\\customer\\contact_about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\controllers\\customer\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\controllers\\customer\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\views\\customer\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\views\\customer\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\views\\customer\\orderdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\views\\customer\\orderdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\controllers\\customer\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\controllers\\customer\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\controllers\\customer\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\controllers\\customer\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\controllers\\customer\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\controllers\\customer\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\views\\customer\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\views\\customer\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\views\\customer\\cart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\views\\customer\\cart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\controllers\\customer\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\controllers\\customer\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|d:\\laptrinhweb\\nikestore\\nikestore\\nikestore\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|d:\\laptrinhweb\\nikestore\\nikestore\\nikestore\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|d:\\laptrinhweb\\nikestore\\nikestore\\nikestore\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|d:\\laptrinhweb\\nikestore\\nikestore\\nikestore\\bin\\entityframework.dll||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\bin\\entityframework.dll||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|d:\\laptrinhweb\\nikestore\\nikestore\\nikestore\\bin\\entityframework.sqlserver.dll||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\bin\\entityframework.sqlserver.dll||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\views\\customer\\collectionproducts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\views\\customer\\collectionproducts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -31,20 +127,12 @@
       "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\views\\employee\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\views\\customer\\orderdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\views\\customer\\orderdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\app_start\\bundleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\app_start\\bundleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\controllers\\customer\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\controllers\\customer\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\content\\bootstrap.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -59,10 +147,6 @@
       "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\views\\admin\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\controllers\\customer\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\controllers\\customer\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\controllers\\employee\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\controllers\\employee\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -73,22 +157,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\controllers\\employee\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\controllers\\employee\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\controllers\\customer\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\controllers\\customer\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\controllers\\customer\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\controllers\\customer\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\controllers\\customer\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\controllers\\customer\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\controllers\\customer\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\controllers\\customer\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\controllers\\admin\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -125,10 +193,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\views\\admin\\categories.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -211,48 +275,8 @@
       "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\views\\employee\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\views\\customer\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\views\\customer\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\views\\customer\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\views\\customer\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\views\\customer\\orders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\views\\customer\\orders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\views\\customer\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\views\\customer\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\views\\customer\\cart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\views\\customer\\cart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\views\\customer\\productdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\views\\customer\\productdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\views\\customer\\products.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\views\\customer\\products.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\models\\color.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\models\\color.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|D:\\LapTrinhWeb\\NikeStore\\NikeStore\\nikestore\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7CFA7797-F08C-4DB4-A50E-23D8B07E57FF}|NikeStore\\NikeStore.csproj|solutionrelative:nikestore\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -262,101 +286,206 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Home.cshtml",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Home.cshtml",
-              "RelativeDocumentMoniker": "NikeStore\\Views\\Customer\\Home.cshtml",
-              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Home.cshtml",
-              "RelativeToolTip": "NikeStore\\Views\\Customer\\Home.cshtml",
-              "ViewState": "AgIAAJwAAAAAAAAAAAAAAK4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:29:40.781Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "_ViewStart.cshtml",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\_ViewStart.cshtml",
-              "RelativeDocumentMoniker": "NikeStore\\Views\\_ViewStart.cshtml",
-              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\_ViewStart.cshtml",
-              "RelativeToolTip": "NikeStore\\Views\\_ViewStart.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T15:17:06.213Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "_ViewStart.cshtml",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Employee\\_ViewStart.cshtml",
-              "RelativeDocumentMoniker": "NikeStore\\Views\\Employee\\_ViewStart.cshtml",
-              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Employee\\_ViewStart.cshtml",
-              "RelativeToolTip": "NikeStore\\Views\\Employee\\_ViewStart.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T17:18:25.328Z",
+              "Title": "role.cs",
+              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Models\\role.cs",
+              "RelativeDocumentMoniker": "NikeStore\\Models\\role.cs",
+              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Models\\role.cs",
+              "RelativeToolTip": "NikeStore\\Models\\role.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAADwvx4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-08T15:59:03.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "user.cs",
+              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Models\\user.cs",
+              "RelativeDocumentMoniker": "NikeStore\\Models\\user.cs",
+              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Models\\user.cs",
+              "RelativeToolTip": "NikeStore\\Models\\user.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAowC8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-08T15:58:59.537Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Register.cshtml",
+              "RelativeDocumentMoniker": "NikeStore\\Views\\Customer\\Register.cshtml",
+              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Register.cshtml",
+              "RelativeToolTip": "NikeStore\\Views\\Customer\\Register.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-03T16:31:14.213Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Customer\\AccountController.cs",
+              "RelativeDocumentMoniker": "NikeStore\\Controllers\\Customer\\AccountController.cs",
+              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Customer\\AccountController.cs",
+              "RelativeToolTip": "NikeStore\\Controllers\\Customer\\AccountController.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAYwD0AAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-03T17:09:33.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Login.cshtml",
+              "RelativeDocumentMoniker": "NikeStore\\Views\\Customer\\Login.cshtml",
+              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Login.cshtml*",
+              "RelativeToolTip": "NikeStore\\Views\\Customer\\Login.cshtml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-03T16:31:04.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "_CustomerLayout.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Shared\\_CustomerLayout.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Shared\\_CustomerLayout.cshtml",
               "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Shared\\_CustomerLayout.cshtml",
               "RelativeToolTip": "NikeStore\\Views\\Shared\\_CustomerLayout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADsAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-11-03T16:23:33.705Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "_ManagementLayout.cshtml",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Shared\\_ManagementLayout.cshtml",
-              "RelativeDocumentMoniker": "NikeStore\\Views\\Shared\\_ManagementLayout.cshtml",
-              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Shared\\_ManagementLayout.cshtml",
-              "RelativeToolTip": "NikeStore\\Views\\Shared\\_ManagementLayout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:23:50.71Z",
+              "DocumentIndex": 1,
+              "Title": "Site.css",
+              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Content\\Site.css",
+              "RelativeDocumentMoniker": "NikeStore\\Content\\Site.css",
+              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Content\\Site.css*",
+              "RelativeToolTip": "NikeStore\\Content\\Site.css*",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAmwBQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-11-03T16:54:42.46Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Customer.css",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Content\\Customer.css",
               "RelativeDocumentMoniker": "NikeStore\\Content\\Customer.css",
               "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Content\\Customer.css",
               "RelativeToolTip": "NikeStore\\Content\\Customer.css",
-              "ViewState": "AgIAAEoBAAAAAAAAAAAUwGQBAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAsCAAAAAAAAAAAUwB0CAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2026-11-03T16:54:33.163Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Model1.edmx [Diagram1]",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Models\\Model1.edmx",
-              "RelativeDocumentMoniker": "NikeStore\\Models\\Model1.edmx",
-              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Models\\Model1.edmx [Diagram1]",
-              "RelativeToolTip": "NikeStore\\Models\\Model1.edmx [Diagram1]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
-              "WhenOpened": "2026-11-03T15:57:37.318Z",
-              "EditorCaption": " [Diagram1]"
+              "DocumentIndex": 8,
+              "Title": "Products.cshtml",
+              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Products.cshtml",
+              "RelativeDocumentMoniker": "NikeStore\\Views\\Customer\\Products.cshtml",
+              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Products.cshtml",
+              "RelativeToolTip": "NikeStore\\Views\\Customer\\Products.cshtml",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAswDUAAACOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-03T16:29:50.341Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
+              "Title": "ProductDetails.cshtml",
+              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\ProductDetails.cshtml",
+              "RelativeDocumentMoniker": "NikeStore\\Views\\Customer\\ProductDetails.cshtml",
+              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\ProductDetails.cshtml",
+              "RelativeToolTip": "NikeStore\\Views\\Customer\\ProductDetails.cshtml",
+              "ViewState": "AgIAACgAAAAAAAAAAAAUwDEAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-03T16:30:00.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Orders.cshtml",
+              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Orders.cshtml",
+              "RelativeDocumentMoniker": "NikeStore\\Views\\Customer\\Orders.cshtml",
+              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Orders.cshtml",
+              "RelativeToolTip": "NikeStore\\Views\\Customer\\Orders.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-03T16:30:36.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Collections.cshtml",
+              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Collections.cshtml",
+              "RelativeDocumentMoniker": "NikeStore\\Views\\Customer\\Collections.cshtml",
+              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Collections.cshtml",
+              "RelativeToolTip": "NikeStore\\Views\\Customer\\Collections.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-08T12:54:44.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Contact_About.cshtml",
+              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Contact_About.cshtml",
+              "RelativeDocumentMoniker": "NikeStore\\Views\\Customer\\Contact_About.cshtml",
+              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Contact_About.cshtml",
+              "RelativeToolTip": "NikeStore\\Views\\Customer\\Contact_About.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAswDIAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-08T13:19:19.711Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Customer\\OrderController.cs",
+              "RelativeDocumentMoniker": "NikeStore\\Controllers\\Customer\\OrderController.cs",
+              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Customer\\OrderController.cs",
+              "RelativeToolTip": "NikeStore\\Controllers\\Customer\\OrderController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-03T17:09:23.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Checkout.cshtml",
+              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Checkout.cshtml",
+              "RelativeDocumentMoniker": "NikeStore\\Views\\Customer\\Checkout.cshtml",
+              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Checkout.cshtml",
+              "RelativeToolTip": "NikeStore\\Views\\Customer\\Checkout.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-03T16:30:22.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "OrderDetails.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\OrderDetails.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Customer\\OrderDetails.cshtml",
@@ -369,7 +498,201 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 16,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Customer\\HomeController.cs",
+              "RelativeDocumentMoniker": "NikeStore\\Controllers\\Customer\\HomeController.cs",
+              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Customer\\HomeController.cs",
+              "RelativeToolTip": "NikeStore\\Controllers\\Customer\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-03T17:08:44.582Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CheckoutController.cs",
+              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Customer\\CheckoutController.cs",
+              "RelativeDocumentMoniker": "NikeStore\\Controllers\\Customer\\CheckoutController.cs",
+              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Customer\\CheckoutController.cs",
+              "RelativeToolTip": "NikeStore\\Controllers\\Customer\\CheckoutController.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAmwDEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-03T17:09:12.597Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Customer\\ProductController.cs",
+              "RelativeDocumentMoniker": "NikeStore\\Controllers\\Customer\\ProductController.cs",
+              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Customer\\ProductController.cs",
+              "RelativeToolTip": "NikeStore\\Controllers\\Customer\\ProductController.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAYwFkAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-03T17:08:55.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Home.cshtml",
+              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Home.cshtml",
+              "RelativeDocumentMoniker": "NikeStore\\Views\\Customer\\Home.cshtml",
+              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Home.cshtml",
+              "RelativeToolTip": "NikeStore\\Views\\Customer\\Home.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-03T16:29:40.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Cart.cshtml",
+              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Cart.cshtml",
+              "RelativeDocumentMoniker": "NikeStore\\Views\\Customer\\Cart.cshtml",
+              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Cart.cshtml",
+              "RelativeToolTip": "NikeStore\\Views\\Customer\\Cart.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAC4AAADJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-03T16:30:12.102Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Customer\\CartController.cs",
+              "RelativeDocumentMoniker": "NikeStore\\Controllers\\Customer\\CartController.cs",
+              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Customer\\CartController.cs",
+              "RelativeToolTip": "NikeStore\\Controllers\\Customer\\CartController.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwC0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-03T17:09:04.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "order.cs",
+              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Models\\order.cs",
+              "RelativeDocumentMoniker": "NikeStore\\Models\\order.cs",
+              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Models\\order.cs",
+              "RelativeToolTip": "NikeStore\\Models\\order.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-08T15:21:08.721Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Model1.edmx [Diagram1]",
+              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Models\\Model1.edmx",
+              "RelativeDocumentMoniker": "NikeStore\\Models\\Model1.edmx",
+              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Models\\Model1.edmx [Diagram1]",
+              "RelativeToolTip": "NikeStore\\Models\\Model1.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2026-11-08T15:19:50.113Z",
+              "EditorCaption": " [Diagram1]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Web.config",
+              "RelativeDocumentMoniker": "NikeStore\\Web.config",
+              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Web.config",
+              "RelativeToolTip": "NikeStore\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-11-08T15:18:03.463Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "EntityFramework.dll",
+              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\bin\\EntityFramework.dll",
+              "RelativeDocumentMoniker": "NikeStore\\bin\\EntityFramework.dll",
+              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\bin\\EntityFramework.dll",
+              "RelativeToolTip": "NikeStore\\bin\\EntityFramework.dll",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001697|",
+              "WhenOpened": "2026-11-08T15:17:44.474Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "EntityFramework.SqlServer.dll",
+              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\bin\\EntityFramework.SqlServer.dll",
+              "RelativeDocumentMoniker": "NikeStore\\bin\\EntityFramework.SqlServer.dll",
+              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\bin\\EntityFramework.SqlServer.dll",
+              "RelativeToolTip": "NikeStore\\bin\\EntityFramework.SqlServer.dll",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001697|",
+              "WhenOpened": "2026-11-08T15:17:45.692Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "CollectionProducts.cshtml",
+              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\CollectionProducts.cshtml",
+              "RelativeDocumentMoniker": "NikeStore\\Views\\Customer\\CollectionProducts.cshtml",
+              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\CollectionProducts.cshtml",
+              "RelativeToolTip": "NikeStore\\Views\\Customer\\CollectionProducts.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACEAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-08T13:13:46.672Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "_ManagementLayout.cshtml",
+              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Shared\\_ManagementLayout.cshtml",
+              "RelativeDocumentMoniker": "NikeStore\\Views\\Shared\\_ManagementLayout.cshtml",
+              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Shared\\_ManagementLayout.cshtml",
+              "RelativeToolTip": "NikeStore\\Views\\Shared\\_ManagementLayout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-03T16:23:50.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Employee\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "NikeStore\\Views\\Employee\\_ViewStart.cshtml",
+              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Employee\\_ViewStart.cshtml",
+              "RelativeToolTip": "NikeStore\\Views\\Employee\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-03T17:18:25.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "NikeStore\\Views\\_ViewStart.cshtml",
+              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "NikeStore\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-03T15:17:06.213Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
               "Title": "BundleConfig.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\App_Start\\BundleConfig.cs",
               "RelativeDocumentMoniker": "NikeStore\\App_Start\\BundleConfig.cs",
@@ -377,23 +700,12 @@
               "RelativeToolTip": "NikeStore\\App_Start\\BundleConfig.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAgwBYAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T16:55:58.774Z"
+              "WhenOpened": "2026-11-03T16:55:58.774Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "CartController.cs",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Customer\\CartController.cs",
-              "RelativeDocumentMoniker": "NikeStore\\Controllers\\Customer\\CartController.cs",
-              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Customer\\CartController.cs",
-              "RelativeToolTip": "NikeStore\\Controllers\\Customer\\CartController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T17:09:04.421Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 33,
               "Title": "bootstrap.min.css",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Content\\bootstrap.min.css",
               "RelativeDocumentMoniker": "NikeStore\\Content\\bootstrap.min.css",
@@ -401,11 +713,12 @@
               "RelativeToolTip": "NikeStore\\Content\\bootstrap.min.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-11-03T16:56:30.103Z"
+              "WhenOpened": "2026-11-03T16:56:30.103Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 32,
               "Title": "RouteConfig.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\App_Start\\RouteConfig.cs",
               "RelativeDocumentMoniker": "NikeStore\\App_Start\\RouteConfig.cs",
@@ -413,11 +726,12 @@
               "RelativeToolTip": "NikeStore\\App_Start\\RouteConfig.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T17:03:18.906Z"
+              "WhenOpened": "2026-11-03T17:03:18.906Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 34,
               "Title": "bootstrap.rtl.min.css",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Content\\bootstrap.rtl.min.css",
               "RelativeDocumentMoniker": "NikeStore\\Content\\bootstrap.rtl.min.css",
@@ -425,23 +739,12 @@
               "RelativeToolTip": "NikeStore\\Content\\bootstrap.rtl.min.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-11-03T17:35:47.642Z"
+              "WhenOpened": "2026-11-03T17:35:47.642Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Customer\\HomeController.cs",
-              "RelativeDocumentMoniker": "NikeStore\\Controllers\\Customer\\HomeController.cs",
-              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Customer\\HomeController.cs",
-              "RelativeToolTip": "NikeStore\\Controllers\\Customer\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T17:08:44.582Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 35,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\_ViewStart.cshtml",
@@ -449,11 +752,12 @@
               "RelativeToolTip": "NikeStore\\Views\\Admin\\_ViewStart.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T17:17:55.226Z"
+              "WhenOpened": "2026-11-03T17:17:55.226Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 36,
               "Title": "CustomerController.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Employee\\CustomerController.cs",
               "RelativeDocumentMoniker": "NikeStore\\Controllers\\Employee\\CustomerController.cs",
@@ -461,11 +765,12 @@
               "RelativeToolTip": "NikeStore\\Controllers\\Employee\\CustomerController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T17:10:24.695Z"
+              "WhenOpened": "2026-11-03T17:10:24.695Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 37,
               "Title": "OrderController.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Employee\\OrderController.cs",
               "RelativeDocumentMoniker": "NikeStore\\Controllers\\Employee\\OrderController.cs",
@@ -473,11 +778,12 @@
               "RelativeToolTip": "NikeStore\\Controllers\\Employee\\OrderController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T17:10:09.154Z"
+              "WhenOpened": "2026-11-03T17:10:09.154Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 38,
               "Title": "DashboardController.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Employee\\DashboardController.cs",
               "RelativeDocumentMoniker": "NikeStore\\Controllers\\Employee\\DashboardController.cs",
@@ -485,59 +791,12 @@
               "RelativeToolTip": "NikeStore\\Controllers\\Employee\\DashboardController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T17:09:57.55Z"
+              "WhenOpened": "2026-11-03T17:09:57.55Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Customer\\AccountController.cs",
-              "RelativeDocumentMoniker": "NikeStore\\Controllers\\Customer\\AccountController.cs",
-              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Customer\\AccountController.cs",
-              "RelativeToolTip": "NikeStore\\Controllers\\Customer\\AccountController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T17:09:33.579Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "OrderController.cs",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Customer\\OrderController.cs",
-              "RelativeDocumentMoniker": "NikeStore\\Controllers\\Customer\\OrderController.cs",
-              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Customer\\OrderController.cs",
-              "RelativeToolTip": "NikeStore\\Controllers\\Customer\\OrderController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T17:09:23.176Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "CheckoutController.cs",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Customer\\CheckoutController.cs",
-              "RelativeDocumentMoniker": "NikeStore\\Controllers\\Customer\\CheckoutController.cs",
-              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Customer\\CheckoutController.cs",
-              "RelativeToolTip": "NikeStore\\Controllers\\Customer\\CheckoutController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T17:09:12.597Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Customer\\ProductController.cs",
-              "RelativeDocumentMoniker": "NikeStore\\Controllers\\Customer\\ProductController.cs",
-              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Customer\\ProductController.cs",
-              "RelativeToolTip": "NikeStore\\Controllers\\Customer\\ProductController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T17:08:55.488Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 41,
               "Title": "InventoryController.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Admin\\InventoryController.cs",
               "RelativeDocumentMoniker": "NikeStore\\Controllers\\Admin\\InventoryController.cs",
@@ -545,11 +804,12 @@
               "RelativeToolTip": "NikeStore\\Controllers\\Admin\\InventoryController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T17:08:21.138Z"
+              "WhenOpened": "2026-11-03T17:08:21.138Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 42,
               "Title": "CouponController.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Admin\\CouponController.cs",
               "RelativeDocumentMoniker": "NikeStore\\Controllers\\Admin\\CouponController.cs",
@@ -557,11 +817,12 @@
               "RelativeToolTip": "NikeStore\\Controllers\\Admin\\CouponController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T17:08:12.145Z"
+              "WhenOpened": "2026-11-03T17:08:12.145Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 40,
               "Title": "OrderController.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Admin\\OrderController.cs",
               "RelativeDocumentMoniker": "NikeStore\\Controllers\\Admin\\OrderController.cs",
@@ -569,11 +830,12 @@
               "RelativeToolTip": "NikeStore\\Controllers\\Admin\\OrderController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T17:08:02.383Z"
+              "WhenOpened": "2026-11-03T17:08:02.383Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 43,
               "Title": "UserController.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Admin\\UserController.cs",
               "RelativeDocumentMoniker": "NikeStore\\Controllers\\Admin\\UserController.cs",
@@ -581,11 +843,12 @@
               "RelativeToolTip": "NikeStore\\Controllers\\Admin\\UserController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T17:07:52.888Z"
+              "WhenOpened": "2026-11-03T17:07:52.888Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 44,
               "Title": "CategoryController.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Admin\\CategoryController.cs",
               "RelativeDocumentMoniker": "NikeStore\\Controllers\\Admin\\CategoryController.cs",
@@ -593,11 +856,12 @@
               "RelativeToolTip": "NikeStore\\Controllers\\Admin\\CategoryController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T17:07:39.73Z"
+              "WhenOpened": "2026-11-03T17:07:39.73Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 39,
               "Title": "DashboardController.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Admin\\DashboardController.cs",
               "RelativeDocumentMoniker": "NikeStore\\Controllers\\Admin\\DashboardController.cs",
@@ -605,11 +869,12 @@
               "RelativeToolTip": "NikeStore\\Controllers\\Admin\\DashboardController.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T17:07:15.981Z"
+              "WhenOpened": "2026-11-03T17:07:15.981Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 45,
               "Title": "ProductController.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Controllers\\Admin\\ProductController.cs",
               "RelativeDocumentMoniker": "NikeStore\\Controllers\\Admin\\ProductController.cs",
@@ -617,11 +882,12 @@
               "RelativeToolTip": "NikeStore\\Controllers\\Admin\\ProductController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T17:07:28.474Z"
+              "WhenOpened": "2026-11-03T17:07:28.474Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 47,
               "Title": "Global.asax.cs",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Global.asax.cs",
               "RelativeDocumentMoniker": "NikeStore\\Global.asax.cs",
@@ -629,11 +895,12 @@
               "RelativeToolTip": "NikeStore\\Global.asax.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T17:00:36.459Z"
+              "WhenOpened": "2026-11-03T17:00:36.459Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 46,
               "Title": "CouponCreate.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\CouponCreate.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\CouponCreate.cshtml",
@@ -641,23 +908,12 @@
               "RelativeToolTip": "NikeStore\\Views\\Admin\\CouponCreate.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:37:37.991Z"
+              "WhenOpened": "2026-11-03T16:37:37.991Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "Site.css",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Content\\Site.css",
-              "RelativeDocumentMoniker": "NikeStore\\Content\\Site.css",
-              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Content\\Site.css",
-              "RelativeToolTip": "NikeStore\\Content\\Site.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-11-03T16:54:42.46Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 50,
               "Title": "CouponEdit.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\CouponEdit.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\CouponEdit.cshtml",
@@ -665,11 +921,12 @@
               "RelativeToolTip": "NikeStore\\Views\\Admin\\CouponEdit.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:37:45.46Z"
+              "WhenOpened": "2026-11-03T16:37:45.46Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 51,
               "Title": "OrderDetails.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\OrderDetails.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\OrderDetails.cshtml",
@@ -677,11 +934,12 @@
               "RelativeToolTip": "NikeStore\\Views\\Admin\\OrderDetails.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:37:23.337Z"
+              "WhenOpened": "2026-11-03T16:37:23.337Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 52,
               "Title": "UserEdit.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\UserEdit.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\UserEdit.cshtml",
@@ -689,11 +947,12 @@
               "RelativeToolTip": "NikeStore\\Views\\Admin\\UserEdit.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:37:02.212Z"
+              "WhenOpened": "2026-11-03T16:37:02.212Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 49,
               "Title": "ProductEdit.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\ProductEdit.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\ProductEdit.cshtml",
@@ -701,11 +960,12 @@
               "RelativeToolTip": "NikeStore\\Views\\Admin\\ProductEdit.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:34:07.485Z"
+              "WhenOpened": "2026-11-03T16:34:07.485Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 48,
               "Title": "Categories.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\Categories.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\Categories.cshtml",
@@ -713,11 +973,12 @@
               "RelativeToolTip": "NikeStore\\Views\\Admin\\Categories.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:34:17.878Z"
+              "WhenOpened": "2026-11-03T16:34:17.878Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 53,
               "Title": "UserCreate.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\UserCreate.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\UserCreate.cshtml",
@@ -725,11 +986,12 @@
               "RelativeToolTip": "NikeStore\\Views\\Admin\\UserCreate.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:36:51.166Z"
+              "WhenOpened": "2026-11-03T16:36:51.166Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 54,
               "Title": "CategoryEdit.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\CategoryEdit.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\CategoryEdit.cshtml",
@@ -737,11 +999,12 @@
               "RelativeToolTip": "NikeStore\\Views\\Admin\\CategoryEdit.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:36:38.489Z"
+              "WhenOpened": "2026-11-03T16:36:38.489Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 55,
               "Title": "CategoryCreate.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\CategoryCreate.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\CategoryCreate.cshtml",
@@ -749,11 +1012,12 @@
               "RelativeToolTip": "NikeStore\\Views\\Admin\\CategoryCreate.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:36:29.618Z"
+              "WhenOpened": "2026-11-03T16:36:29.618Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 56,
               "Title": "ProductDetails.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\ProductDetails.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\ProductDetails.cshtml",
@@ -761,11 +1025,12 @@
               "RelativeToolTip": "NikeStore\\Views\\Admin\\ProductDetails.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:36:13.419Z"
+              "WhenOpened": "2026-11-03T16:36:13.419Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 57,
               "Title": "Inventory.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\Inventory.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\Inventory.cshtml",
@@ -773,11 +1038,12 @@
               "RelativeToolTip": "NikeStore\\Views\\Admin\\Inventory.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:34:59.456Z"
+              "WhenOpened": "2026-11-03T16:34:59.456Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 58,
               "Title": "Coupons.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\Coupons.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\Coupons.cshtml",
@@ -785,11 +1051,12 @@
               "RelativeToolTip": "NikeStore\\Views\\Admin\\Coupons.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:34:41.956Z"
+              "WhenOpened": "2026-11-03T16:34:41.956Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 59,
               "Title": "Orders.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\Orders.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\Orders.cshtml",
@@ -797,11 +1064,12 @@
               "RelativeToolTip": "NikeStore\\Views\\Admin\\Orders.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:34:33.895Z"
+              "WhenOpened": "2026-11-03T16:34:33.895Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 60,
               "Title": "Users.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\Users.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\Users.cshtml",
@@ -809,11 +1077,12 @@
               "RelativeToolTip": "NikeStore\\Views\\Admin\\Users.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:34:26.389Z"
+              "WhenOpened": "2026-11-03T16:34:26.389Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 61,
               "Title": "ProductCreate.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\ProductCreate.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\ProductCreate.cshtml",
@@ -821,11 +1090,12 @@
               "RelativeToolTip": "NikeStore\\Views\\Admin\\ProductCreate.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:33:59.277Z"
+              "WhenOpened": "2026-11-03T16:33:59.277Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 62,
               "Title": "Products.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\Products.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\Products.cshtml",
@@ -833,11 +1103,12 @@
               "RelativeToolTip": "NikeStore\\Views\\Admin\\Products.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:33:50.025Z"
+              "WhenOpened": "2026-11-03T16:33:50.025Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 63,
               "Title": "Dashboard.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Admin\\Dashboard.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Admin\\Dashboard.cshtml",
@@ -845,11 +1116,12 @@
               "RelativeToolTip": "NikeStore\\Views\\Admin\\Dashboard.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:33:32.124Z"
+              "WhenOpened": "2026-11-03T16:33:32.124Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 64,
               "Title": "CustomerDetails.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Employee\\CustomerDetails.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Employee\\CustomerDetails.cshtml",
@@ -857,11 +1129,12 @@
               "RelativeToolTip": "NikeStore\\Views\\Employee\\CustomerDetails.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:32:54.174Z"
+              "WhenOpened": "2026-11-03T16:32:54.174Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 65,
               "Title": "OrderDetails.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Employee\\OrderDetails.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Employee\\OrderDetails.cshtml",
@@ -869,11 +1142,12 @@
               "RelativeToolTip": "NikeStore\\Views\\Employee\\OrderDetails.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:32:14.659Z"
+              "WhenOpened": "2026-11-03T16:32:14.659Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 66,
               "Title": "Orders.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Employee\\Orders.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Employee\\Orders.cshtml",
@@ -881,11 +1155,12 @@
               "RelativeToolTip": "NikeStore\\Views\\Employee\\Orders.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:31:55.161Z"
+              "WhenOpened": "2026-11-03T16:31:55.161Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 67,
               "Title": "Dashboard.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Employee\\Dashboard.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Employee\\Dashboard.cshtml",
@@ -893,95 +1168,12 @@
               "RelativeToolTip": "NikeStore\\Views\\Employee\\Dashboard.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:31:46.025Z"
+              "WhenOpened": "2026-11-03T16:31:46.025Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Register.cshtml",
-              "RelativeDocumentMoniker": "NikeStore\\Views\\Customer\\Register.cshtml",
-              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Register.cshtml",
-              "RelativeToolTip": "NikeStore\\Views\\Customer\\Register.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:31:14.213Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 53,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Login.cshtml",
-              "RelativeDocumentMoniker": "NikeStore\\Views\\Customer\\Login.cshtml",
-              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Login.cshtml",
-              "RelativeToolTip": "NikeStore\\Views\\Customer\\Login.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:31:04.305Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 54,
-              "Title": "Orders.cshtml",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Orders.cshtml",
-              "RelativeDocumentMoniker": "NikeStore\\Views\\Customer\\Orders.cshtml",
-              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Orders.cshtml",
-              "RelativeToolTip": "NikeStore\\Views\\Customer\\Orders.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:30:36.605Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 55,
-              "Title": "Checkout.cshtml",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Checkout.cshtml",
-              "RelativeDocumentMoniker": "NikeStore\\Views\\Customer\\Checkout.cshtml",
-              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Checkout.cshtml",
-              "RelativeToolTip": "NikeStore\\Views\\Customer\\Checkout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:30:22.196Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 56,
-              "Title": "Cart.cshtml",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Cart.cshtml",
-              "RelativeDocumentMoniker": "NikeStore\\Views\\Customer\\Cart.cshtml",
-              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Cart.cshtml",
-              "RelativeToolTip": "NikeStore\\Views\\Customer\\Cart.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:30:12.102Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 57,
-              "Title": "ProductDetails.cshtml",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\ProductDetails.cshtml",
-              "RelativeDocumentMoniker": "NikeStore\\Views\\Customer\\ProductDetails.cshtml",
-              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\ProductDetails.cshtml",
-              "RelativeToolTip": "NikeStore\\Views\\Customer\\ProductDetails.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:30:00.829Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 58,
-              "Title": "Products.cshtml",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Products.cshtml",
-              "RelativeDocumentMoniker": "NikeStore\\Views\\Customer\\Products.cshtml",
-              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Customer\\Products.cshtml",
-              "RelativeToolTip": "NikeStore\\Views\\Customer\\Products.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:29:50.341Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 68,
               "Title": "Error.cshtml",
               "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "NikeStore\\Views\\Shared\\Error.cshtml",
@@ -989,47 +1181,8 @@
               "RelativeToolTip": "NikeStore\\Views\\Shared\\Error.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-03T16:24:40.404Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 60,
-              "Title": "order.cs",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Models\\order.cs",
-              "RelativeDocumentMoniker": "NikeStore\\Models\\order.cs",
-              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Models\\order.cs",
-              "RelativeToolTip": "NikeStore\\Models\\order.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAUwCwAAABfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T15:58:44.277Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 61,
-              "Title": "color.cs",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Models\\color.cs",
-              "RelativeDocumentMoniker": "NikeStore\\Models\\color.cs",
-              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Models\\color.cs",
-              "RelativeToolTip": "NikeStore\\Models\\color.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T15:59:43.004Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 62,
-              "Title": "category.cs",
-              "DocumentMoniker": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Models\\category.cs",
-              "RelativeDocumentMoniker": "NikeStore\\Models\\category.cs",
-              "ToolTip": "D:\\LapTrinhWeb\\NikeStore\\NikeStore\\NikeStore\\Models\\category.cs",
-              "RelativeToolTip": "NikeStore\\Models\\category.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T15:59:41.489Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "WhenOpened": "2026-11-03T16:24:40.404Z",
+              "EditorCaption": ""
             }
           ]
         }

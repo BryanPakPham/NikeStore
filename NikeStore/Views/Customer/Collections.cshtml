@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "Collections";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+<section class="customer-collections container-fluid px-4 px-lg-5 py-5">
+    <div class="collections-heading">
+        <p>NIKE / COLLECTIONS</p>
+        <h1>ICONIC COLLECTIONS</h1>
+        <p>Discover the iconic Nike footwear collections.</p>
+    </div>
+    <div class="row g-4">
+        <div class="col-6 col-md-4">
+            <a href="@Url.Action("CollectionProducts", "Product", new { collectionName = "Jordan 1" })" class="collection-card">
+                <img src="@Url.Content("~/Content/Images/Products/AJ1LOW-M/white/side.jpg")" alt="Air Jordan 1" />
+                <h3>AIR JORDAN 1</h3>
+                <span>SHOP NOW →</span>
+            </a>
+        </div>
+        <div class="col-6 col-md-4">
+            <a href="@Url.Action("CollectionProducts", "Product", new { collectionName = "Air Force 1" })" class="collection-card">
+                <img src="@Url.Content("~/Content/Images/Products/NK-AF107-M/white/side.jpg")" alt="Air Force 1" />
+                <h3>AIR FORCE 1</h3>
+                <span>SHOP NOW →</span>
+            </a>
+        </div>
+        <div class="col-6 col-md-4">
+            <a href="@Url.Action("CollectionProducts", "Product", new { collectionName = "Air Max" })" class="collection-card">
+                <img src="@Url.Content("~/Content/Images/Products/NK-AM90-M/white/side.jpg")" alt="Air Max" />
+                <h3>AIR MAX</h3>
+                <span>SHOP NOW →</span>
+            </a>
+        </div>
+        <div class="col-6 col-md-4">
+            <a href="@Url.Action("Index", "Product", new { collectionName = "Pegasus" })" class="collection-card">
+                <img src="@Url.Content("~/Content/Images/Products/NK-PEG42-M/white/side.jpg")" alt="Pegasus" />
+                <h3>PEGASUS</h3>
+                <span>SHOP NOW →</span>
+            </a>
+        </div>
+        <div class="col-6 col-md-4">
+            <a href="@Url.Action("Index", "Product", new { collectionName = "Vomero" })" class="collection-card">
+                <img src="@Url.Content("~/Content/Images/Products/NK-VOM18-M/white/side.jpg")" alt="Vomero" />
+                <h3>VOMERO</h3>
+                <span>SHOP NOW →</span>
+            </a>
+        </div>
+        <div class="col-6 col-md-4">
+            <a href="@Url.Action("Index", "Product", new { collectionName = "Shox" })" class="collection-card">
+                <img src="@Url.Content("~/Content/Images/Products/NK-SHOXNZ-M/white/side.jpg")" alt="Shox" />
+                <h3>SHOX</h3>
+                <span>SHOP NOW →</span>
+            </a>
+        </div>
+        <div class="col-6 col-md-4">
+            <a href="@Url.Action("Index", "Product", new { collectionName = "P-6000" })" class="collection-card">
+                <img src="@Url.Content("~/Content/Images/Products/NK-P6000-M/white/side.jpg")" alt="P-6000" />
+                <h3>P-6000</h3>
+                <span>SHOP NOW →</span>
+            </a>
+        </div>
+        <div class="col-6 col-md-4">
+            <a href="@Url.Action("Index", "Product", new { collectionName = "V5 RNR" })" class="collection-card">
+                <img src="@Url.Content("~/Content/Images/Products/NK-V5RNRPRE-W/white/side.jpg")" alt="V5 RNR" />
+                <h3>V5 RNR</h3>
+                <span>SHOP NOW →</span>
+            </a>
+        </div>
+        <div class="col-6 col-md-4">
+            <a href="@Url.Action("Index", "Product", new { collectionName = "Cortez" })" class="collection-card">
+                <img src="@Url.Content("~/Content/Images/Products/NK-CORTEZSE-W/white/side.jpg")" alt="Cortez" />
+                <h3>CORTEZ</h3>
+                <span>SHOP NOW →</span>
+            </a>
+        </div>
+    </div>
+</section>

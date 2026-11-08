@@ -1,8 +1,69 @@
-﻿
+﻿@model IEnumerable<NikeStore.Models.product>
 @{
-    ViewBag.Title = "Products";
+    ViewBag.Title = "All Shoes";
     Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+    var danhSachAnh = ViewBag.DanhSachAnh as IEnumerable<NikeStore.Models.product_images> ?? new List<NikeStore.Models.product_images>();
 }
-
-<h2>Products</h2>
-
+<section class="customer-products container-fluid px-4 px-lg-5 py-5">
+    <div class="customer-products-heading">
+        <p class="products-breadcrumb">NIKE / PRODUCTS</p>
+        <h1>ALL SHOES</h1>
+        <p>Discover your style. Find the perfect pair for every step.</p>
+        <!-- FILTER BY PRICE -->
+        <form method="get" action="@Url.Content("~/Customer/Product/Index")" class="row g-2 mb-4 justify-content-end">
+            <div class="col-auto">
+                <label class="form-label">Minimum Price</label>
+                <input type="number" name="minPrice" class="form-control" placeholder="From" min="0" value="@Request.QueryString["minPrice"]" />
+            </div>
+            <div class="col-auto">
+                <label class="form-label">Maximum Price</label>
+                <input type="number" name="maxPrice" class="form-control" placeholder="To" min="0" value="@Request.QueryString["maxPrice"]" />
+            </div>
+            <div class="col-auto d-flex align-items-end gap-2">
+                <button type="submit" class="btn btn-dark">FILTER</button>
+                <a href="@Url.Content("~/Customer/Product/Index")" class="btn btn-outline-dark">CLEAR</a>
+            </div>
+        </form>
+    </div>
+    <div class="products-toolbar">
+        <span>@(Model == null ? 0 : Model.Count()) Products</span>
+    </div>
+    <div class="row g-4">
+        @if (Model != null && Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                var anhSanPham = danhSachAnh.FirstOrDefault(i => i.product_id == item.product_id);
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="customer-product-card">
+                        <div class="customer-product-image-wrap">
+                            @if (anhSanPham != null)
+                            {
+                                <img src="@Url.Content(anhSanPham.image_url)" alt="@item.product_name" class="customer-product-image" />
+                            }
+                            else
+                            {
+                                <div class="customer-product-no-image">IMAGE NOT AVAILABLE</div>
+                            }
+                        </div>
+                        <div class="customer-product-info">
+                            <h5>@item.product_name</h5>
+                            <p>Nike Shoes</p>
+                            <strong>@String.Format("{0:N0}₫", item.price)</strong>
+                            <div class="mt-3 d-flex justify-content-center">
+                                <a href="@Url.Action("Details", "Product", new { id = item.product_id })" class="w-100 btn btn-outline-success btn-sm">BUY</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="col-12 text-center py-5">
+                <h4>No products found</h4>
+                <p class="text-muted">There are currently no available products.</p>
+            </div>
+        }
+    </div>
+</section>

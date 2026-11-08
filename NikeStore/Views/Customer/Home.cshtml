@@ -1,9 +1,16 @@
-﻿
+﻿@model IEnumerable<NikeStore.Models.product>
 @{
     ViewBag.Title = "Home";
     Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+    var danhSachAnh = ViewBag.DanhSachAnh as IEnumerable<NikeStore.Models.product_images>;
 }
 
+@if (TempData["ThongBao"] != null)
+{
+    <script>
+        alert('@TempData["ThongBao"]');
+    </script>
+}
 <!-- 1. HERO BANNER -->
 <section class="home-hero">
 
@@ -18,7 +25,7 @@
         <h1>JUST DO IT.</h1>
         <p>Discover your potential. Push beyond your limits.</p>
 
-        <a href="#" class="btn btn-light rounded-0 px-4 py-2">
+        <a href="@Url.Content("~/Customer/Product/Index")" class="btn btn-light rounded-5 px-4 py-2">
             SHOP NOW
         </a>
     </div>
@@ -30,7 +37,7 @@
 <div class="row g-4 mt-2">
 
     <div class="col-12 col-md-4">
-        <a href="#" class="category-card">
+        <a href="@Url.Content("~/Customer/Product/Index?categoryName=Men%20Shoes")" class="category-card">
             <div class="category-image"
                  style="background-image: url('@Url.Content("~/Content/Images/shoesformen.jpg")')">
             </div>
@@ -40,7 +47,7 @@
     </div>
 
     <div class="col-12 col-md-4">
-        <a href="#" class="category-card">
+        <a href="@Url.Content("~/Customer/Product/Index?categoryName=Kids%20Shoes")" class="category-card">
             <div class="category-image"
                  style="background-image: url('@Url.Content("~/Content/Images/shoesforkid.jpg")')">
             </div>
@@ -50,7 +57,7 @@
     </div>
 
     <div class="col-12 col-md-4">
-        <a href="#" class="category-card">
+        <a href="@Url.Content("~/Customer/Product/Index?categoryName=Women%20Shoes")" class="category-card">
             <div class="category-image"
                  style="background-image: url('@Url.Content("~/Content/Images/shoesforgirl.jpg")')">
             </div>
@@ -62,56 +69,27 @@
 
 
 <!-- 3. NEW ARRIVALS -->
-<section class="home-new-arrivals container py-5">
+<section class="home-new-arrivals container-fluid py-5">
     <div class="home-section-heading">
         <h2>NEW ARRIVALS</h2>
         <p>Discover the latest additions to Nike.</p>
     </div>
-
     <div class="row g-4">
-
-        <!-- TODO: Sau này lấy danh sách sản phẩm mới từ Database -->
-
-        <div class="col-6 col-md-3">
-            <div class="home-product-card">
-                <!-- TODO: Thêm ảnh sản phẩm 1 -->
-                <div class="product-image"></div>
-                <h5>Product Name</h5>
-                <p>Men's Shoes</p>
-                <strong>$120</strong>
+        @foreach (var item in Model)
+        {
+            var anhSanPham = danhSachAnh == null ? null : danhSachAnh.FirstOrDefault(i => i.product_id == item.product_id);
+            <div class="col-6 col-md-3">
+                <div class="home-product-card">
+                    @if (anhSanPham != null)
+                    {
+                        <img src="@Url.Content(anhSanPham.image_url)" alt="@item.product_name" class="img-fluid w-100" />
+                    }
+                    <h5>@item.product_name</h5>
+                    <p>Nike Shoes</p>
+                    <strong>@String.Format("{0:N0}₫", item.price)</strong>
+                </div>
             </div>
-        </div>
-
-        <div class="col-6 col-md-3">
-            <div class="home-product-card">
-                <!-- TODO: Thêm ảnh sản phẩm 2 -->
-                <div class="product-image"></div>
-                <h5>Product Name</h5>
-                <p>Women's Shoes</p>
-                <strong>$110</strong>
-            </div>
-        </div>
-
-        <div class="col-6 col-md-3">
-            <div class="home-product-card">
-                <!-- TODO: Thêm ảnh sản phẩm 3 -->
-                <div class="product-image"></div>
-                <h5>Product Name</h5>
-                <p>Running Shoes</p>
-                <strong>$130</strong>
-            </div>
-        </div>
-
-        <div class="col-6 col-md-3">
-            <div class="home-product-card">
-                <!-- TODO: Thêm ảnh sản phẩm 4 -->
-                <div class="product-image"></div>
-                <h5>Product Name</h5>
-                <p>Sportswear</p>
-                <strong>$100</strong>
-            </div>
-        </div>
-
+        }
     </div>
 </section>
 
@@ -161,13 +139,12 @@
 <!-- 5. PROMOTIONAL BANNER -->
 <section class="home-promotion">
     <!-- TODO: Thêm ảnh hoặc video quảng cáo tại đây -->
-
     <div class="promotion-content">
         <p>NIKE SPORTSWEAR</p>
         <h2>MAKE EVERY MOVE COUNT.</h2>
         <p>Gear up and take your performance to the next level.</p>
 
-        <a href="#" class="btn btn-light rounded-0 px-4 py-2">
+        <a href="#" class="btn btn-light rounded-5 px-4 py-2">
             SHOP NOW
         </a>
     </div>

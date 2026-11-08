@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="NikeStoreDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="NikeStoreDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="cart_details">
           <Key>
             <PropertyRef Name="cart_detail_id" />
@@ -96,7 +96,7 @@
           </Key>
           <Property Name="order_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="order_code" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="customer_id" Type="int" Nullable="false" />
+          <Property Name="customer_id" Type="int" />
           <Property Name="handled_by_user_id" Type="int" />
           <Property Name="coupon_id" Type="int" />
           <Property Name="order_date" Type="datetime2" Precision="7" />
@@ -315,7 +315,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__orders__customer__26CFC035">
-          <End Role="users" Type="Self.users" Multiplicity="1" />
+          <End Role="users" Type="Self.users" Multiplicity="0..1" />
           <End Role="orders" Type="Self.orders" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="users">
@@ -524,7 +524,8 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
             <End Role="users" EntitySet="users" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="NikeStoreDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -537,8 +538,8 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
           <Property Name="variant_id" Type="Int32" Nullable="false" />
           <Property Name="quantity" Type="Int32" />
           <Property Name="added_at" Type="DateTime" Precision="7" />
-          <NavigationProperty Name="cart" Relationship="Self.cart_details_cart_id_fk" FromRole="cart_details" ToRole="carts" />
-          <NavigationProperty Name="product_variants" Relationship="Self.cart_details_variant_id_fk" FromRole="cart_details" ToRole="product_variants" />
+          <NavigationProperty Name="cart" Relationship="Self.FK__cart_deta__cart___0D0FEE32" FromRole="cart_details" ToRole="carts" />
+          <NavigationProperty Name="product_variants" Relationship="Self.FK__cart_deta__varia__0E04126B" FromRole="cart_details" ToRole="product_variants" />
         </EntityType>
         <EntityType Name="cart">
           <Key>
@@ -548,8 +549,8 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
           <Property Name="user_id" Type="Int32" Nullable="false" />
           <Property Name="created_at" Type="DateTime" Precision="7" />
           <Property Name="updated_at" Type="DateTime" Precision="7" />
-          <NavigationProperty Name="cart_details" Relationship="Self.cart_details_cart_id_fk" FromRole="carts" ToRole="cart_details" />
-          <NavigationProperty Name="user" Relationship="Self.carts_user_id_fk" FromRole="carts" ToRole="users" />
+          <NavigationProperty Name="cart_details" Relationship="Self.FK__cart_deta__cart___0D0FEE32" FromRole="carts" ToRole="cart_details" />
+          <NavigationProperty Name="user" Relationship="Self.FK__carts__user_id__075714DC" FromRole="carts" ToRole="users" />
         </EntityType>
         <EntityType Name="category">
           <Key>
@@ -573,7 +574,7 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
           <Property Name="color_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="color_code" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
           <Property Name="is_active" Type="Boolean" />
-          <NavigationProperty Name="product_colors" Relationship="Self.product_colors_color_id_fk" FromRole="colors" ToRole="product_colors" />
+          <NavigationProperty Name="product_colors" Relationship="Self.FK__product_c__color__7073AF84" FromRole="colors" ToRole="product_colors" />
         </EntityType>
         <EntityType Name="coupon">
           <Key>
@@ -592,7 +593,7 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
           <Property Name="is_active" Type="Boolean" />
           <Property Name="created_at" Type="DateTime" Precision="7" />
           <Property Name="updated_at" Type="DateTime" Precision="7" />
-          <NavigationProperty Name="orders" Relationship="Self.orders_coupon_id_fk" FromRole="coupons" ToRole="orders" />
+          <NavigationProperty Name="orders" Relationship="Self.FK__orders__coupon_i__28B808A7" FromRole="coupons" ToRole="orders" />
         </EntityType>
         <EntityType Name="inventory_transactions">
           <Key>
@@ -606,9 +607,9 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
           <Property Name="quantity_change" Type="Int32" Nullable="false" />
           <Property Name="note" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="created_at" Type="DateTime" Precision="7" />
-          <NavigationProperty Name="order" Relationship="Self.inventory_transactions_order_id_fk" FromRole="inventory_transactions" ToRole="orders" />
-          <NavigationProperty Name="user" Relationship="Self.inventory_transactions_user_id_fk" FromRole="inventory_transactions" ToRole="users" />
-          <NavigationProperty Name="product_variants" Relationship="Self.inventory_transactions_variant_id_fk" FromRole="inventory_transactions" ToRole="product_variants" />
+          <NavigationProperty Name="order" Relationship="Self.FK__inventory__order__3AD6B8E2" FromRole="inventory_transactions" ToRole="orders" />
+          <NavigationProperty Name="user" Relationship="Self.FK__inventory__user___39E294A9" FromRole="inventory_transactions" ToRole="users" />
+          <NavigationProperty Name="product_variants" Relationship="Self.FK__inventory__varia__38EE7070" FromRole="inventory_transactions" ToRole="product_variants" />
         </EntityType>
         <EntityType Name="order_details">
           <Key>
@@ -622,8 +623,8 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
           <Property Name="color_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="unit_price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="quantity" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="order" Relationship="Self.order_details_order_id_fk" FromRole="order_details" ToRole="orders" />
-          <NavigationProperty Name="product_variants" Relationship="Self.order_details_variant_id_fk" FromRole="order_details" ToRole="product_variants" />
+          <NavigationProperty Name="order" Relationship="Self.FK__order_det__order__324172E1" FromRole="order_details" ToRole="orders" />
+          <NavigationProperty Name="product_variants" Relationship="Self.FK__order_det__varia__3335971A" FromRole="order_details" ToRole="product_variants" />
         </EntityType>
         <EntityType Name="order">
           <Key>
@@ -631,7 +632,7 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
           </Key>
           <Property Name="order_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="order_code" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="customer_id" Type="Int32" Nullable="false" />
+          <Property Name="customer_id" Type="Int32" />
           <Property Name="handled_by_user_id" Type="Int32" />
           <Property Name="coupon_id" Type="Int32" />
           <Property Name="order_date" Type="DateTime" Precision="7" />
@@ -647,11 +648,11 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
           <Property Name="payment_status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="note" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="updated_at" Type="DateTime" Precision="7" />
-          <NavigationProperty Name="coupon" Relationship="Self.orders_coupon_id_fk" FromRole="orders" ToRole="coupons" />
-          <NavigationProperty Name="inventory_transactions" Relationship="Self.inventory_transactions_order_id_fk" FromRole="orders" ToRole="inventory_transactions" />
-          <NavigationProperty Name="order_details" Relationship="Self.order_details_order_id_fk" FromRole="orders" ToRole="order_details" />
-          <NavigationProperty Name="user" Relationship="Self.orders_customer_id_fk" FromRole="orders" ToRole="users" />
-          <NavigationProperty Name="user1" Relationship="Self.orders_handled_by_user_id_fk" FromRole="orders" ToRole="users" />
+          <NavigationProperty Name="coupon" Relationship="Self.FK__orders__coupon_i__28B808A7" FromRole="orders" ToRole="coupons" />
+          <NavigationProperty Name="inventory_transactions" Relationship="Self.FK__inventory__order__3AD6B8E2" FromRole="orders" ToRole="inventory_transactions" />
+          <NavigationProperty Name="order_details" Relationship="Self.FK__order_det__order__324172E1" FromRole="orders" ToRole="order_details" />
+          <NavigationProperty Name="user" Relationship="Self.FK__orders__customer__26CFC035" FromRole="orders" ToRole="users" />
+          <NavigationProperty Name="user1" Relationship="Self.FK__orders__handled___27C3E46E" FromRole="orders" ToRole="users" />
         </EntityType>
         <EntityType Name="product_colors">
           <Key>
@@ -661,8 +662,8 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
           <Property Name="product_id" Type="Int32" Nullable="false" />
           <Property Name="color_id" Type="Int32" Nullable="false" />
           <Property Name="is_active" Type="Boolean" />
-          <NavigationProperty Name="color" Relationship="Self.product_colors_color_id_fk" FromRole="product_colors" ToRole="colors" />
-          <NavigationProperty Name="product" Relationship="Self.product_colors_product_id_fk" FromRole="product_colors" ToRole="products" />
+          <NavigationProperty Name="color" Relationship="Self.FK__product_c__color__7073AF84" FromRole="product_colors" ToRole="colors" />
+          <NavigationProperty Name="product" Relationship="Self.FK__product_c__produ__6F7F8B4B" FromRole="product_colors" ToRole="products" />
         </EntityType>
         <EntityType Name="product_images">
           <Key>
@@ -688,11 +689,11 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
           <Property Name="sku" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="stock_quantity" Type="Int32" />
           <Property Name="is_active" Type="Boolean" />
-          <NavigationProperty Name="cart_details" Relationship="Self.cart_details_variant_id_fk" FromRole="product_variants" ToRole="cart_details" />
-          <NavigationProperty Name="inventory_transactions" Relationship="Self.inventory_transactions_variant_id_fk" FromRole="product_variants" ToRole="inventory_transactions" />
-          <NavigationProperty Name="order_details" Relationship="Self.order_details_variant_id_fk" FromRole="product_variants" ToRole="order_details" />
-          <NavigationProperty Name="product" Relationship="Self.product_variants_product_id_fk" FromRole="product_variants" ToRole="products" />
-          <NavigationProperty Name="size" Relationship="Self.product_variants_size_id_fk" FromRole="product_variants" ToRole="sizes" />
+          <NavigationProperty Name="cart_details" Relationship="Self.FK__cart_deta__varia__0E04126B" FromRole="product_variants" ToRole="cart_details" />
+          <NavigationProperty Name="inventory_transactions" Relationship="Self.FK__inventory__varia__38EE7070" FromRole="product_variants" ToRole="inventory_transactions" />
+          <NavigationProperty Name="order_details" Relationship="Self.FK__order_det__varia__3335971A" FromRole="product_variants" ToRole="order_details" />
+          <NavigationProperty Name="product" Relationship="Self.FK__product_v__produ__7720AD13" FromRole="product_variants" ToRole="products" />
+          <NavigationProperty Name="size" Relationship="Self.FK__product_v__size___7814D14C" FromRole="product_variants" ToRole="sizes" />
         </EntityType>
         <EntityType Name="product">
           <Key>
@@ -708,8 +709,8 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
           <Property Name="is_featured" Type="Boolean" />
           <Property Name="created_at" Type="DateTime" Precision="7" />
           <Property Name="updated_at" Type="DateTime" Precision="7" />
-          <NavigationProperty Name="product_colors" Relationship="Self.product_colors_product_id_fk" FromRole="products" ToRole="product_colors" />
-          <NavigationProperty Name="product_variants" Relationship="Self.product_variants_product_id_fk" FromRole="products" ToRole="product_variants" />
+          <NavigationProperty Name="product_colors" Relationship="Self.FK__product_c__produ__6F7F8B4B" FromRole="products" ToRole="product_colors" />
+          <NavigationProperty Name="product_variants" Relationship="Self.FK__product_v__produ__7720AD13" FromRole="products" ToRole="product_variants" />
           <NavigationProperty Name="categories" Relationship="Self.product_categories" FromRole="products" ToRole="categories" />
         </EntityType>
         <EntityType Name="role">
@@ -719,7 +720,7 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
           <Property Name="role_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="role_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="users" Relationship="Self.users_role_id_fk" FromRole="roles" ToRole="users" />
+          <NavigationProperty Name="users" Relationship="Self.FK__users__role_id__4E1E9780" FromRole="roles" ToRole="users" />
         </EntityType>
         <EntityType Name="size">
           <Key>
@@ -729,7 +730,7 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
           <Property Name="size_value" Type="Decimal" Precision="4" Scale="1" Nullable="false" />
           <Property Name="size_system" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="is_active" Type="Boolean" />
-          <NavigationProperty Name="product_variants" Relationship="Self.product_variants_size_id_fk" FromRole="sizes" ToRole="product_variants" />
+          <NavigationProperty Name="product_variants" Relationship="Self.FK__product_v__size___7814D14C" FromRole="sizes" ToRole="product_variants" />
         </EntityType>
         <EntityType Name="user">
           <Key>
@@ -745,13 +746,13 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
           <Property Name="is_active" Type="Boolean" />
           <Property Name="created_at" Type="DateTime" Precision="7" />
           <Property Name="updated_at" Type="DateTime" Precision="7" />
-          <NavigationProperty Name="carts" Relationship="Self.carts_user_id_fk" FromRole="users" ToRole="carts" />
-          <NavigationProperty Name="inventory_transactions" Relationship="Self.inventory_transactions_user_id_fk" FromRole="users" ToRole="inventory_transactions" />
-          <NavigationProperty Name="orders" Relationship="Self.orders_customer_id_fk" FromRole="users" ToRole="orders" />
-          <NavigationProperty Name="orders1" Relationship="Self.orders_handled_by_user_id_fk" FromRole="users" ToRole="orders" />
-          <NavigationProperty Name="role" Relationship="Self.users_role_id_fk" FromRole="users" ToRole="roles" />
+          <NavigationProperty Name="carts" Relationship="Self.FK__carts__user_id__075714DC" FromRole="users" ToRole="carts" />
+          <NavigationProperty Name="inventory_transactions" Relationship="Self.FK__inventory__user___39E294A9" FromRole="users" ToRole="inventory_transactions" />
+          <NavigationProperty Name="orders" Relationship="Self.FK__orders__customer__26CFC035" FromRole="users" ToRole="orders" />
+          <NavigationProperty Name="orders1" Relationship="Self.FK__orders__handled___27C3E46E" FromRole="users" ToRole="orders" />
+          <NavigationProperty Name="role" Relationship="Self.FK__users__role_id__4E1E9780" FromRole="users" ToRole="roles" />
         </EntityType>
-        <Association Name="cart_details_cart_id_fk">
+        <Association Name="FK__cart_deta__cart___0D0FEE32">
           <End Role="carts" Type="Self.cart" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -765,7 +766,7 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="cart_details_variant_id_fk">
+        <Association Name="FK__cart_deta__varia__0E04126B">
           <End Role="product_variants" Type="Self.product_variants" Multiplicity="1" />
           <End Role="cart_details" Type="Self.cart_details" Multiplicity="*" />
           <ReferentialConstraint>
@@ -777,7 +778,7 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="carts_user_id_fk">
+        <Association Name="FK__carts__user_id__075714DC">
           <End Role="users" Type="Self.user" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -791,7 +792,7 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="product_colors_color_id_fk">
+        <Association Name="FK__product_c__color__7073AF84">
           <End Role="colors" Type="Self.color" Multiplicity="1" />
           <End Role="product_colors" Type="Self.product_colors" Multiplicity="*" />
           <ReferentialConstraint>
@@ -803,7 +804,7 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="orders_coupon_id_fk">
+        <Association Name="FK__orders__coupon_i__28B808A7">
           <End Role="coupons" Type="Self.coupon" Multiplicity="0..1" />
           <End Role="orders" Type="Self.order" Multiplicity="*" />
           <ReferentialConstraint>
@@ -815,7 +816,7 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="inventory_transactions_order_id_fk">
+        <Association Name="FK__inventory__order__3AD6B8E2">
           <End Role="orders" Type="Self.order" Multiplicity="0..1" />
           <End Role="inventory_transactions" Type="Self.inventory_transactions" Multiplicity="*" />
           <ReferentialConstraint>
@@ -827,7 +828,7 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="inventory_transactions_user_id_fk">
+        <Association Name="FK__inventory__user___39E294A9">
           <End Role="users" Type="Self.user" Multiplicity="0..1" />
           <End Role="inventory_transactions" Type="Self.inventory_transactions" Multiplicity="*" />
           <ReferentialConstraint>
@@ -839,7 +840,7 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="inventory_transactions_variant_id_fk">
+        <Association Name="FK__inventory__varia__38EE7070">
           <End Role="product_variants" Type="Self.product_variants" Multiplicity="1" />
           <End Role="inventory_transactions" Type="Self.inventory_transactions" Multiplicity="*" />
           <ReferentialConstraint>
@@ -851,7 +852,7 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="order_details_order_id_fk">
+        <Association Name="FK__order_det__order__324172E1">
           <End Role="orders" Type="Self.order" Multiplicity="1" />
           <End Role="order_details" Type="Self.order_details" Multiplicity="*" />
           <ReferentialConstraint>
@@ -863,7 +864,7 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="order_details_variant_id_fk">
+        <Association Name="FK__order_det__varia__3335971A">
           <End Role="product_variants" Type="Self.product_variants" Multiplicity="1" />
           <End Role="order_details" Type="Self.order_details" Multiplicity="*" />
           <ReferentialConstraint>
@@ -875,8 +876,8 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="orders_customer_id_fk">
-          <End Role="users" Type="Self.user" Multiplicity="1" />
+        <Association Name="FK__orders__customer__26CFC035">
+          <End Role="users" Type="Self.user" Multiplicity="0..1" />
           <End Role="orders" Type="Self.order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="users">
@@ -887,7 +888,7 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="orders_handled_by_user_id_fk">
+        <Association Name="FK__orders__handled___27C3E46E">
           <End Role="users" Type="Self.user" Multiplicity="0..1" />
           <End Role="orders" Type="Self.order" Multiplicity="*" />
           <ReferentialConstraint>
@@ -899,7 +900,7 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="product_colors_product_id_fk">
+        <Association Name="FK__product_c__produ__6F7F8B4B">
           <End Role="products" Type="Self.product" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -913,7 +914,7 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="product_variants_product_id_fk">
+        <Association Name="FK__product_v__produ__7720AD13">
           <End Role="products" Type="Self.product" Multiplicity="1" />
           <End Role="product_variants" Type="Self.product_variants" Multiplicity="*" />
           <ReferentialConstraint>
@@ -925,7 +926,7 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="product_variants_size_id_fk">
+        <Association Name="FK__product_v__size___7814D14C">
           <End Role="sizes" Type="Self.size" Multiplicity="1" />
           <End Role="product_variants" Type="Self.product_variants" Multiplicity="*" />
           <ReferentialConstraint>
@@ -937,7 +938,7 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="users_role_id_fk">
+        <Association Name="FK__users__role_id__4E1E9780">
           <End Role="roles" Type="Self.role" Multiplicity="1" />
           <End Role="users" Type="Self.user" Multiplicity="*" />
           <ReferentialConstraint>
@@ -969,67 +970,67 @@ warning 6035: The relationship 'FK__product_variants__7908F585' has columns that
           <EntitySet Name="roles" EntityType="Self.role" />
           <EntitySet Name="sizes" EntityType="Self.size" />
           <EntitySet Name="users" EntityType="Self.user" />
-          <AssociationSet Name="cart_details_cart_id_fk" Association="Self.cart_details_cart_id_fk">
+          <AssociationSet Name="FK__cart_deta__cart___0D0FEE32" Association="Self.FK__cart_deta__cart___0D0FEE32">
             <End Role="carts" EntitySet="carts" />
             <End Role="cart_details" EntitySet="cart_details" />
           </AssociationSet>
-          <AssociationSet Name="cart_details_variant_id_fk" Association="Self.cart_details_variant_id_fk">
+          <AssociationSet Name="FK__cart_deta__varia__0E04126B" Association="Self.FK__cart_deta__varia__0E04126B">
             <End Role="product_variants" EntitySet="product_variants" />
             <End Role="cart_details" EntitySet="cart_details" />
           </AssociationSet>
-          <AssociationSet Name="carts_user_id_fk" Association="Self.carts_user_id_fk">
+          <AssociationSet Name="FK__carts__user_id__075714DC" Association="Self.FK__carts__user_id__075714DC">
             <End Role="users" EntitySet="users" />
             <End Role="carts" EntitySet="carts" />
           </AssociationSet>
-          <AssociationSet Name="product_colors_color_id_fk" Association="Self.product_colors_color_id_fk">
+          <AssociationSet Name="FK__product_c__color__7073AF84" Association="Self.FK__product_c__color__7073AF84">
             <End Role="colors" EntitySet="colors" />
             <End Role="product_colors" EntitySet="product_colors" />
           </AssociationSet>
-          <AssociationSet Name="orders_coupon_id_fk" Association="Self.orders_coupon_id_fk">
+          <AssociationSet Name="FK__orders__coupon_i__28B808A7" Association="Self.FK__orders__coupon_i__28B808A7">
             <End Role="coupons" EntitySet="coupons" />
             <End Role="orders" EntitySet="orders" />
           </AssociationSet>
-          <AssociationSet Name="inventory_transactions_order_id_fk" Association="Self.inventory_transactions_order_id_fk">
+          <AssociationSet Name="FK__inventory__order__3AD6B8E2" Association="Self.FK__inventory__order__3AD6B8E2">
             <End Role="orders" EntitySet="orders" />
             <End Role="inventory_transactions" EntitySet="inventory_transactions" />
           </AssociationSet>
-          <AssociationSet Name="inventory_transactions_user_id_fk" Association="Self.inventory_transactions_user_id_fk">
+          <AssociationSet Name="FK__inventory__user___39E294A9" Association="Self.FK__inventory__user___39E294A9">
             <End Role="users" EntitySet="users" />
             <End Role="inventory_transactions" EntitySet="inventory_transactions" />
           </AssociationSet>
-          <AssociationSet Name="inventory_transactions_variant_id_fk" Association="Self.inventory_transactions_variant_id_fk">
+          <AssociationSet Name="FK__inventory__varia__38EE7070" Association="Self.FK__inventory__varia__38EE7070">
             <End Role="product_variants" EntitySet="product_variants" />
             <End Role="inventory_transactions" EntitySet="inventory_transactions" />
           </AssociationSet>
-          <AssociationSet Name="order_details_order_id_fk" Association="Self.order_details_order_id_fk">
+          <AssociationSet Name="FK__order_det__order__324172E1" Association="Self.FK__order_det__order__324172E1">
             <End Role="orders" EntitySet="orders" />
             <End Role="order_details" EntitySet="order_details" />
           </AssociationSet>
-          <AssociationSet Name="order_details_variant_id_fk" Association="Self.order_details_variant_id_fk">
+          <AssociationSet Name="FK__order_det__varia__3335971A" Association="Self.FK__order_det__varia__3335971A">
             <End Role="product_variants" EntitySet="product_variants" />
             <End Role="order_details" EntitySet="order_details" />
           </AssociationSet>
-          <AssociationSet Name="orders_customer_id_fk" Association="Self.orders_customer_id_fk">
+          <AssociationSet Name="FK__orders__customer__26CFC035" Association="Self.FK__orders__customer__26CFC035">
             <End Role="users" EntitySet="users" />
             <End Role="orders" EntitySet="orders" />
           </AssociationSet>
-          <AssociationSet Name="orders_handled_by_user_id_fk" Association="Self.orders_handled_by_user_id_fk">
+          <AssociationSet Name="FK__orders__handled___27C3E46E" Association="Self.FK__orders__handled___27C3E46E">
             <End Role="users" EntitySet="users" />
             <End Role="orders" EntitySet="orders" />
           </AssociationSet>
-          <AssociationSet Name="product_colors_product_id_fk" Association="Self.product_colors_product_id_fk">
+          <AssociationSet Name="FK__product_c__produ__6F7F8B4B" Association="Self.FK__product_c__produ__6F7F8B4B">
             <End Role="products" EntitySet="products" />
             <End Role="product_colors" EntitySet="product_colors" />
           </AssociationSet>
-          <AssociationSet Name="product_variants_product_id_fk" Association="Self.product_variants_product_id_fk">
+          <AssociationSet Name="FK__product_v__produ__7720AD13" Association="Self.FK__product_v__produ__7720AD13">
             <End Role="products" EntitySet="products" />
             <End Role="product_variants" EntitySet="product_variants" />
           </AssociationSet>
-          <AssociationSet Name="product_variants_size_id_fk" Association="Self.product_variants_size_id_fk">
+          <AssociationSet Name="FK__product_v__size___7814D14C" Association="Self.FK__product_v__size___7814D14C">
             <End Role="sizes" EntitySet="sizes" />
             <End Role="product_variants" EntitySet="product_variants" />
           </AssociationSet>
-          <AssociationSet Name="users_role_id_fk" Association="Self.users_role_id_fk">
+          <AssociationSet Name="FK__users__role_id__4E1E9780" Association="Self.FK__users__role_id__4E1E9780">
             <End Role="roles" EntitySet="roles" />
             <End Role="users" EntitySet="users" />
           </AssociationSet>

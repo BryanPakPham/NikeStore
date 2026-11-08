@@ -14,7 +14,9 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg customer-navbar">
         <div class="container-fluid px-4 px-lg-5">
-            <a class="navbar-brand nike-logo" href="@Url.Action("Home", "Home")">NIKE<span>.</span></a>
+            <a class="navbar-brand nike-logo" href="@Url.Action("Index", "Home")">
+                <img src="@Url.Content("~/Content/Images/logo.jpg")" width="100px" alt="Alternate Text" />
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#customerNavbar" aria-controls="customerNavbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -22,25 +24,25 @@
                 <!-- CENTER MENU -->
                 <ul class="navbar-nav mx-auto customer-nav-links">
                     <li class="nav-item">
-                        <a class="nav-link" href="@Url.Action("Home", "Home")">HOME</a>
+                        <a class="nav-link" href="@Url.Action("Index", "Home")">HOME</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">PRODUCTS</a>
                         <ul class="dropdown-menu customer-dropdown" aria-labelledby="productsDropdown">
-                            <li><a class="dropdown-item" href="@Url.Action("Products", "Product")">All Shoes</a></li>
-                            <li><a class="dropdown-item" href="#">Men Shoes</a></li>
-                            <li><a class="dropdown-item" href="#">Women Shoes</a></li>
-                            <li><a class="dropdown-item" href="#">Running</a></li>
-                            <li><a class="dropdown-item" href="#">Jordan</a></li>
-                            <li><a class="dropdown-item" href="#">Lifestyle</a></li>
-                            <li><a class="dropdown-item" href="#">Kids Shoes</a></li>
+                            <li><a class="dropdown-item" href="@Url.Content("~/Customer/Product/Index")">All Shoes</a></li>
+                            <li><a class="dropdown-item" href="@Url.Content("~/Customer/Product/Index?categoryName=Men%20Shoes")">Men Shoes</a></li>
+                            <li><a class="dropdown-item" href="@Url.Content("~/Customer/Product/Index?categoryName=Women%20Shoes")">Women Shoes</a></li>
+                            <li><a class="dropdown-item" href="@Url.Content("~/Customer/Product/Index?categoryName=Running")">Running</a></li>
+                            <li><a class="dropdown-item" href="@Url.Content("~/Customer/Product/Index?categoryName=Jordan")">Jordan</a></li>
+                            <li><a class="dropdown-item" href="@Url.Content("~/Customer/Product/Index?categoryName=Lifestyle")">Lifestyle</a></li>
+                            <li><a class="dropdown-item" href="@Url.Content("~/Customer/Product/Index?categoryName=Kids%20Shoes")">Kids Shoes</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="@Url.Action("Collections", "Product")">COLLECTION</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="@Url.Action("About", "Home")">CONTACT / ABOUT</a>
+                        <a class="nav-link" href="@Url.Action("Contact_About","Home")">CONTACT / ABOUT</a>
                     </li>
                 </ul>
                 <!-- RIGHT MENU -->
@@ -52,8 +54,8 @@
                         <a class="nav-link" href="@Url.Action("Register", "Account")">REGISTER</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link cart-link" href="@Url.Action("Cart", "Cart")">
-                            CART <span class="cart-count">0</span>
+                        <a class="nav-link cart-link" href="@Url.Content("~/Customer/Cart/Index")">
+                            CART <span class="cart-count">@(Session["CartCount"] ?? 0)</span>
                         </a>
                     </li>
                 </ul>

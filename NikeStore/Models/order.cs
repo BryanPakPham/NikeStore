@@ -23,7 +23,7 @@ namespace NikeStore.Models
     
         public int order_id { get; set; }
         public string order_code { get; set; }
-        public int customer_id { get; set; }
+        public Nullable<int> customer_id { get; set; }
         public Nullable<int> handled_by_user_id { get; set; }
         public Nullable<int> coupon_id { get; set; }
         public Nullable<System.DateTime> order_date { get; set; }
