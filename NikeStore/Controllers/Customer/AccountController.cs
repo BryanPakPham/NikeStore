@@ -59,7 +59,7 @@ namespace NikeStore.Controllers
 
             TempData["ThongBao"] = "Register successfully! Please login.";
 
-            return View("~/Views/Customer/Register.cshtml");
+            return Redirect("~/Customer/Home/Index");
         }
 
         // Hiển thị trang đăng nhập
@@ -100,7 +100,7 @@ namespace NikeStore.Controllers
                 return Redirect("~/Employee/Home/Index");
             }
 
-            return View("~/Views/Customer/Login.cshtml");
+            return Redirect("~/Customer/Home/Index");
         }
 
         // Đăng xuất

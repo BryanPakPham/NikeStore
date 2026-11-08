@@ -46,13 +46,29 @@
                     </li>
                 </ul>
                 <!-- RIGHT MENU -->
-                <ul class="navbar-nav customer-account-links">
-                    <li class="nav-item">
-                        <a class="nav-link" href="@Url.Action("Login", "Account")">LOGIN</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="@Url.Action("Register", "Account")">REGISTER</a>
-                    </li>
+                <ul class="navbar-nav customer-account-links align-items-center">
+                    @if (Session["UserID"] != null)
+                    {
+                        <li class="nav-item">
+                            <span class="nav-link fw-bold">
+                                Hi, @Session["FullName"]
+                            </span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Logout", "Account")">
+                                LOGOUT
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Login", "Account")">LOGIN</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Register", "Account")">REGISTER</a>
+                        </li>
+                    }
                     <li class="nav-item">
                         <a class="nav-link cart-link" href="@Url.Content("~/Customer/Cart/Index")">
                             CART <span class="cart-count">@(Session["CartCount"] ?? 0)</span>
