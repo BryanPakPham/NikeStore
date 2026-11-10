@@ -1,8 +1,235 @@
-﻿
+﻿@model NikeStore.ViewModels.Employee.OrderDetailsVM
+@using NikeStore.ViewModels.Employee
 @{
-    ViewBag.Title = "OrderDetails";
-    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+    ViewBag.Title = "Đơn " + Model.Code;
+    ViewBag.ActiveNav = "orders";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+
+    string[] steps = { OrderStatus.Pending, OrderStatus.Confirmed, OrderStatus.Shipping, OrderStatus.Completed };
+    // Đơn hoàn tất: cả 4 bước đều hiện dấu tích
+    int currentIndex = Model.Status == OrderStatus.Completed ? steps.Length : Array.IndexOf(steps, Model.Status);
+    bool cancelled = Model.Status == OrderStatus.Cancelled;
 }
 
-<h2>OrderDetails</h2>
+<div class="staff-container">
 
+    <div class="staff-page-head">
+        <div>
+            <a href="@Url.Content("~/Employee/Order")" class="staff-back">&larr; QUAY LẠI DANH SÁCH ĐƠN</a>
+            <h1 class="mt-2">@Model.Code</h1>
+            <p class="staff-sub">Đặt lúc @StaffFormat.DateTimeText(Model.OrderDate)</p>
+        </div>
+        <span class="status-pill @OrderStatus.Css(Model.Status)" style="font-size:13px;padding:9px 18px;">@OrderStatus.Label(Model.Status)</span>
+    </div>
+
+    <!-- TIẾN TRÌNH -->
+    <div class="staff-card mb-4">
+        @if (cancelled)
+        {
+            <div class="cancelled-banner">Đơn hàng này đã bị hủy.</div>
+        }
+        else
+        {
+            <div class="order-tracker">
+                @for (int i = 0; i < steps.Length; i++)
+                {
+                    string state = i < currentIndex ? "done" : (i == currentIndex ? "current" : "");
+                    <div class="tracker-step @state">
+                        <span class="tracker-dot">@(i < currentIndex ? "✓" : (i + 1).ToString())</span>
+                        <span class="tracker-label">@OrderStatus.Label(steps[i])</span>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+
+    <div class="row g-4">
+
+        <!-- TRÁI: SẢN PHẨM + TỔNG TIỀN -->
+        <div class="col-12 col-lg-8">
+            <div class="staff-card">
+                <div class="staff-card-head">
+                    <h2 class="staff-card-title">Sản phẩm (@Model.Items.Count)</h2>
+                </div>
+                <div class="table-responsive">
+                    <table class="staff-table">
+                        <thead>
+                            <tr>
+                                <th>Sản phẩm</th>
+                                <th>Màu</th>
+                                <th>Size</th>
+                                <th class="num">Đơn giá</th>
+                                <th class="num">SL</th>
+                                <th class="num">Thành tiền</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Items)
+                            {
+                                <tr>
+                                    <td>
+                                        <div class="item-cell">
+                                            @if (!string.IsNullOrEmpty(item.ImageUrl))
+                                            {
+                                                <img class="item-thumb" src="@Url.Content(item.ImageUrl)" alt="@item.ProductName" />
+                                            }
+                                            else
+                                            {
+                                                <span class="item-thumb item-thumb-empty">KHÔNG ẢNH</span>
+                                            }
+                                            <span class="cell-main">@item.ProductName</span>
+                                        </div>
+                                    </td>
+                                    <td>@item.ColorName</td>
+                                    <td>@StaffFormat.Size(item.SizeValue)</td>
+                                    <td class="num">@StaffFormat.Money(item.UnitPrice)</td>
+                                    <td class="num">@item.Quantity</td>
+                                    <td class="num"><strong>@StaffFormat.Money(item.LineTotal)</strong></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="staff-card-body">
+                    <div class="ms-auto" style="max-width:360px;">
+                        <div class="total-row"><span>Tạm tính</span><span>@StaffFormat.Money(Model.Subtotal)</span></div>
+                        <div class="total-row">
+                            <span>Giảm giá@(string.IsNullOrEmpty(Model.CouponCode) ? "" : " (" + Model.CouponCode + ")")</span>
+                            <span>- @StaffFormat.Money(Model.Discount)</span>
+                        </div>
+                        <div class="total-row"><span>Phí vận chuyển</span><span>@StaffFormat.Money(Model.ShippingFee)</span></div>
+                        <div class="total-row grand"><span>TỔNG CỘNG</span><span>@StaffFormat.Money(Model.Total)</span></div>
+                    </div>
+                </div>
+            </div>
+
+            @if (Model.Movements.Count > 0)
+            {
+                <div class="staff-card mt-4">
+                    <div class="staff-card-head">
+                        <h2 class="staff-card-title">Lịch sử kho của đơn</h2>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="staff-table">
+                            <thead>
+                                <tr>
+                                    <th>Thời gian</th>
+                                    <th>Sản phẩm</th>
+                                    <th>Loại</th>
+                                    <th class="num">Thay đổi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var m in Model.Movements)
+                                {
+                                    <tr>
+                                        <td>@StaffFormat.DateTimeText(m.CreatedAt)</td>
+                                        <td>
+                                            <span class="cell-main">@m.ProductName</span>
+                                            <span class="cell-sub">Size @StaffFormat.Size(m.SizeValue) &nbsp;·&nbsp; @m.Sku</span>
+                                        </td>
+                                        <td>@StaffFormat.Movement(m.Type)<span class="cell-sub">@m.Note</span></td>
+                                        <td class="num"><strong class="@(m.Change < 0 ? "text-danger" : "text-success")">@(m.Change > 0 ? "+" : "")@m.Change</strong></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <!-- PHẢI: THAO TÁC + THÔNG TIN -->
+        <div class="col-12 col-lg-4">
+
+            <div class="staff-card mb-4">
+                <div class="staff-card-head">
+                    <h2 class="staff-card-title">Cập nhật trạng thái</h2>
+                </div>
+                <div class="staff-card-body">
+                    @if (Model.NextStatuses.Length == 0)
+                    {
+                        <p class="mb-0 text-muted">Đơn hàng đang ở trạng thái "@OrderStatus.Label(Model.Status)" nên không còn thao tác nào.</p>
+                    }
+                    else
+                    {
+                        <div class="d-grid gap-2">
+                            @foreach (var next in Model.NextStatuses)
+                            {
+                                bool isCancel = next == OrderStatus.Cancelled;
+                                <form method="post" action="@Url.Content("~/Employee/Order/UpdateStatus")"
+                                      onsubmit="@(isCancel ? "return confirm('Hủy đơn này? Số lượng kho đã trừ cho đơn sẽ được hoàn lại. Không thể hoàn tác.');" : null)">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="id" value="@Model.OrderId" />
+                                    <input type="hidden" name="newStatus" value="@next" />
+                                    <button type="submit" class="btn @(isCancel ? "btn-outline-dark" : "btn-dark") w-100">@OrderStatus.ActionLabel(next)</button>
+                                </form>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="staff-card mb-4">
+                <div class="staff-card-head">
+                    <h2 class="staff-card-title">Thanh toán</h2>
+                </div>
+                <div class="staff-card-body">
+                    <div class="info-row"><span class="info-label">Phương thức</span><span class="info-value">@StaffFormat.Method(Model.PaymentMethod)</span></div>
+                    <div class="info-row"><span class="info-label">Trạng thái</span><span class="info-value"><span class="pay-pill @PaymentStatus.Css(Model.PaymentStatus)" style="margin:0;">@PaymentStatus.Label(Model.PaymentStatus)</span></span></div>
+                    @if (Model.NextPayments.Length > 0)
+                    {
+                        <div class="d-grid gap-2 mt-3">
+                            @foreach (var np in Model.NextPayments)
+                            {
+                                <form method="post" action="@Url.Content("~/Employee/Order/UpdatePayment")">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="id" value="@Model.OrderId" />
+                                    <input type="hidden" name="newPaymentStatus" value="@np" />
+                                    <button type="submit" class="btn @(np == PaymentStatus.Paid ? "btn-dark" : "btn-outline-dark") w-100">@PaymentStatus.ActionLabel(np)</button>
+                                </form>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="staff-card mb-4">
+                <div class="staff-card-head">
+                    <h2 class="staff-card-title">Giao hàng</h2>
+                </div>
+                <div class="staff-card-body">
+                    <div class="info-row"><span class="info-label">Người nhận</span><span class="info-value">@Model.Recipient</span></div>
+                    <div class="info-row"><span class="info-label">Điện thoại</span><span class="info-value">@Model.Phone</span></div>
+                    <div class="info-row"><span class="info-label">Địa chỉ</span><span class="info-value">@Model.Address</span></div>
+                    @if (!string.IsNullOrWhiteSpace(Model.Note))
+                    {
+                        <div class="info-row"><span class="info-label">Ghi chú</span><span class="info-value">@Model.Note</span></div>
+                    }
+                </div>
+            </div>
+
+            <div class="staff-card">
+                <div class="staff-card-head">
+                    <h2 class="staff-card-title">Khách hàng</h2>
+                    @if (Model.CustomerId.HasValue)
+                    {
+                        <a class="staff-back" href="@Url.Content("~/Employee/Customer/Details/" + Model.CustomerId.Value)">XEM</a>
+                    }
+                </div>
+                <div class="staff-card-body">
+                    <div class="person-cell mb-3">
+                        <span class="avatar">@StaffFormat.Initial(Model.CustomerName)</span>
+                        <div>
+                            <span class="cell-main">@(Model.CustomerId.HasValue ? (Model.CustomerName ?? "Không rõ khách hàng") : "Khách vãng lai")</span>
+                            <span class="cell-sub">@(Model.CustomerId.HasValue ? Model.CustomerEmail : "Đặt hàng không đăng nhập")</span>
+                        </div>
+                    </div>
+                    <div class="info-row"><span class="info-label">Người xử lý</span><span class="info-value">@(string.IsNullOrEmpty(Model.HandledByName) ? "Chưa phân công" : Model.HandledByName)</span></div>
+                    <div class="info-row"><span class="info-label">Cập nhật lần cuối</span><span class="info-value">@StaffFormat.DateTimeText(Model.UpdatedAt)</span></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

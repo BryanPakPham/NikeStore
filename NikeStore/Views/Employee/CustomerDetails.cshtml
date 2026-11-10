@@ -1,8 +1,141 @@
-﻿
+﻿@model NikeStore.ViewModels.Employee.CustomerDetailsVM
+@using NikeStore.ViewModels.Employee
 @{
-    ViewBag.Title = "CustomerDetails";
-    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+    ViewBag.Title = Model.FullName;
+    ViewBag.ActiveNav = "customers";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
 }
 
-<h2>CustomerDetails</h2>
+<div class="staff-container">
 
+    <div class="staff-page-head">
+        <div class="person-cell">
+            <span class="avatar lg">@StaffFormat.Initial(Model.FullName)</span>
+            <div>
+                <a href="@Url.Content("~/Employee/Customer")" class="staff-back">&larr; QUAY LẠI DANH SÁCH KHÁCH HÀNG</a>
+                <h1 class="mt-1">@Model.FullName</h1>
+                <p class="staff-sub">@Model.Email</p>
+            </div>
+        </div>
+        @if (Model.IsActive)
+        {
+            <span class="status-pill status-completed" style="font-size:13px;padding:9px 18px;">Hoạt động</span>
+        }
+        else
+        {
+            <span class="status-pill status-cancelled" style="font-size:13px;padding:9px 18px;">Bị khóa</span>
+        }
+    </div>
+
+    <!-- THỐNG KÊ -->
+    <div class="stat-grid" style="margin-top:0;">
+        <div class="stat-card is-alert" style="pointer-events:none;">
+            <span class="stat-label">Tổng số đơn</span>
+            <span class="stat-value">@Model.OrderCount</span>
+            <span class="stat-hint">Từ trước đến nay</span>
+        </div>
+        <div class="stat-card" style="pointer-events:none;">
+            <span class="stat-label">Hoàn tất</span>
+            <span class="stat-value">@Model.CompletedCount</span>
+            <span class="stat-hint">Đơn đã giao thành công</span>
+        </div>
+        <div class="stat-card" style="pointer-events:none;">
+            <span class="stat-label">Tổng chi tiêu</span>
+            <span class="stat-value" style="font-size:30px;">@StaffFormat.Money(Model.TotalSpent)</span>
+            <span class="stat-hint">Chỉ tính đơn hoàn tất</span>
+        </div>
+        <div class="stat-card" style="pointer-events:none;">
+            <span class="stat-label">Thành viên từ</span>
+            <span class="stat-value" style="font-size:28px;">@StaffFormat.Date(Model.CreatedAt)</span>
+            <span class="stat-hint">Cập nhật gần nhất @StaffFormat.Date(Model.UpdatedAt)</span>
+        </div>
+    </div>
+
+    <div class="row g-4 staff-section">
+
+        <!-- THÔNG TIN LIÊN HỆ (hỗ trợ khách hàng) -->
+        <div class="col-12 col-lg-5">
+            <div class="staff-card">
+                <div class="staff-card-head">
+                    <h2 class="staff-card-title">Thông tin liên hệ</h2>
+                </div>
+                <div class="staff-card-body">
+                    <form method="post" action="@Url.Content("~/Employee/Customer/Update")">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="id" value="@Model.UserId" />
+
+                        <div class="mb-3">
+                            <label class="staff-label" for="fullName">Họ và tên</label>
+                            <input type="text" class="form-control" id="fullName" name="fullName" value="@Model.FullName" maxlength="100" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="staff-label" for="email">Email (tên đăng nhập)</label>
+                            <input type="text" class="form-control" id="email" value="@Model.Email" readonly />
+                        </div>
+                        <div class="mb-3">
+                            <label class="staff-label" for="phone">Số điện thoại</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" value="@Model.Phone" maxlength="20" />
+                        </div>
+                        <div class="mb-4">
+                            <label class="staff-label" for="address">Địa chỉ</label>
+                            <textarea class="form-control" id="address" name="address" rows="3" maxlength="300">@Model.Address</textarea>
+                        </div>
+                        <button type="submit" class="btn btn-dark w-100">LƯU THAY ĐỔI</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- ĐƠN GẦN ĐÂY -->
+        <div class="col-12 col-lg-7">
+            <div class="staff-card">
+                <div class="staff-card-head">
+                    <h2 class="staff-card-title">Đơn hàng gần đây</h2>
+                    <span class="cell-sub m-0">10 đơn mới nhất</span>
+                </div>
+
+                @if (Model.RecentOrders.Count == 0)
+                {
+                    <div class="staff-empty">
+                        <strong>Chưa có đơn hàng</strong>
+                        Khách hàng này chưa đặt đơn nào.
+                    </div>
+                }
+                else
+                {
+                    <div class="table-responsive">
+                        <table class="staff-table">
+                            <thead>
+                                <tr>
+                                    <th>Đơn hàng</th>
+                                    <th class="num">SL</th>
+                                    <th class="num">Tổng tiền</th>
+                                    <th>Trạng thái</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var o in Model.RecentOrders)
+                                {
+                                    <tr>
+                                        <td>
+                                            <a class="cell-main" href="@Url.Content("~/Employee/Order/Details/" + o.OrderId)">@o.Code</a>
+                                            <span class="cell-sub">@StaffFormat.DateTimeText(o.OrderDate)</span>
+                                        </td>
+                                        <td class="num">@o.ItemCount</td>
+                                        <td class="num"><strong>@StaffFormat.Money(o.Total)</strong></td>
+                                        <td><span class="status-pill @OrderStatus.Css(o.Status)">@OrderStatus.Label(o.Status)</span></td>
+                                        <td class="actions">
+                                            <a class="btn btn-outline-dark btn-sm" href="@Url.Content("~/Employee/Order/Details/" + o.OrderId)">XEM</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+            </div>
+        </div>
+
+    </div>
+</div>

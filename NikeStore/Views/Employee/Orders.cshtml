@@ -1,8 +1,154 @@
-﻿
+﻿@model NikeStore.ViewModels.Employee.OrderListVM
+@using NikeStore.ViewModels.Employee
 @{
-    ViewBag.Title = "Orders";
-    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+    ViewBag.Title = "Đơn hàng";
+    ViewBag.ActiveNav = "orders";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+
+    string baseUrl = Url.Content("~/Employee/Order");
+    string qs = string.IsNullOrEmpty(Model.Query) ? "" : "&q=" + HttpUtility.UrlEncode(Model.Query);
+    var tabs = new List<string> { "All" };
+    tabs.AddRange(OrderStatus.All);
 }
 
-<h2>Orders</h2>
+<div class="staff-container">
 
+    <div class="staff-page-head">
+        <div>
+            <p class="staff-eyebrow">CỔNG NHÂN VIÊN</p>
+            <h1>Đơn hàng</h1>
+            <p class="staff-sub">Xem, xác nhận và cập nhật trạng thái đơn hàng của khách.</p>
+        </div>
+        <form method="get" action="@baseUrl" class="staff-search">
+            @if (Model.Status != "All")
+            {
+                <input type="hidden" name="status" value="@Model.Status" />
+            }
+            <input type="text" name="q" value="@Model.Query" class="form-control" placeholder="Tìm theo mã đơn, tên hoặc số điện thoại" />
+            <button type="submit" class="btn btn-dark">TÌM KIẾM</button>
+        </form>
+    </div>
+
+    <!-- TAB TRẠNG THÁI -->
+    <div class="status-tabs">
+        @foreach (var t in tabs)
+        {
+            <a href="@(baseUrl + "?status=" + t + qs)" class="@(Model.Status == t ? "active" : "")">
+                @(t == "All" ? "Tất cả" : OrderStatus.Label(t))<span class="tab-count">@Model.CountFor(t)</span>
+            </a>
+        }
+    </div>
+
+    <div class="staff-card">
+        @if (Model.Items.Count == 0)
+        {
+            <div class="staff-empty">
+                <strong>Không tìm thấy đơn hàng</strong>
+                @if (!string.IsNullOrEmpty(Model.Query))
+                {
+                    <text>Thử từ khóa khác hoặc </text><a href="@baseUrl">xóa tìm kiếm</a><text>.</text>
+                }
+                else
+                {
+                    <text>Chưa có đơn hàng nào trong danh sách này.</text>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="table-responsive">
+                <table class="staff-table">
+                    <thead>
+                        <tr>
+                            <th>Đơn hàng</th>
+                            <th>Người nhận</th>
+                            <th class="num">SL</th>
+                            <th class="num">Tổng tiền</th>
+                            <th>Thanh toán</th>
+                            <th>Trạng thái</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var o in Model.Items)
+                        {
+                            <tr>
+                                <td>
+                                    <a class="cell-main" href="@Url.Content("~/Employee/Order/Details/" + o.OrderId)">@o.Code</a>
+                                    <span class="cell-sub">@StaffFormat.DateTimeText(o.OrderDate)</span>
+                                </td>
+                                <td>
+                                    @o.Recipient
+                                    <span class="cell-sub">@o.Phone</span>
+                                </td>
+                                <td class="num">@o.ItemCount</td>
+                                <td class="num"><strong>@StaffFormat.Money(o.Total)</strong></td>
+                                <td>
+                                    @StaffFormat.Method(o.PaymentMethod)
+                                    <br /><span class="pay-pill @PaymentStatus.Css(o.PayStatus)">@PaymentStatus.Label(o.PayStatus)</span>
+                                </td>
+                                <td><span class="status-pill @OrderStatus.Css(o.Status)">@OrderStatus.Label(o.Status)</span></td>
+                                <td class="actions">
+                                    <a class="btn btn-outline-dark btn-sm" href="@Url.Content("~/Employee/Order/Details/" + o.OrderId)">XEM</a>
+                                    @if (o.Status == OrderStatus.Pending)
+                                    {
+                                        <form method="post" action="@Url.Content("~/Employee/Order/UpdateStatus")" class="d-inline">
+                                            @Html.AntiForgeryToken()
+                                            <input type="hidden" name="id" value="@o.OrderId" />
+                                            <input type="hidden" name="newStatus" value="@OrderStatus.Confirmed" />
+                                            <input type="hidden" name="returnUrl" value="@Request.RawUrl" />
+                                            <button type="submit" class="btn btn-dark btn-sm">XÁC NHẬN</button>
+                                        </form>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+
+    <!-- PHÂN TRANG -->
+    @if (Model.TotalPages > 1)
+    {
+        string pageBase = baseUrl + "?status=" + Model.Status + qs + "&page=";
+        <nav class="staff-pagination" aria-label="Phân trang đơn hàng">
+            @if (Model.Page > 1)
+            {
+                <a href="@(pageBase + (Model.Page - 1))">TRƯỚC</a>
+            }
+            else
+            {
+                <span class="disabled">TRƯỚC</span>
+            }
+
+            @for (int i = 1; i <= Model.TotalPages; i++)
+            {
+                if (i == Model.Page)
+                {
+                    <span class="current">@i</span>
+                }
+                else if (i == 1 || i == Model.TotalPages || Math.Abs(i - Model.Page) <= 2)
+                {
+                    <a href="@(pageBase + i)">@i</a>
+                }
+                else if (Math.Abs(i - Model.Page) == 3)
+                {
+                    <span class="disabled">…</span>
+                }
+            }
+
+            @if (Model.Page < Model.TotalPages)
+            {
+                <a href="@(pageBase + (Model.Page + 1))">SAU</a>
+            }
+            else
+            {
+                <span class="disabled">SAU</span>
+            }
+        </nav>
+    }
+
+    <p class="cell-sub text-center mt-3">@Model.TotalCount đơn hàng</p>
+</div>

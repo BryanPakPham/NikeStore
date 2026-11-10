@@ -1,8 +1,146 @@
-﻿
+﻿@model NikeStore.ViewModels.Employee.DashboardVM
+@using NikeStore.ViewModels.Employee
 @{
-    ViewBag.Title = "Dashboard";
-    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+    ViewBag.Title = "Tổng quan";
+    ViewBag.ActiveNav = "dashboard";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+    int pending = Model.Count(OrderStatus.Pending);
 }
 
-<h2>Dashboard</h2>
+@helper StatCard(string label, int value, string href, string hint, bool alert)
+{
+    <a class="stat-card @(alert ? "is-alert" : "")" href="@href">
+        <span class="stat-label">@label</span>
+        <span class="stat-value">@value</span>
+        <span class="stat-hint">@hint</span>
+    </a>
+}
 
+<!-- 1. BANNER -->
+<section class="staff-hero">
+    <div>
+        <p class="staff-eyebrow">TỔNG QUAN NHÂN VIÊN &nbsp;·&nbsp; @StaffFormat.Today()</p>
+        <h1>@(pending > 0 ? "XỬ LÝ ĐƠN HÀNG THẬT NHANH." : "ĐÃ XỬ LÝ HẾT ĐƠN.")</h1>
+        <p class="staff-hero-sub">
+            @if (pending > 0)
+            {
+                <text>Có <strong>@pending</strong> đơn hàng đang chờ bạn xác nhận.</text>
+            }
+            else
+            {
+                <text>Hiện không có đơn hàng nào đang chờ xác nhận.</text>
+            }
+        </p>
+    </div>
+    <a href="@Url.Content("~/Employee/Order?status=Pending")" class="btn btn-light px-4 py-2">XEM ĐƠN CHỜ XÁC NHẬN</a>
+</section>
+
+<div class="staff-container">
+
+    <!-- 2. THẺ THỐNG KÊ -->
+    <div class="stat-grid">
+        @StatCard("Chờ xác nhận", Model.Count(OrderStatus.Pending), Url.Content("~/Employee/Order?status=Pending"), "Cần bạn xác nhận", true)
+        @StatCard("Đã xác nhận", Model.Count(OrderStatus.Confirmed), Url.Content("~/Employee/Order?status=Confirmed"), "Sẵn sàng giao", false)
+        @StatCard("Đang giao", Model.Count(OrderStatus.Shipping), Url.Content("~/Employee/Order?status=Shipping"), "Đang trên đường", false)
+        @StatCard("Hoàn tất", Model.Count(OrderStatus.Completed), Url.Content("~/Employee/Order?status=Completed"), "Đã giao thành công", false)
+        @StatCard("Đã hủy", Model.Count(OrderStatus.Cancelled), Url.Content("~/Employee/Order?status=Cancelled"), "Đơn bị hủy", false)
+        @StatCard("Chờ thanh toán", Model.AwaitingPayment, Url.Content("~/Employee/Order"), "Chuyển khoản chưa nhận tiền", false)
+        @StatCard("Hôm nay", Model.OrdersToday, Url.Content("~/Employee/Order"), "Đơn đặt trong hôm nay", false)
+    </div>
+
+    <div class="row g-4 staff-section">
+
+        <!-- 3. ĐƠN CẦN XỬ LÝ -->
+        <div class="col-12 col-xl-8">
+            <div class="staff-card">
+                <div class="staff-card-head">
+                    <h2 class="staff-card-title">Đơn cần xác nhận</h2>
+                    <a href="@Url.Content("~/Employee/Order?status=Pending")" class="staff-back">XEM TẤT CẢ</a>
+                </div>
+
+                @if (Model.PendingOrders.Count == 0)
+                {
+                    <div class="staff-empty">
+                        <strong>Không có đơn nào cần xác nhận</strong>
+                        Đơn hàng mới sẽ hiện ở đây.
+                    </div>
+                }
+                else
+                {
+                    <div class="table-responsive">
+                        <table class="staff-table">
+                            <thead>
+                                <tr>
+                                    <th>Đơn hàng</th>
+                                    <th>Khách hàng</th>
+                                    <th class="num">SL</th>
+                                    <th class="num">Tổng tiền</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var o in Model.PendingOrders)
+                                {
+                                    <tr>
+                                        <td>
+                                            <a class="cell-main" href="@Url.Content("~/Employee/Order/Details/" + o.OrderId)">@o.Code</a>
+                                            <span class="cell-sub">@StaffFormat.DateTimeText(o.OrderDate)</span>
+                                        </td>
+                                        <td>
+                                            @o.Recipient
+                                            <span class="cell-sub">@o.Phone</span>
+                                        </td>
+                                        <td class="num">@o.ItemCount</td>
+                                        <td class="num"><strong>@StaffFormat.Money(o.Total)</strong></td>
+                                        <td class="actions">
+                                            <a class="btn btn-outline-dark btn-sm" href="@Url.Content("~/Employee/Order/Details/" + o.OrderId)">XEM</a>
+                                            <form method="post" action="@Url.Content("~/Employee/Order/UpdateStatus")" class="d-inline">
+                                                @Html.AntiForgeryToken()
+                                                <input type="hidden" name="id" value="@o.OrderId" />
+                                                <input type="hidden" name="newStatus" value="@OrderStatus.Confirmed" />
+                                                <input type="hidden" name="returnUrl" value="@Request.RawUrl" />
+                                                <button type="submit" class="btn btn-dark btn-sm">XÁC NHẬN</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <!-- 4. TỒN KHO THẤP -->
+        <div class="col-12 col-xl-4">
+            <div class="staff-card">
+                <div class="staff-card-head">
+                    <h2 class="staff-card-title">Cảnh báo tồn kho thấp</h2>
+                    <span class="cell-sub m-0">@Model.LowStockCount mặt hàng ≤ @Model.LowStockThreshold</span>
+                </div>
+
+                @if (Model.LowStock.Count == 0)
+                {
+                    <div class="staff-empty">
+                        <strong>Tồn kho ổn định</strong>
+                        Chưa có mặt hàng nào sắp hết.
+                    </div>
+                }
+                else
+                {
+                    foreach (var s in Model.LowStock)
+                    {
+                        <div class="stock-item">
+                            <div>
+                                <span class="cell-main">@s.ProductName</span>
+                                <span class="cell-sub">@s.ColorName &nbsp;·&nbsp; Size @StaffFormat.Size(s.SizeValue) &nbsp;·&nbsp; @s.Sku</span>
+                            </div>
+                            <span class="stock-badge @(s.Stock <= 0 ? "out" : "")">@s.Stock</span>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+
+    </div>
+</div>

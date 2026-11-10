@@ -320,6 +320,8 @@
     <Content Include="Views\Customer\Collections.cshtml" />
     <Content Include="Views\Customer\CollectionProducts.cshtml" />
     <Content Include="Views\Customer\Contact_About.cshtml" />
+    <Content Include="Views\Employee\Customers.cshtml" />
+    <Content Include="Views\Shared\_EmployeeLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

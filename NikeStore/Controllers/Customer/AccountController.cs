@@ -78,9 +78,10 @@ namespace NikeStore.Controllers
             var taiKhoan = data.users
                 .FirstOrDefault(u => u.email == email);
 
-            if (taiKhoan == null ||
-                taiKhoan.is_active != true)
-            {
+           if (taiKhoan == null ||
+            taiKhoan.is_active != true ||
+            taiKhoan.password_hash != password)
+           {       
                 ViewBag.ThongBao = "Email or password is incorrect!";
                 return View();
             }
@@ -93,11 +94,11 @@ namespace NikeStore.Controllers
             // Chuyển trang theo quyền
             if (taiKhoan.role.role_name == "Admin")
             {
-                return Redirect("~/Admin/Home/Index");
+                return Redirect("~/Admin/Dashboard/Index");
             }
             else if (taiKhoan.role.role_name == "Employee")
             {
-                return Redirect("~/Employee/Home/Index");
+                return Redirect("~/Employee/Dashboard");
             }
 
             return Redirect("~/Customer/Home/Index");

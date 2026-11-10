@@ -43,7 +43,7 @@ namespace NikeStore.Controllers.Customer
             order donHang = new order();
 
             donHang.order_code = "NK" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            donHang.customer_id = null;
+            donHang.customer_id = Session["UserID"] as int?;
             donHang.order_date = DateTime.Now;
             donHang.recipient_name = recipientName;
             donHang.recipient_phone = recipientPhone;

@@ -1,0 +1,135 @@
+﻿@model NikeStore.ViewModels.Employee.CustomerListVM
+@using NikeStore.ViewModels.Employee
+@{
+    ViewBag.Title = "Khách hàng";
+    ViewBag.ActiveNav = "customers";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+
+    string baseUrl = Url.Content("~/Employee/Customer");
+    string qs = string.IsNullOrEmpty(Model.Query) ? "" : "&q=" + HttpUtility.UrlEncode(Model.Query);
+}
+
+<div class="staff-container">
+
+    <div class="staff-page-head">
+        <div>
+            <p class="staff-eyebrow">CỔNG NHÂN VIÊN</p>
+            <h1>Khách hàng</h1>
+            <p class="staff-sub">Tra cứu thông tin khách hàng và hỗ trợ họ về đơn hàng.</p>
+        </div>
+        <form method="get" action="@baseUrl" class="staff-search">
+            <input type="text" name="q" value="@Model.Query" class="form-control" placeholder="Tìm theo tên, email hoặc số điện thoại" />
+            <button type="submit" class="btn btn-dark">TÌM KIẾM</button>
+        </form>
+    </div>
+
+    <div class="staff-card">
+        @if (Model.Items.Count == 0)
+        {
+            <div class="staff-empty">
+                <strong>Không tìm thấy khách hàng</strong>
+                @if (!string.IsNullOrEmpty(Model.Query))
+                {
+                    <text>Thử từ khóa khác hoặc </text><a href="@baseUrl">xóa tìm kiếm</a><text>.</text>
+                }
+                else
+                {
+                    <text>Tài khoản khách hàng sẽ hiện ở đây.</text>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="table-responsive">
+                <table class="staff-table">
+                    <thead>
+                        <tr>
+                            <th>Khách hàng</th>
+                            <th>Điện thoại</th>
+                            <th>Địa chỉ</th>
+                            <th class="num">Số đơn</th>
+                            <th>Ngày tham gia</th>
+                            <th>Tài khoản</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var c in Model.Items)
+                        {
+                            <tr>
+                                <td>
+                                    <div class="person-cell">
+                                        <span class="avatar">@StaffFormat.Initial(c.FullName)</span>
+                                        <div>
+                                            <a class="cell-main" href="@Url.Content("~/Employee/Customer/Details/" + c.UserId)">@c.FullName</a>
+                                            <span class="cell-sub">@c.Email</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>@(string.IsNullOrEmpty(c.Phone) ? "-" : c.Phone)</td>
+                                <td style="max-width:260px;">@(string.IsNullOrEmpty(c.Address) ? "-" : c.Address)</td>
+                                <td class="num"><strong>@c.OrderCount</strong></td>
+                                <td>@StaffFormat.Date(c.CreatedAt)</td>
+                                <td>
+                                    @if (c.IsActive)
+                                    {
+                                        <span class="status-pill status-completed">Hoạt động</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="status-pill status-cancelled">Bị khóa</span>
+                                    }
+                                </td>
+                                <td class="actions">
+                                    <a class="btn btn-outline-dark btn-sm" href="@Url.Content("~/Employee/Customer/Details/" + c.UserId)">XEM</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+
+    @if (Model.TotalPages > 1)
+    {
+        string pageBase = baseUrl + "?" + (qs.Length > 0 ? qs.Substring(1) + "&" : "") + "page=";
+        <nav class="staff-pagination" aria-label="Phân trang khách hàng">
+            @if (Model.Page > 1)
+            {
+                <a href="@(pageBase + (Model.Page - 1))">TRƯỚC</a>
+            }
+            else
+            {
+                <span class="disabled">TRƯỚC</span>
+            }
+
+            @for (int i = 1; i <= Model.TotalPages; i++)
+            {
+                if (i == Model.Page)
+                {
+                    <span class="current">@i</span>
+                }
+                else if (i == 1 || i == Model.TotalPages || Math.Abs(i - Model.Page) <= 2)
+                {
+                    <a href="@(pageBase + i)">@i</a>
+                }
+                else if (Math.Abs(i - Model.Page) == 3)
+                {
+                    <span class="disabled">…</span>
+                }
+            }
+
+            @if (Model.Page < Model.TotalPages)
+            {
+                <a href="@(pageBase + (Model.Page + 1))">SAU</a>
+            }
+            else
+            {
+                <span class="disabled">SAU</span>
+            }
+        </nav>
+    }
+
+    <p class="cell-sub text-center mt-3">@Model.TotalCount khách hàng</p>
+</div>
