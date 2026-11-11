@@ -1,8 +1,78 @@
-﻿
+
+@model IEnumerable<Admin_doan.Models.products>
+//đường dẫn model cần cho chức năng, chỉ cần thay phần "Admin_doan" theo tên cấu trúc.
+
 @{
-    ViewBag.Title = "Products";
-    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+    ViewBag.Title = "Quản lý sản phẩm";
 }
 
-<h2>Products</h2>
+<div class="container-fluid mt-4">
+    <h2>Quản lý sản phẩm</h2>
 
+    <div class="d-flex justify-content-between my-3">
+        @using (Html.BeginForm("Products", "Product", FormMethod.Get))
+        {
+            <input type="text" name="search"
+                   value="@ViewBag.Search"
+                   placeholder="Tìm tên hoặc mã sản phẩm..."
+                   class="form-control d-inline-block"
+                   style="width:280px" />
+            <button class="btn btn-primary">Tìm kiếm</button>
+        }
+
+        @Html.ActionLink("Thêm sản phẩm", "ProductCreate", "Product",
+                      null, new { @class = "btn btn-success" })
+    </div>
+
+    <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>Mã</th>
+                <th>Tên sản phẩm</th>
+                <th>Giá</th>
+                <th>Danh mục</th>
+                <th>Trạng thái</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.product_code</td>
+                    <td>@item.product_name</td>
+                    <td>@item.price.ToString("N0") đ</td>
+                    <td>
+                        @string.Join(", ", item.categories.Select(c => c.category_name))
+                    </td>
+                    <td>
+                        @(item.is_active == true ? "Đang bán" : "Ngừng bán")
+                    </td>
+                    <td>
+                        @Html.ActionLink("Chi tiết", "ProductDetails",
+                                      new { id = item.product_id },
+                                      new { @class = "btn btn-info btn-sm" })
+
+                        @Html.ActionLink("Sửa", "ProductEdit",
+                                      new { id = item.product_id },
+                                      new { @class = "btn btn-warning btn-sm" })
+
+                        @if (item.is_active == true)
+                        {
+                            using (Html.BeginForm("Deactivate", "Product",
+                                new { id = item.product_id }, FormMethod.Post,
+                                new { style = "display:inline" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <button type="submit" class="btn btn-danger btn-sm"
+                                        onclick="return confirm('Ngừng kinh doanh sản phẩm này?')">
+                                    Ngừng bán
+                                </button>
+                            }
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
