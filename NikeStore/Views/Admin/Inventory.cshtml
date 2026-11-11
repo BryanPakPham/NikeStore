@@ -1,8 +1,98 @@
-﻿
+
+@model IEnumerable<Admin_doan.Models.product_variants>
+//đường dẫn model cần cho chức năng, chỉ cần thay phần "Admin_doan" theo tên cấu trúc.
+
 @{
-    ViewBag.Title = "Inventory";
-    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+    ViewBag.Title = "Quản lý tồn kho";
 }
 
-<h2>Inventory</h2>
+<div class="container-fluid mt-4">
 
+    <h2>Quản lý tồn kho</h2>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Success"]
+        </div>
+    }
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["Error"]
+        </div>
+    }
+
+    <table class="table table-bordered table-hover mt-3">
+
+        <thead class="table-dark">
+            <tr>
+                <th>Mã phiên bản</th>
+                <th>Sản phẩm</th>
+                <th>SKU</th>
+                <th>Size</th>
+                <th>Tồn kho</th>
+                <th>Trạng thái</th>
+                <th>Điều chỉnh</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.variant_id</td>
+                    <td>@item.products.product_name</td>
+                    <td>@item.sku</td>
+                    <td>
+                        @item.sizes.size_value
+                        (@item.sizes.size_system)
+                    </td>
+                    <td>
+                        <strong>@(item.stock_quantity ?? 0)</strong>
+                    </td>
+                    <td>
+                        @(item.is_active == true ? "Hoạt động" : "Ngừng")
+                    </td>
+                    <td>
+                        @using (Html.BeginForm("UpdateStock", "Inventory",
+                            FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <input type="hidden"
+                                   name="variant_id"
+                                   value="@item.variant_id" />
+
+                            <div class="mb-2">
+                                <select name="transaction_type"
+                                        class="form-select form-select-sm">
+                                    <option value="Import">Nhập kho</option>
+                                    <option value="Adjustment">Điều chỉnh</option>
+                                </select>
+                            </div>
+
+                            <input type="number"
+                                   name="quantity_change"
+                                   class="form-control form-control-sm mb-2"
+                                   placeholder="Số lượng (+/-)"
+                                   required />
+
+                            <input type="text"
+                                   name="note"
+                                   class="form-control form-control-sm mb-2"
+                                   placeholder="Ghi chú" />
+
+                            <button type="submit"
+                                    class="btn btn-primary btn-sm"
+                                    onclick="return confirm('Xác nhận cập nhật tồn kho?')">
+                                Cập nhật
+                            </button>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
