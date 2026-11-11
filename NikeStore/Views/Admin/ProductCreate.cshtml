@@ -1,8 +1,57 @@
-﻿
+
+@model Admin_doan.Models.products
+//đường dẫn model cần cho chức năng, chỉ cần thay phần "Admin_doan" theo tên cấu trúc.
+
 @{
-    ViewBag.Title = "ProductCreate";
-    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+    ViewBag.Title = "Thêm sản phẩm";
 }
 
-<h2>ProductCreate</h2>
+<div class="container mt-4">
+    <h2>Thêm sản phẩm</h2>
 
+    @using (Html.BeginForm("ProductCreate", "Product", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="mb-3">
+            <label>Mã sản phẩm</label>
+            @Html.TextBoxFor(m => m.product_code,
+                          new { @class = "form-control", required = "required" })
+        </div>
+
+        <div class="mb-3">
+            <label>Tên sản phẩm</label>
+            @Html.TextBoxFor(m => m.product_name,
+                          new { @class = "form-control", required = "required" })
+        </div>
+
+        <div class="mb-3">
+            <label>Slug</label>
+            @Html.TextBoxFor(m => m.slug,
+                          new { @class = "form-control", required = "required" })
+        </div>
+
+        <div class="mb-3">
+            <label>Giá</label>
+            @Html.TextBoxFor(m => m.price,
+                          new { @class = "form-control", type = "number", min = "0", step = "0.01" })
+        </div>
+
+        <div class="mb-3">
+            <label>Mô tả</label>
+            @Html.TextAreaFor(m => m.description,
+                          new { @class = "form-control", rows = "4" })
+        </div>
+
+        <div class="mb-3">
+            <label>Danh mục</label>
+            @Html.ListBox("categoryIds",
+                          (IEnumerable<SelectListItem>)ViewBag.Categories,
+                          new { @class = "form-select", multiple = "multiple" })
+        </div>
+
+        <button type="submit" class="btn btn-success">Lưu sản phẩm</button>
+        @Html.ActionLink("Quay lại", "Products", null,
+                      new { @class = "btn btn-secondary" })
+    }
+</div>
