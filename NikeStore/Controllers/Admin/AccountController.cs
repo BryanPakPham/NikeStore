@@ -1,11 +1,11 @@
-﻿using Admin_doan.Models;
+﻿using Admin_doan.Models; // sửa lại đường dẫn của model
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-#controller đăng nhập, đăng xuất
-namespace Admin_doan.Controllers.Admin
+//controller đăng nhập, đăng xuất
+namespace Admin_doan.Controllers.Admin // sửa lại namespace
 {
     public class AccountController : Controller
     {
