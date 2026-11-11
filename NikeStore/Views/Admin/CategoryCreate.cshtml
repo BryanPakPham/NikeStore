@@ -1,8 +1,45 @@
-﻿
+
+@model Admin_doan.Models.categories
+//đường dẫn model cần cho chức năng, chỉ cần thay phần "Admin_doan" theo tên cấu trúc.
+
 @{
-    ViewBag.Title = "CategoryCreate";
-    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+    ViewBag.Title = "Thêm danh mục";
 }
 
-<h2>CategoryCreate</h2>
+<div class="container mt-4">
+    <h2>Thêm danh mục</h2>
 
+    @using (Html.BeginForm("CategoryCreate", "Category", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="mb-3">
+            <label>Tên danh mục</label>
+            @Html.TextBoxFor(m => m.category_name,
+                          new { @class = "form-control", required = "required" })
+        </div>
+
+        <div class="mb-3">
+            <label>Slug</label>
+            @Html.TextBoxFor(m => m.slug,
+                          new { @class = "form-control", required = "required" })
+        </div>
+
+        <div class="mb-3">
+            <label>Mô tả</label>
+            @Html.TextAreaFor(m => m.description,
+                          new { @class = "form-control", rows = "3" })
+        </div>
+
+        <div class="mb-3">
+            <label>Thứ tự hiển thị</label>
+            @Html.TextBoxFor(m => m.display_order,
+                          new { @class = "form-control", type = "number" })
+        </div>
+
+        <button type="submit" class="btn btn-success">Lưu danh mục</button>
+
+        @Html.ActionLink("Quay lại", "Categories", null,
+                      new { @class = "btn btn-secondary" })
+    }
+</div>
