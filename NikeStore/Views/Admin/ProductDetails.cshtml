@@ -1,8 +1,74 @@
-﻿
+
+@model Admin_doan.Models.products
+//đường dẫn model cần cho chức năng, chỉ cần thay phần "Admin_doan" theo tên cấu trúc.
+
 @{
-    ViewBag.Title = "ProductDetails";
-    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+    ViewBag.Title = "Chi tiết sản phẩm";
+    var variants = ViewBag.Variants as IEnumerable<Admin_doan.Models.product_variants>;
+    var images = ViewBag.Images as IEnumerable<Admin_doan.Models.product_images>;
 }
 
-<h2>ProductDetails</h2>
+<div class="container mt-4">
+    <h2>Chi tiết sản phẩm</h2>
 
+    <div class="card p-4 mb-4">
+        <h4>@Model.product_name</h4>
+        <p><b>Mã sản phẩm:</b> @Model.product_code</p>
+        <p><b>Slug:</b> @Model.slug</p>
+        <p><b>Giá:</b> @Model.price.ToString("N0") đ</p>
+        <p><b>Mô tả:</b> @Model.description</p>
+        <p>
+            <b>Danh mục:</b>
+            @string.Join(", ", Model.categories.Select(c => c.category_name))
+        </p>
+        <p>
+            <b>Trạng thái:</b>
+            @(Model.is_active == true ? "Đang bán" : "Ngừng bán")
+        </p>
+    </div>
+
+    <h4>Các phiên bản sản phẩm</h4>
+    <table class="table table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>SKU</th>
+                <th>Size</th>
+                <th>Số lượng tồn</th>
+                <th>Trạng thái</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (variants != null)
+            {
+                foreach (var v in variants)
+                {
+                    <tr>
+                        <td>@v.sku</td>
+                        <td>@v.sizes.size_value (@v.sizes.size_system)</td>
+                        <td>@v.stock_quantity</td>
+                        <td>@(v.is_active == true ? "Hoạt động" : "Ngừng")</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+    <h4 class="mt-4">Hình ảnh sản phẩm</h4>
+    <div class="row">
+        @if (images != null)
+        {
+            foreach (var img in images)
+            {
+                <div class="col-md-3 mb-3">
+                    <img src="@Url.Content(img.image_url)"
+                         class="img-fluid img-thumbnail"
+                         alt="Ảnh sản phẩm" />
+                    <p>@img.image_angle</p>
+                </div>
+            }
+        }
+    </div>
+
+    @Html.ActionLink("Quay lại", "Products", "Product",
+                null, new { @class = "btn btn-secondary" })
+</div>
