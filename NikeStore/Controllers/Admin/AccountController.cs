@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+#controller đăng nhập, đăng xuất
 namespace Admin_doan.Controllers.Admin
 {
     public class AccountController : Controller
