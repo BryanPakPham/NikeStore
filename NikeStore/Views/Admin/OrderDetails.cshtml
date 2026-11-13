@@ -1,8 +1,82 @@
-﻿
-@{
-    ViewBag.Title = "OrderDetails";
-    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+@using NikeStore.ViewModels.Employee
+@model OrderDetailsVM
+@{ ViewBag.Title = "Chi tiết đơn hàng"; }
+@Html.ActionLink("Quay lại danh sách đơn", "Index")
+<div class="d-flex flex-wrap gap-3 align-items-baseline my-3">
+    <h1 class="h3 mb-0">Đơn @Model.Code</h1><span class="badge bg-dark">@OrderStatus.Label(Model.Status)</span>
+</div>
+<div class="row g-4 mb-4">
+    <section class="col-md-6">
+        <h2 class="h5">Giao hàng</h2>
+        <div>@Model.Recipient · @Model.Phone</div><div>@Model.Address</div>
+        @if (!string.IsNullOrWhiteSpace(Model.Note)) { <div>Ghi chú: @Model.Note</div> }
+        <div class="mt-2">Khách hàng: @(Model.CustomerName ?? "Khách vãng lai") @Model.CustomerEmail</div>
+    </section>
+    <section class="col-md-6">
+        <h2 class="h5">Thông tin đơn</h2>
+        <div>Ngày đặt: @StaffFormat.DateTimeText(Model.OrderDate)</div>
+        <div>Người xử lý: @(Model.HandledByName ?? "Chưa phân công")</div>
+        <div>@StaffFormat.Method(Model.PaymentMethod) · @PaymentStatus.Label(Model.PaymentStatus)</div>
+    </section>
+</div>
+<h2 class="h5">Sản phẩm trong đơn</h2>
+<div class="table-responsive">
+<table class="table">
+    <thead><tr><th>Sản phẩm</th><th>Màu</th><th>Cỡ</th><th>Đơn giá</th><th>Số lượng</th><th>Thành tiền</th></tr></thead>
+    <tbody>
+    @foreach (var item in Model.Items)
+    {
+        <tr><td>@item.ProductName</td><td>@item.ColorName</td><td>@StaffFormat.Size(item.SizeValue)</td>
+            <td>@StaffFormat.Money(item.UnitPrice)</td><td>@item.Quantity</td><td>@StaffFormat.Money(item.LineTotal)</td></tr>
+    }
+    @if (Model.Items.Count == 0) { <tr><td colspan="6">Đơn chưa có dòng sản phẩm.</td></tr> }
+    </tbody>
+</table>
+</div>
+<div class="mb-4">
+    <div>Tiền hàng: @StaffFormat.Money(Model.Subtotal)</div>
+    <div>Giảm giá @(Model.CouponCode): @StaffFormat.Money(Model.Discount)</div>
+    <div>Phí giao hàng: @StaffFormat.Money(Model.ShippingFee)</div>
+    <strong>Tổng thanh toán: @StaffFormat.Money(Model.Total)</strong>
+</div>
+@if (Model.NextStatuses.Length > 0 || Model.NextPayments.Length > 0)
+{
+    <section class="mb-4">
+        <h2 class="h5">Xử lý đơn</h2>
+        <div class="d-flex flex-wrap gap-2">
+        @foreach (var target in Model.NextPayments)
+        {
+            using (Html.BeginForm("UpdatePayment", "Order", new { id = Model.OrderId }, FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <button class="btn btn-outline-dark" name="newPaymentStatus" value="@target">@PaymentStatus.ActionLabel(target)</button>
+            }
+        }
+        @foreach (var target in Model.NextStatuses)
+        {
+            using (Html.BeginForm("UpdateStatus", "Order", new { id = Model.OrderId }, FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                if (target == OrderStatus.Cancelled)
+                {
+                    <button class="btn btn-outline-danger" name="newStatus" value="@target" onclick="return confirm('Xác nhận hủy đơn này?')">@OrderStatus.ActionLabel(target)</button>
+                }
+                else
+                {
+                    <button class="btn btn-dark" name="newStatus" value="@target">@OrderStatus.ActionLabel(target)</button>
+                }
+            }
+        }
+        </div>
+    </section>
 }
-
-<h2>OrderDetails</h2>
-
+@if (Model.Movements.Count > 0)
+{
+    <h2 class="h5">Lịch sử kho của đơn</h2>
+    <div class="table-responsive"><table class="table">
+    <thead><tr><th>Thời điểm</th><th>SKU</th><th>Nghiệp vụ</th><th>Thay đổi</th></tr></thead>
+    <tbody>
+        @foreach (var movement in Model.Movements)
+        { <tr><td>@StaffFormat.DateTimeText(movement.CreatedAt)</td><td>@movement.Sku</td><td>@StaffFormat.Movement(movement.Type)</td><td>@movement.Change.ToString("+0;-0;0")</td></tr> }
+    </tbody></table></div>
+}

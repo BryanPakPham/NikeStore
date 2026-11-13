@@ -1,6 +1,5 @@
 
-@model Admin_doan.Models.categories
-//đường dẫn model cần cho chức năng, chỉ cần thay phần "Admin_doan" theo tên cấu trúc.
+@model NikeStore.Models.category
 
 @{
     ViewBag.Title = "Thêm danh mục";
@@ -12,6 +11,7 @@
     @using (Html.BeginForm("CategoryCreate", "Category", FormMethod.Post))
     {
         @Html.AntiForgeryToken()
+        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
 
         <div class="mb-3">
             <label>Tên danh mục</label>

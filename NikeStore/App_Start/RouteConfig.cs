@@ -46,7 +46,7 @@ namespace NikeStore
             );
 
             // Admin
-            routes.MapRoute(
+            var admin = routes.MapRoute(
                 name: "Admin",
                 url: "Admin/{controller}/{action}/{id}",
                 defaults: new
@@ -56,6 +56,8 @@ namespace NikeStore
                 },
                 namespaces: new[] { "NikeStore.Controllers.Admin" }
             );
+            admin.DataTokens["area"] = "Admin";
+            admin.DataTokens["UseNamespaceFallback"] = false;
         }
     }
 }

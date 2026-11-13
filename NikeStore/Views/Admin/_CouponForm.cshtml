@@ -1,0 +1,43 @@
+@model NikeStore.Models.coupon
+@Html.ValidationSummary(false, "", new { @class = "text-danger" })
+<div class="row g-3 mb-3">
+    <div class="col-md-6">
+        @Html.LabelFor(m => m.code, "Mã giảm giá", new { @class = "form-label" })
+        @Html.TextBoxFor(m => m.code, new { @class = "form-control", maxlength = "30", required = "required" })
+    </div>
+    <div class="col-md-6">
+        @Html.LabelFor(m => m.discount_type, "Loại giảm giá", new { @class = "form-label" })
+        @Html.DropDownListFor(m => m.discount_type, (IEnumerable<SelectListItem>)ViewBag.DiscountTypes, new { @class = "form-select" })
+    </div>
+    <div class="col-md-4">
+        @Html.LabelFor(m => m.discount_value, "Mức giảm", new { @class = "form-label" })
+        @Html.TextBoxFor(m => m.discount_value, new { @class = "form-control", inputmode = "decimal", required = "required" })
+    </div>
+    <div class="col-md-4">
+        @Html.LabelFor(m => m.min_order_value, "Đơn tối thiểu (₫)", new { @class = "form-label" })
+        @Html.TextBoxFor(m => m.min_order_value, new { @class = "form-control", inputmode = "decimal" })
+    </div>
+    <div class="col-md-4">
+        @Html.LabelFor(m => m.max_discount, "Giảm tối đa (₫)", new { @class = "form-label" })
+        @Html.TextBoxFor(m => m.max_discount, new { @class = "form-control", inputmode = "decimal" })
+    </div>
+    <div class="col-md-6">
+        @Html.LabelFor(m => m.start_at, "Bắt đầu", new { @class = "form-label" })
+        @Html.TextBoxFor(m => m.start_at, "{0:yyyy-MM-ddTHH:mm:ss}", new { type = "datetime-local", step = "1", @class = "form-control", required = "required" })
+    </div>
+    <div class="col-md-6">
+        @Html.LabelFor(m => m.end_at, "Kết thúc", new { @class = "form-label" })
+        @Html.TextBoxFor(m => m.end_at, "{0:yyyy-MM-ddTHH:mm:ss}", new { type = "datetime-local", step = "1", @class = "form-control", required = "required" })
+    </div>
+    <div class="col-md-6">
+        @Html.LabelFor(m => m.usage_limit, "Giới hạn lượt dùng", new { @class = "form-label" })
+        @Html.TextBoxFor(m => m.usage_limit, new { type = "number", min = "0", step = "1", @class = "form-control", placeholder = "Để trống nếu không giới hạn" })
+        <small>Đã sử dụng @((Model.used_count ?? 0).ToString()) lượt.</small>
+    </div>
+</div>
+<div class="form-check mb-3">
+    @Html.CheckBox("is_active", Model.is_active == true, new { @class = "form-check-input" })
+    <label for="is_active" class="form-check-label">Cho phép sử dụng mã</label>
+</div>
+<button class="btn btn-dark" type="submit">Lưu mã giảm giá</button>
+@Html.ActionLink("Quay lại", "Index", null, new { @class = "btn btn-outline-secondary" })

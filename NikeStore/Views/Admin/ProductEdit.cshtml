@@ -1,6 +1,5 @@
 
-@model Admin_doan.Models.products
-//đường dẫn model cần cho chức năng, chỉ cần thay phần "Admin_doan" theo tên cấu trúc.
+@model NikeStore.Models.product
 
 @{
     ViewBag.Title = "Sửa sản phẩm";
@@ -49,7 +48,7 @@
         </div>
 
         <div class="form-check mb-3">
-            @Html.CheckBoxFor(m => m.is_featured.Value,
+            @Html.CheckBox("is_featured", Model.is_featured == true,
                           new { @class = "form-check-input" })
             <label class="form-check-label">Sản phẩm nổi bật</label>
         </div>

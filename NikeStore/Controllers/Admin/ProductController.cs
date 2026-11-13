@@ -1,12 +1,14 @@
-using Admin_doan.Models;//sửa lại đường dẫn của model
+using NikeStore.Models;
+using NikeStore.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Admin_doan.Controllers.Admin //sửa lại namespace theo cấu trúc đồ án.
+namespace NikeStore.Controllers.Admin
 {
+    [AdminOnly]
     public class ProductController : Controller
     {
         // GET: Product
@@ -43,8 +45,8 @@ namespace Admin_doan.Controllers.Admin //sửa lại namespace theo cấu trúc 
                 return HttpNotFound();
 
             ViewBag.Variants = db.product_variants
-                .Include("products")
-                .Include("sizes")
+                .Include("product")
+                .Include("size")
                 .Where(v => v.product_id == id)
                 .ToList();
 
@@ -70,7 +72,7 @@ namespace Admin_doan.Controllers.Admin //sửa lại namespace theo cấu trúc 
         // POST: Thêm sản phẩm
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ProductCreate(products product, int[] categoryIds)
+        public ActionResult ProductCreate(product product, int[] categoryIds)
         {
             if (ModelState.IsValid)
             {
@@ -125,7 +127,7 @@ namespace Admin_doan.Controllers.Admin //sửa lại namespace theo cấu trúc 
         // POST: Sửa sản phẩm
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ProductEdit(products model, int[] categoryIds)
+        public ActionResult ProductEdit(product model, int[] categoryIds)
         {
             var product = db.products
                 .Include("categories")

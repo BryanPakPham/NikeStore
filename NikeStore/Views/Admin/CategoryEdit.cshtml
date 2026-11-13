@@ -1,46 +1,31 @@
-
-@model Admin_doan.Models.categories
-//đường dẫn model cần cho chức năng, chỉ cần thay phần "Admin_doan" theo tên cấu trúc.
-
-@{
-    ViewBag.Title = "Sửa danh mục";
+@model NikeStore.Models.category
+@{ ViewBag.Title = "Chỉnh sửa danh mục"; }
+<h1 class="h3 mb-3">Chỉnh sửa danh mục</h1>
+@using (Html.BeginForm("CategoryEdit", "Category", FormMethod.Post, new { @class = "col-lg-7" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.category_id)
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+    <div class="mb-3">
+        @Html.LabelFor(m => m.category_name, "Tên danh mục", new { @class = "form-label" })
+        @Html.TextBoxFor(m => m.category_name, new { @class = "form-control", maxlength = "100", required = "required" })
+    </div>
+    <div class="mb-3">
+        @Html.LabelFor(m => m.slug, "Slug (đường dẫn)", new { @class = "form-label" })
+        @Html.TextBoxFor(m => m.slug, new { @class = "form-control", maxlength = "120", required = "required" })
+    </div>
+    <div class="mb-3">
+        @Html.LabelFor(m => m.description, "Mô tả", new { @class = "form-label" })
+        @Html.TextAreaFor(m => m.description, new { @class = "form-control", rows = "3", maxlength = "500" })
+    </div>
+    <div class="mb-3">
+        @Html.LabelFor(m => m.display_order, "Thứ tự hiển thị", new { @class = "form-label" })
+        @Html.TextBoxFor(m => m.display_order, new { @class = "form-control", type = "number", step = "1" })
+    </div>
+    <div class="form-check mb-3">
+        @Html.CheckBox("is_active", Model.is_active == true, new { @class = "form-check-input" })
+        <label class="form-check-label" for="is_active">Đang hoạt động</label>
+    </div>
+    <button class="btn btn-dark" type="submit">Lưu thay đổi</button>
+    @Html.ActionLink("Quay lại", "Categories", null, new { @class = "btn btn-outline-secondary" })
 }
-
-<div class="container mt-4">
-    <h2>Sửa danh mục</h2>
-
-    @using (Html.BeginForm("CategoryEdit", "Category", FormMethod.Post))
-    {
-        @Html.AntiForgeryToken()
-        @Html.HiddenFor(m => m.category_id)
-
-        <div class="mb-3">
-            <label>Tên danh mục</label>
-            @Html.TextBoxFor(m => m.category_name,
-                          new { @class = "form-control" })
-        </div>
-
-        <div class="mb-3">
-            <label>Slug</label>
-            @Html.TextBoxFor(m => m.slug,
-                          new { @class = "form-control" })
-        </div>
-
-        <div class="mb-3">
-            <label>Mô tả</label>
-            @Html.TextAreaFor(m => m.description,
-                          new { @class = "form-control", rows = "3" })
-        </div>
-
-        <div class="mb-3">
-            <label>Thứ tự hiển thị</label>
-            @Html.TextBoxFor(m => m.display_order,
-                          new { @class = "form-control", type = "number" })
-        </div>
-
-        <button type="submit" class="btn btn-primary">Cập nhật</button>
-
-        @Html.ActionLink("Quay lại", "Categories", null,
-                      new { @class = "btn btn-secondary" })
-    }
-</div>
