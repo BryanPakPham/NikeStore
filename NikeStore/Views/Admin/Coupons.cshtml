@@ -1,8 +1,32 @@
-﻿
-@{
-    ViewBag.Title = "Coupons";
-    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
-}
-
-<h2>Coupons</h2>
-
+@using System.Linq
+@using NikeStore.ViewModels.Employee
+@model IEnumerable<NikeStore.Models.coupon>
+@{ ViewBag.Title = "Mã giảm giá"; var now = DateTime.Now; }
+<div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+    <h1 class="h3 mb-0">Mã giảm giá</h1>
+    @Html.ActionLink("Tạo mã giảm giá", "Create", null, new { @class = "btn btn-dark" })
+</div>
+<form method="get" action="@Url.Action("Index", "Coupon")" class="d-flex flex-wrap align-items-end gap-2 mb-3">
+    <div><label for="q" class="form-label">Tìm mã giảm giá</label>
+        <input type="search" class="form-control" id="q" name="q" value="@ViewBag.Query" /></div>
+    <button class="btn btn-outline-dark">Tìm</button>
+</form>
+<div class="table-responsive">
+<table class="table align-middle">
+    <thead><tr><th>Mã</th><th>Mức giảm</th><th>Đơn tối thiểu</th><th>Hiệu lực</th><th>Đã dùng / giới hạn</th><th>Trạng thái</th><th></th></tr></thead>
+    <tbody>
+    @foreach (var c in Model)
+    {
+        var percent = string.Equals(c.discount_type, "Percent", StringComparison.OrdinalIgnoreCase);
+        string state = c.is_active != true ? "Đã tắt" : now < c.start_at ? "Sắp áp dụng" : now > c.end_at ? "Hết hạn" :
+            c.usage_limit.HasValue && (c.used_count ?? 0) >= c.usage_limit.Value ? "Hết lượt" : "Đang áp dụng";
+        <tr><td class="fw-bold">@c.code</td><td>@(percent ? c.discount_value.ToString("0.##") + "%" : StaffFormat.Money(c.discount_value))</td>
+            <td>@StaffFormat.Money(c.min_order_value ?? 0)</td>
+            <td>@StaffFormat.DateTimeText(c.start_at)<br />@StaffFormat.DateTimeText(c.end_at)</td>
+            <td>@(c.used_count ?? 0) / @(c.usage_limit.HasValue ? c.usage_limit.Value.ToString() : "Không giới hạn")</td>
+            <td>@state</td><td>@Html.ActionLink("Chỉnh sửa", "Edit", new { id = c.coupon_id })</td></tr>
+    }
+    @if (!Model.Any()) { <tr><td colspan="7" class="text-muted">Không có mã giảm giá phù hợp.</td></tr> }
+    </tbody>
+</table>
+</div>

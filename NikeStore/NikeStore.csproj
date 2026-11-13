@@ -129,6 +129,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Infrastructure\AccountPassword.cs" />
+    <Compile Include="Infrastructure\AdminOnlyAttribute.cs" />
+    <Compile Include="ViewModels\Admin\InventoryPage.cs" />
+    <Compile Include="ViewModels\Admin\UserForm.cs" />
+    <Compile Include="Controllers\Admin\AccountController.cs" />
     <Compile Include="Controllers\Admin\CategoryController.cs" />
     <Compile Include="Controllers\Admin\CouponController.cs" />
     <Compile Include="Controllers\Admin\DashboardController.cs" />
@@ -316,6 +321,9 @@
     <Content Include="Views\Admin\CouponCreate.cshtml" />
     <Content Include="Views\Admin\CouponEdit.cshtml" />
     <Content Include="Views\Admin\_ViewStart.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Admin\_UserForm.cshtml" />
+    <Content Include="Views\Admin\_CouponForm.cshtml" />
     <Content Include="Views\Employee\_ViewStart.cshtml" />
     <Content Include="Views\Customer\Collections.cshtml" />
     <Content Include="Views\Customer\CollectionProducts.cshtml" />

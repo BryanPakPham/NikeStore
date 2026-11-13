@@ -1,20 +1,38 @@
-﻿<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="vi">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Nike Management</title>
-
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewBag.Title · NikeStore Admin</title>
+    <link rel="stylesheet" href="@Url.Content("~/Content/bootstrap.min.css")" />
 </head>
 <body>
-
-    @RenderBody()
-
+    <nav class="navbar navbar-dark bg-dark" aria-label="Quản trị NikeStore">
+        <div class="container-fluid gap-2 px-3">
+            <a class="navbar-brand fw-bold" href="@Url.Action("Index", "Dashboard")">NikeStore Admin</a>
+            <div class="d-flex flex-wrap align-items-center gap-3 me-auto">
+                <a class="link-light" href="@Url.Action("Products", "Product")">Sản phẩm</a>
+                <a class="link-light" href="@Url.Action("Categories", "Category")">Danh mục</a>
+                <a class="link-light" href="@Url.Action("Index", "User")">Tài khoản</a>
+                <a class="link-light" href="@Url.Action("Index", "Order")">Đơn hàng</a>
+                <a class="link-light" href="@Url.Action("Index", "Coupon")">Mã giảm giá</a>
+                <a class="link-light" href="@Url.Action("Inventory", "Inventory")">Tồn kho</a>
+            </div>
+            @using (Html.BeginRouteForm("Admin", new { controller = "Account", action = "Logout" }, FormMethod.Post, new { @class = "d-flex align-items-center gap-2" }))
+            {
+                @Html.AntiForgeryToken()
+                <span class="text-light">@Session["FullName"]</span>
+                <button type="submit" class="btn btn-outline-light btn-sm">Đăng xuất</button>
+            }
+        </div>
+    </nav>
+    <main class="container-xxl py-4">
+        @if (TempData["Success"] != null) { <div class="alert alert-success" role="status">@TempData["Success"]</div> }
+        @if (TempData["Error"] != null) { <div class="alert alert-danger" role="alert">@TempData["Error"]</div> }
+        @RenderBody()
+    </main>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-
 </body>
 </html>

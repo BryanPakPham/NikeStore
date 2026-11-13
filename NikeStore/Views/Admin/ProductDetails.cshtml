@@ -1,11 +1,11 @@
+@using System.Linq
 
-@model Admin_doan.Models.products
-//đường dẫn model cần cho chức năng, chỉ cần thay phần "Admin_doan" theo tên cấu trúc.
+@model NikeStore.Models.product
 
 @{
     ViewBag.Title = "Chi tiết sản phẩm";
-    var variants = ViewBag.Variants as IEnumerable<Admin_doan.Models.product_variants>;
-    var images = ViewBag.Images as IEnumerable<Admin_doan.Models.product_images>;
+    var variants = ViewBag.Variants as IEnumerable<NikeStore.Models.product_variants>;
+    var images = ViewBag.Images as IEnumerable<NikeStore.Models.product_images>;
 }
 
 <div class="container mt-4">
@@ -19,7 +19,7 @@
         <p><b>Mô tả:</b> @Model.description</p>
         <p>
             <b>Danh mục:</b>
-            @string.Join(", ", Model.categories.Select(c => c.category_name))
+            @(string.Join(", ", Model.categories.Select(c => c.category_name)))
         </p>
         <p>
             <b>Trạng thái:</b>
@@ -44,7 +44,7 @@
                 {
                     <tr>
                         <td>@v.sku</td>
-                        <td>@v.sizes.size_value (@v.sizes.size_system)</td>
+                        <td>@v.size.size_value (@v.size.size_system)</td>
                         <td>@v.stock_quantity</td>
                         <td>@(v.is_active == true ? "Hoạt động" : "Ngừng")</td>
                     </tr>

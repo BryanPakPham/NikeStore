@@ -1,6 +1,6 @@
+@using System.Linq
 
-@model IEnumerable<Admin_doan.Models.products>
-//đường dẫn model cần cho chức năng, chỉ cần thay phần "Admin_doan" theo tên cấu trúc.
+@model IEnumerable<NikeStore.Models.product>
 
 @{
     ViewBag.Title = "Quản lý sản phẩm";
@@ -43,7 +43,7 @@
                     <td>@item.product_name</td>
                     <td>@item.price.ToString("N0") đ</td>
                     <td>
-                        @string.Join(", ", item.categories.Select(c => c.category_name))
+                        @(string.Join(", ", item.categories.Select(c => c.category_name)))
                     </td>
                     <td>
                         @(item.is_active == true ? "Đang bán" : "Ngừng bán")

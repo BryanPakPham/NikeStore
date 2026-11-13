@@ -1,87 +1,48 @@
-﻿using Admin_doan.Models; // sửa lại đường dẫn của model
 using System;
-using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-//controller đăng nhập, đăng xuất
-namespace Admin_doan.Controllers.Admin // sửa lại namespace
+using NikeStore.Infrastructure;
+using NikeStore.Models;
+
+namespace NikeStore.Controllers.Admin
 {
     public class AccountController : Controller
     {
-        private NikeStoreDBEntities db = new NikeStoreDBEntities();
-
-        // GET: Login
         [HttpGet]
         public ActionResult Login()
         {
-            if (Session["UserId"] != null)
-            {
-                return RedirectToAction("Products", "Product");
-            }
-
             return View("~/Views/Admin/Login.cshtml");
         }
 
-        // POST: Login
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpPost, ValidateAntiForgeryToken]
         public ActionResult Login(string email, string password)
         {
-            if (string.IsNullOrWhiteSpace(email) ||
-                string.IsNullOrWhiteSpace(password))
+            email = (email ?? "").Trim();
+            using (var db = new NikeStoreDBEntities())
             {
-                ViewBag.Error = "Vui lòng nhập email và mật khẩu.";
-                return View("~/Views/Admin/Login.cshtml");
+                var account = db.users.Include(u => u.role)
+                    .FirstOrDefault(u => u.email == email && u.is_active == true);
+                if (account != null && account.role != null &&
+                    string.Equals(account.role.role_name, "Admin", StringComparison.OrdinalIgnoreCase) &&
+                    AccountPassword.Matches(account.password_hash, password))
+                {
+                    Session["UserID"] = account.user_id;
+                    Session["Role"] = account.role.role_name;
+                    Session["FullName"] = account.full_name;
+                    return RedirectToRoute("Admin", new { controller = "Dashboard", action = "Index" });
+                }
             }
-
-            // Tìm tài khoản theo email
-            var user = db.users
-                .Include("roles")
-                .FirstOrDefault(u => u.email == email);
-
-            // Kiểm tra tài khoản
-            if (user == null || user.is_active != true)
-            {
-                ViewBag.Error = "Tài khoản không tồn tại hoặc đã bị khóa.";
-                return View("~/Views/Admin/Login.cshtml");
-            }
-
-            // Kiểm tra quyền Admin
-            if (user.roles == null ||
-                user.roles.role_name != "Admin")
-            {
-                ViewBag.Error = "Bạn không có quyền truy cập hệ thống quản trị.";
-                return View("~/Views/Admin/Login.cshtml");
-            }
-
-            // TODO: Xác thực password_hash tại đây.
-            // Chưa xác định thuật toán mã hóa nên chưa thể
-            // kiểm tra mật khẩu một cách chính xác.
-
-            ViewBag.Error = "Chưa hoàn thiện xác thực mật khẩu.";
+            ViewBag.Error = "Email, mật khẩu hoặc quyền quản trị không hợp lệ.";
             return View("~/Views/Admin/Login.cshtml");
         }
 
-        // POST: Logout
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpPost, ValidateAntiForgeryToken]
         public ActionResult Logout()
         {
             Session.Clear();
             Session.Abandon();
-
-            return RedirectToAction("Login", "Account");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-
-            base.Dispose(disposing);
+            return RedirectToRoute("Admin", new { controller = "Account", action = "Login" });
         }
     }
 }

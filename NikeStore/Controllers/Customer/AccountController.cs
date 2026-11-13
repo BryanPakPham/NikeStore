@@ -2,10 +2,10 @@
 using System;
 using System.Linq;
 using System.Web.Mvc;
-using System.Security.Cryptography;
+using NikeStore.Infrastructure;
 using NikeStore.Models;
 
-namespace NikeStore.Controllers
+namespace NikeStore.Controllers.Customer
 {
     public class AccountController : Controller
     {
@@ -22,7 +22,13 @@ namespace NikeStore.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Register(string full_name, string email, string password, string phone, string address)
         {
-            email = email.Trim();
+            email = (email ?? "").Trim();
+
+            if (string.IsNullOrWhiteSpace(password))
+            {
+                ViewBag.ThongBao = "Vui lòng nhập mật khẩu.";
+                return View("~/Views/Customer/Register.cshtml");
+            }
 
             // Kiểm tra email đã tồn tại
             var kiemTra = data.users.FirstOrDefault(u => u.email == email);
@@ -30,7 +36,7 @@ namespace NikeStore.Controllers
             if (kiemTra != null)
             {
                 ViewBag.ThongBao = "Email already exists!";
-                return View();
+                return View("~/Views/Customer/Register.cshtml");
             }
 
             // Lấy quyền Customer
@@ -39,7 +45,7 @@ namespace NikeStore.Controllers
             if (roleCustomer == null)
             {
                 ViewBag.ThongBao = "Customer role not found!";
-                return View();
+                return View("~/Views/Customer/Register.cshtml");
             }
 
             // Tạo tài khoản mới
@@ -47,7 +53,7 @@ namespace NikeStore.Controllers
 
             taiKhoan.full_name = full_name;
             taiKhoan.email = email;
-            taiKhoan.password_hash =password;
+            taiKhoan.password_hash = AccountPassword.Hash(password);
             taiKhoan.phone = phone;
             taiKhoan.address = address;
             taiKhoan.role_id = roleCustomer.role_id;
@@ -73,17 +79,16 @@ namespace NikeStore.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(string email, string password)
         {
-            email = email.Trim();
+            email = (email ?? "").Trim();
 
             var taiKhoan = data.users
                 .FirstOrDefault(u => u.email == email);
 
-           if (taiKhoan == null ||
-            taiKhoan.is_active != true ||
-            taiKhoan.password_hash != password)
-           {       
+            if (taiKhoan == null || taiKhoan.is_active != true ||
+                !AccountPassword.Matches(taiKhoan.password_hash, password))
+            {
                 ViewBag.ThongBao = "Email or password is incorrect!";
-                return View();
+                return View("~/Views/Customer/Login.cshtml");
             }
 
             // Lưu thông tin đăng nhập

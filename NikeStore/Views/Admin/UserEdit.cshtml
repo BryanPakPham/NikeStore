@@ -1,8 +1,8 @@
-﻿
-@{
-    ViewBag.Title = "UserEdit";
-    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+@model NikeStore.ViewModels.Admin.UserForm
+@{ ViewBag.Title = "Chỉnh sửa tài khoản"; }
+<h1 class="h3 mb-3">@ViewBag.Title</h1>
+@using (Html.BeginForm("Edit", "User", new { id = Model.Id }, FormMethod.Post, new { @class = "col-lg-8" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.Partial("~/Views/Admin/_UserForm.cshtml", Model)
 }
-
-<h2>UserEdit</h2>
-

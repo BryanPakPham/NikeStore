@@ -1,8 +1,42 @@
-﻿
-@{
-    ViewBag.Title = "Orders";
-    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+@using System.Linq
+@using NikeStore.ViewModels.Employee
+@model OrderListVM
+@{ ViewBag.Title = "Quản lý đơn hàng"; }
+<h1 class="h3 mb-3">Đơn hàng</h1>
+<form method="get" action="@Url.Action("Index", "Order")" class="row g-2 align-items-end mb-3">
+    <div class="col-md-5">
+        <label for="q" class="form-label">Mã đơn, người nhận hoặc số điện thoại</label>
+        <input id="q" name="q" value="@Model.Query" type="search" class="form-control" />
+    </div>
+    <div class="col-md-4">
+        <label for="status" class="form-label">Trạng thái</label>
+        @Html.DropDownList("status", new SelectList(OrderStatus.All.Select(s => new { Value = s, Text = OrderStatus.Label(s) }),
+            "Value", "Text", Model.Status), "Tất cả trạng thái", new { @class = "form-select" })
+    </div>
+    <div class="col-auto"><button class="btn btn-outline-dark">Lọc đơn hàng</button></div>
+</form>
+<p>@Model.TotalCount đơn hàng</p>
+<div class="table-responsive">
+<table class="table table-hover align-middle">
+    <thead><tr><th>Mã đơn</th><th>Ngày đặt</th><th>Người nhận</th><th>Tổng tiền</th><th>Trạng thái</th><th>Thanh toán</th></tr></thead>
+    <tbody>
+    @foreach (var row in Model.Items)
+    {
+        <tr>
+            <td>@Html.ActionLink(row.Code ?? ("#" + row.OrderId), "Details", new { id = row.OrderId })</td>
+            <td>@StaffFormat.DateTimeText(row.OrderDate)</td><td>@row.Recipient<br /><small>@row.Phone</small></td>
+            <td>@StaffFormat.Money(row.Total)</td><td>@OrderStatus.Label(row.Status)</td><td>@PaymentStatus.Label(row.PayStatus)</td>
+        </tr>
+    }
+    @if (Model.Items.Count == 0) { <tr><td colspan="6" class="text-muted">Không có đơn hàng phù hợp.</td></tr> }
+    </tbody>
+</table>
+</div>
+@if (Model.TotalPages > 1)
+{
+    <nav aria-label="Trang đơn hàng" class="d-flex align-items-center gap-3">
+        @if (Model.Page > 1) { @Html.ActionLink("Trang trước", "Index", new { status = Model.Status, q = Model.Query, page = Model.Page - 1 }) }
+        <span>Trang @Model.Page / @Model.TotalPages</span>
+        @if (Model.Page < Model.TotalPages) { @Html.ActionLink("Trang sau", "Index", new { status = Model.Status, q = Model.Query, page = Model.Page + 1 }) }
+    </nav>
 }
-
-<h2>Orders</h2>
-

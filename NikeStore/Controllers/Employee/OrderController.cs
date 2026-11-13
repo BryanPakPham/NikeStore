@@ -16,6 +16,8 @@ namespace NikeStore.Controllers.Employee
     // =====================================================================
     public class OrderController : EmployeeBaseController
     {
+        protected virtual string OrderModule { get { return "Employee"; } }
+
         private const int PageSize = 10;
 
         // Khớp CHECK của bảng inventory_transactions:
@@ -73,7 +75,7 @@ namespace NikeStore.Controllers.Employee
                 StatusCounts = GetStatusCounts()
             };
 
-            return View("~/Views/Employee/Orders.cshtml", vm);
+            return View("~/Views/" + OrderModule + "/Orders.cshtml", vm);
         }
 
         // GET: Employee/Order/Details/5
@@ -166,7 +168,7 @@ namespace NikeStore.Controllers.Employee
             bool open = vm.Status == OrderStatus.Pending || vm.Status == OrderStatus.Confirmed || vm.Status == OrderStatus.Shipping;
             vm.NextPayments = (IsBank(o) && open) ? PaymentStatus.Next(vm.PaymentStatus) : new string[0];
 
-            return View("~/Views/Employee/OrderDetails.cshtml", vm);
+            return View("~/Views/" + OrderModule + "/OrderDetails.cshtml", vm);
         }
 
         // =================================================================
@@ -182,7 +184,7 @@ namespace NikeStore.Controllers.Employee
         [ValidateAntiForgeryToken]
         public ActionResult UpdateStatus(int id, string newStatus, string returnUrl)
         {
-            string fallback = Url.Content("~/Employee/Order/Details/" + id);
+            string fallback = Url.Content("~/" + OrderModule + "/Order/Details/" + id);
             string target = OrderStatus.Normalize(newStatus);
 
             using (var tx = db.Database.BeginTransaction())
@@ -293,7 +295,7 @@ namespace NikeStore.Controllers.Employee
         [ValidateAntiForgeryToken]
         public ActionResult UpdatePayment(int id, string newPaymentStatus, string returnUrl)
         {
-            string fallback = Url.Content("~/Employee/Order/Details/" + id);
+            string fallback = Url.Content("~/" + OrderModule + "/Order/Details/" + id);
             string target = PaymentStatus.Normalize(newPaymentStatus);
 
             using (var tx = db.Database.BeginTransaction())

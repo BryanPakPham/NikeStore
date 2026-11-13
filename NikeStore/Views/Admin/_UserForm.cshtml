@@ -1,0 +1,38 @@
+@model NikeStore.ViewModels.Admin.UserForm
+@Html.ValidationSummary(false, "", new { @class = "text-danger" })
+<div class="row g-3 mb-3">
+    <div class="col-md-6">
+        @Html.LabelFor(m => m.Name, "Họ tên", new { @class = "form-label" })
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", maxlength = "100", required = "required" })
+    </div>
+    <div class="col-md-6">
+        @Html.LabelFor(m => m.Email, "Email", new { @class = "form-label" })
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", type = "email", maxlength = "254", required = "required" })
+    </div>
+    <div class="col-md-6">
+        @Html.LabelFor(m => m.Phone, "Điện thoại", new { @class = "form-label" })
+        @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", type = "tel", maxlength = "20" })
+    </div>
+    <div class="col-md-6">
+        @Html.LabelFor(m => m.RoleId, "Vai trò", new { @class = "form-label" })
+        @Html.DropDownListFor(m => m.RoleId, (IEnumerable<SelectListItem>)ViewBag.Roles, "Chọn vai trò",
+            new { @class = "form-select", required = "required" })
+    </div>
+    <div class="col-12">
+        @Html.LabelFor(m => m.Address, "Địa chỉ", new { @class = "form-label" })
+        @Html.TextAreaFor(m => m.Address, new { @class = "form-control", rows = "2", maxlength = "300" })
+    </div>
+    @if (Model.Id == 0)
+    {
+        <div class="col-md-6">
+            <label class="form-label" for="password">Mật khẩu (ít nhất 8 ký tự)</label>
+            <input class="form-control" type="password" id="password" name="password" minlength="8" autocomplete="new-password" required />
+        </div>
+    }
+</div>
+<div class="form-check mb-3">
+    @Html.CheckBoxFor(m => m.Active, new { @class = "form-check-input" })
+    <label for="Active" class="form-check-label">Cho phép đăng nhập</label>
+</div>
+<button type="submit" class="btn btn-dark">Lưu tài khoản</button>
+@Html.ActionLink("Quay lại", "Index", null, new { @class = "btn btn-outline-secondary" })

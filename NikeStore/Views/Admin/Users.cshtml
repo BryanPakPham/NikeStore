@@ -1,8 +1,26 @@
-﻿
-@{
-    ViewBag.Title = "Users";
-    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
-}
-
-<h2>Users</h2>
-
+@using System.Linq
+@model IEnumerable<NikeStore.Models.user>
+@{ ViewBag.Title = "Quản lý tài khoản"; }
+<div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+    <h1 class="h3 mb-0">Tài khoản</h1>
+    @Html.ActionLink("Thêm tài khoản", "Create", null, new { @class = "btn btn-dark" })
+</div>
+<form method="get" action="@Url.Action("Index", "User")" class="d-flex flex-wrap align-items-end gap-2 mb-3">
+    <div><label for="q" class="form-label">Tìm theo tên, email hoặc số điện thoại</label>
+        <input id="q" name="q" type="search" value="@ViewBag.Query" class="form-control" /></div>
+    <button class="btn btn-outline-dark">Tìm</button>
+</form>
+<div class="table-responsive">
+<table class="table table-hover align-middle">
+    <thead><tr><th>Họ tên</th><th>Email</th><th>Điện thoại</th><th>Vai trò</th><th>Trạng thái</th><th></th></tr></thead>
+    <tbody>
+    @foreach (var u in Model)
+    {
+        <tr><td>@u.full_name</td><td>@u.email</td><td>@u.phone</td><td>@(u.role == null ? "—" : u.role.role_name)</td>
+            <td>@(u.is_active == true ? "Hoạt động" : "Đã khóa")</td>
+            <td>@Html.ActionLink("Chỉnh sửa", "Edit", new { id = u.user_id })</td></tr>
+    }
+    @if (!Model.Any()) { <tr><td colspan="6" class="text-muted">Không có tài khoản phù hợp.</td></tr> }
+    </tbody>
+</table>
+</div>

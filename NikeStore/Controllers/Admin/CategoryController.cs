@@ -1,107 +1,103 @@
-using Admin_doan.Models;//sửa lại đường dẫn của model
 using System;
-using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using NikeStore.Infrastructure;
+using NikeStore.Models;
 
-namespace Admin_doan.Controllers.Admin //sửa lại namespace theo cấu trúc đồ án.
+namespace NikeStore.Controllers.Admin
 {
+    [AdminOnly]
     public class CategoryController : Controller
     {
-        private NikeStoreDBEntities db = new NikeStoreDBEntities();
+        private readonly NikeStoreDBEntities db = new NikeStoreDBEntities();
 
-        // Danh sách danh mục
         public ActionResult Categories()
         {
-            var categories = db.categories
-                .OrderBy(c => c.display_order)
-                .ToList();
-
-            return View("~/Views/Admin/Categories.cshtml", categories);
+            return View("~/Views/Admin/Categories.cshtml",
+                db.categories.OrderBy(c => c.display_order).ThenBy(c => c.category_name).ToList());
         }
 
-        // GET: Thêm danh mục
         [HttpGet]
         public ActionResult CategoryCreate()
         {
-            return View("~/Views/Admin/CategoryCreate.cshtml");
+            return View("~/Views/Admin/CategoryCreate.cshtml", new category());
         }
 
-        // POST: Thêm danh mục
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult CategoryCreate(categories model)
+        [HttpPost, ValidateAntiForgeryToken]
+        public ActionResult CategoryCreate([Bind(Include = "category_name,slug,description,display_order")] category input)
         {
+            ValidateCategory(input, 0);
             if (ModelState.IsValid)
             {
-                model.created_at = DateTime.Now;
-                model.updated_at = DateTime.Now;
-                model.is_active = true;
-
-                db.categories.Add(model);
-                db.SaveChanges();
-
-                return RedirectToAction("Categories");
+                input.is_active = true;
+                input.created_at = input.updated_at = DateTime.Now;
+                db.categories.Add(input);
+                if (Save()) return RedirectToAction("Categories");
             }
-
-            return View("~/Views/Admin/CategoryCreate.cshtml", model);
+            return View("~/Views/Admin/CategoryCreate.cshtml", input);
         }
 
-        // GET: Sửa danh mục
         [HttpGet]
         public ActionResult CategoryEdit(int id)
         {
-            var category = db.categories.Find(id);
-
-            if (category == null)
-                return HttpNotFound();
-
-            return View("~/Views/Admin/CategoryEdit.cshtml", category);
+            var row = db.categories.Find(id);
+            if (row == null) return HttpNotFound();
+            return View("~/Views/Admin/CategoryEdit.cshtml", row);
         }
 
-        // POST: Sửa danh mục
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult CategoryEdit(categories model)
+        [HttpPost, ValidateAntiForgeryToken]
+        public ActionResult CategoryEdit([Bind(Include = "category_id,category_name,slug,description,display_order,is_active")] category input)
         {
-            var category = db.categories.Find(model.category_id);
-
-            if (category == null)
-                return HttpNotFound();
-
+            var row = db.categories.Find(input.category_id);
+            if (row == null) return HttpNotFound();
+            ValidateCategory(input, row.category_id);
             if (ModelState.IsValid)
             {
-                category.category_name = model.category_name;
-                category.slug = model.slug;
-                category.description = model.description;
-                category.display_order = model.display_order;
-                category.updated_at = DateTime.Now;
-
-                db.SaveChanges();
-
-                return RedirectToAction("Categories");
+                row.category_name = input.category_name;
+                row.slug = input.slug;
+                row.description = input.description;
+                row.display_order = input.display_order;
+                if (input.is_active.HasValue) row.is_active = input.is_active;
+                row.updated_at = DateTime.Now;
+                if (Save()) return RedirectToAction("Categories");
             }
-
-            return View("~/Views/Admin/CategoryEdit.cshtml", model);
+            return View("~/Views/Admin/CategoryEdit.cshtml", input);
         }
 
-        // Ngừng hoạt động danh mục
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpPost, ValidateAntiForgeryToken]
         public ActionResult Deactivate(int id)
         {
-            var category = db.categories.Find(id);
-
-            if (category == null)
-                return HttpNotFound();
-
-            category.is_active = false;
-            category.updated_at = DateTime.Now;
-
-            db.SaveChanges();
-
+            var row = db.categories.Find(id);
+            if (row == null) return HttpNotFound();
+            row.is_active = false;
+            row.updated_at = DateTime.Now;
+            if (!Save()) TempData["Error"] = "Không thể ngừng danh mục. Hãy tải lại danh sách.";
             return RedirectToAction("Categories");
+        }
+
+        private void ValidateCategory(category input, int id)
+        {
+            input.category_name = (input.category_name ?? "").Trim();
+            input.slug = (input.slug ?? "").Trim();
+            if (input.category_name.Length == 0 || input.category_name.Length > 100)
+                ModelState.AddModelError("category_name", "Tên danh mục cần từ 1 đến 100 ký tự.");
+            if (input.slug.Length == 0 || input.slug.Length > 120)
+                ModelState.AddModelError("slug", "Slug cần từ 1 đến 120 ký tự.");
+            else if (db.categories.Any(c => c.category_id != id && c.slug == input.slug))
+                ModelState.AddModelError("slug", "Slug này đã thuộc về một danh mục khác.");
+            if (input.description != null && input.description.Length > 500)
+                ModelState.AddModelError("description", "Mô tả tối đa 500 ký tự.");
+        }
+
+        private bool Save()
+        {
+            try { db.SaveChanges(); return true; }
+            catch (DbUpdateException)
+            {
+                ModelState.AddModelError("", "Không lưu được danh mục. Hãy kiểm tra slug và tải lại nếu dữ liệu vừa thay đổi.");
+                return false;
+            }
         }
 
         protected override void Dispose(bool disposing)

@@ -1,98 +1,69 @@
-
-@model IEnumerable<Admin_doan.Models.product_variants>
-//đường dẫn model cần cho chức năng, chỉ cần thay phần "Admin_doan" theo tên cấu trúc.
-
-@{
-    ViewBag.Title = "Quản lý tồn kho";
-}
-
-<div class="container-fluid mt-4">
-
-    <h2>Quản lý tồn kho</h2>
-
-    @if (TempData["Success"] != null)
+@using System.Linq
+@using NikeStore.ViewModels.Employee
+@model NikeStore.ViewModels.Admin.InventoryPage
+@{ ViewBag.Title = "Quản lý tồn kho"; }
+<h1 class="h3 mb-3">Tồn kho theo biến thể</h1>
+<form method="get" action="@Url.Action("Inventory", "Inventory")" class="d-flex flex-wrap align-items-end gap-2 mb-3">
+    <div><label class="form-label" for="q">Tìm theo SKU, sản phẩm hoặc màu</label>
+        <input type="search" class="form-control" id="q" name="q" value="@Model.Query" /></div>
+    <button class="btn btn-outline-dark">Tìm</button>
+</form>
+<div class="table-responsive">
+<table class="table table-hover align-middle">
+    <thead><tr><th>SKU / Sản phẩm</th><th>Màu</th><th>Cỡ</th><th>Tồn</th><th>Nhập hoặc điều chỉnh số lượng</th></tr></thead>
+    <tbody>
+    @foreach (var v in Model.Variants)
     {
-        <div class="alert alert-success">
-            @TempData["Success"]
-        </div>
-    }
-
-    @if (TempData["Error"] != null)
-    {
-        <div class="alert alert-danger">
-            @TempData["Error"]
-        </div>
-    }
-
-    <table class="table table-bordered table-hover mt-3">
-
-        <thead class="table-dark">
-            <tr>
-                <th>Mã phiên bản</th>
-                <th>Sản phẩm</th>
-                <th>SKU</th>
-                <th>Size</th>
-                <th>Tồn kho</th>
-                <th>Trạng thái</th>
-                <th>Điều chỉnh</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            @foreach (var item in Model)
+        <tr>
+            <td><a href="@Url.Action("Inventory", new { q = Model.Query, variantId = v.Id })#lich-su">@v.Sku</a><br />@v.Product</td>
+            <td>@(v.Color ?? "—")</td><td>@StaffFormat.Size(v.Size) @v.SizeSystem</td><td class="fw-bold">@v.Stock</td>
+            <td>
+            @using (Html.BeginForm("UpdateStock", "Inventory", FormMethod.Post, new { @class = "row g-2" }))
             {
-                <tr>
-                    <td>@item.variant_id</td>
-                    <td>@item.products.product_name</td>
-                    <td>@item.sku</td>
-                    <td>
-                        @item.sizes.size_value
-                        (@item.sizes.size_system)
-                    </td>
-                    <td>
-                        <strong>@(item.stock_quantity ?? 0)</strong>
-                    </td>
-                    <td>
-                        @(item.is_active == true ? "Hoạt động" : "Ngừng")
-                    </td>
-                    <td>
-                        @using (Html.BeginForm("UpdateStock", "Inventory",
-                            FormMethod.Post))
-                        {
-                            @Html.AntiForgeryToken()
-
-                            <input type="hidden"
-                                   name="variant_id"
-                                   value="@item.variant_id" />
-
-                            <div class="mb-2">
-                                <select name="transaction_type"
-                                        class="form-select form-select-sm">
-                                    <option value="Import">Nhập kho</option>
-                                    <option value="Adjustment">Điều chỉnh</option>
-                                </select>
-                            </div>
-
-                            <input type="number"
-                                   name="quantity_change"
-                                   class="form-control form-control-sm mb-2"
-                                   placeholder="Số lượng (+/-)"
-                                   required />
-
-                            <input type="text"
-                                   name="note"
-                                   class="form-control form-control-sm mb-2"
-                                   placeholder="Ghi chú" />
-
-                            <button type="submit"
-                                    class="btn btn-primary btn-sm"
-                                    onclick="return confirm('Xác nhận cập nhật tồn kho?')">
-                                Cập nhật
-                            </button>
-                        }
-                    </td>
-                </tr>
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="variant_id" value="@v.Id" />
+                <input type="hidden" name="q" value="@Model.Query" />
+                <div class="col-auto"><select name="transaction_type" class="form-select form-select-sm" aria-label="Loại giao dịch">
+                    <option value="Import">Nhập kho (+)</option><option value="Adjustment">Điều chỉnh (+/−)</option>
+                </select></div>
+                <div class="col-auto"><input name="quantity_change" class="form-control form-control-sm" type="number" step="1" placeholder="Số lượng ±" aria-label="Số lượng thay đổi" required /></div>
+                <div class="col-auto"><input name="note" class="form-control form-control-sm" maxlength="255" placeholder="Ghi chú" aria-label="Ghi chú" /></div>
+                <div class="col-auto"><button class="btn btn-sm btn-outline-dark">Ghi nhận</button></div>
             }
-        </tbody>
-    </table>
+            </td>
+        </tr>
+    }
+    @if (Model.Variants.Count == 0) { <tr><td colspan="5">Không tìm thấy biến thể phù hợp.</td></tr> }
+    </tbody>
+</table>
 </div>
+<section id="lich-su" class="mt-4">
+    <h2 class="h4">Lịch sử nhập xuất kho</h2>
+    @if (Model.VariantId.HasValue)
+    {
+        var selected = Model.Variants.FirstOrDefault(v => v.Id == Model.VariantId);
+        <p>Đang xem: @(selected == null ? "#" + Model.VariantId : selected.Sku) · @Html.ActionLink("Xem tất cả biến thể", "Inventory", new { q = Model.Query })</p>
+    }
+    <div class="table-responsive"><table class="table">
+    <thead><tr><th>Thời điểm</th><th>SKU</th><th>Nghiệp vụ</th><th>Thay đổi</th><th>Người thực hiện</th><th>Đơn hàng</th><th>Ghi chú</th></tr></thead>
+    <tbody>
+        @foreach (var t in Model.History)
+        {
+            <tr><td>@StaffFormat.DateTimeText(t.created_at)</td><td>@t.product_variants.sku</td>
+                <td>@StaffFormat.Movement(t.transaction_type)</td><td>@t.quantity_change.ToString("+0;-0;0")</td>
+                <td>@(t.user == null ? "—" : t.user.full_name)</td>
+                <td>@if (t.order != null) { @Html.ActionLink(t.order.order_code, "Details", "Order", new { id = t.order_id }, null) }</td>
+                <td>@t.note</td></tr>
+        }
+        @if (Model.History.Count == 0) { <tr><td colspan="7">Chưa có giao dịch kho phù hợp.</td></tr> }
+    </tbody>
+    </table></div>
+    @if (Model.Pages > 1)
+    {
+        <nav aria-label="Trang lịch sử kho" class="d-flex align-items-center gap-3">
+            @if (Model.Page > 1) { <a href="@Url.Action("Inventory", new { q = Model.Query, variantId = Model.VariantId, page = Model.Page - 1 })#lich-su">Trang trước</a> }
+            <span>Trang @Model.Page / @Model.Pages</span>
+            @if (Model.Page < Model.Pages) { <a href="@Url.Action("Inventory", new { q = Model.Query, variantId = Model.VariantId, page = Model.Page + 1 })#lich-su">Trang sau</a> }
+        </nav>
+    }
+</section>
