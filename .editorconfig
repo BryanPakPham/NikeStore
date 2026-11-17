@@ -1,0 +1,5 @@
+# Keep Visual Studio source files in Unicode when they are saved.
+root = true
+
+[*.{cs,cshtml,css,js,config,csproj,sql,edmx,tt,resx,asax,txt,sln}]
+charset = utf-8-bom

@@ -1,8 +1,36 @@
-﻿
+﻿@using System.Globalization
+@using NikeStore.ViewModels.Employee
+@model NikeStore.ViewModels.Admin.AdminDashboard
 @{
-    ViewBag.Title = "Dashboard";
-    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+    ViewBag.Title = "Tổng quan quản trị";
+    var money = CultureInfo.GetCultureInfo("vi-VN");
 }
-
-<h2>Dashboard</h2>
-
+<div class="admin-page-heading"><div><h1>Tổng quan quản trị</h1><p>Theo dõi cửa hàng và xử lý những việc cần làm.</p></div><span class="text-muted">@DateTime.Today.ToString("dd/MM/yyyy")</span></div>
+<div class="row g-3 mb-4">
+    <div class="col-sm-6 col-xl-3"><a class="admin-stat" href="@Url.Action("Products", "Product")"><span>Sản phẩm đang bán</span><strong>@Model.ActiveProducts</strong><small>Xem danh sách sản phẩm →</small></a></div>
+    <div class="col-sm-6 col-xl-3"><a class="admin-stat" href="@Url.Action("Employees", "User")"><span>Nhân viên hoạt động</span><strong>@Model.ActiveEmployees</strong><small>Quản lý nhân viên →</small></a></div>
+    <div class="col-sm-6 col-xl-3"><a class="admin-stat" href="@Url.Action("Index", "User")"><span>Tài khoản khách hàng</span><strong>@Model.TotalCustomers</strong><small>Tra cứu tài khoản →</small></a></div>
+    <div class="col-sm-6 col-xl-3"><a class="admin-stat" href="@Url.Action("Index", "Order", new { status = "pending" })"><span>Đơn chờ xác nhận</span><strong>@Model.PendingOrders</strong><small>Xem đơn hàng →</small></a></div>
+</div>
+<div class="row g-4 mb-4">
+    <div class="col-lg-7"><div class="admin-revenue"><span>Giá trị đơn hoàn tất được đặt trong tháng @DateTime.Today.ToString("MM/yyyy")</span><strong>@Model.CompletedRevenueThisMonth.ToString("N0", money) ₫</strong><small>Tính theo ngày đặt đơn và trạng thái hoàn tất hiện tại.</small></div></div>
+    <div class="col-lg-5"><div class="admin-panel h-100"><h2 class="h5">Cảnh báo tồn kho</h2><p><strong class="fs-3">@Model.LowStockCount</strong> biến thể đang bán có tồn kho ≤ @Model.LowStockThreshold.</p><a href="@Url.Action("Inventory", "Inventory")" class="btn btn-outline-dark btn-sm">Kiểm tra tồn kho</a> <a href="@Url.Action("Index", "System")" class="btn btn-link btn-sm">Đổi ngưỡng cảnh báo</a></div></div>
+</div>
+<div class="row g-4">
+    <div class="col-xl-8"><section class="admin-panel h-100"><div class="d-flex justify-content-between gap-2 mb-3"><h2 class="h5 mb-0">Đơn hàng gần đây</h2><a href="@Url.Action("Index", "Order")">Xem tất cả</a></div>
+        <div class="table-responsive"><table class="table align-middle"><thead><tr><th>Mã đơn</th><th>Người nhận</th><th>Tổng tiền</th><th>Trạng thái</th></tr></thead><tbody>
+        @foreach (var order in Model.RecentOrders)
+        {
+            <tr><td><a href="@Url.Action("Details", "Order", new { id = order.Id })">@order.Code</a><small class="d-block text-muted">@(order.Date.HasValue ? order.Date.Value.ToString("dd/MM/yyyy HH:mm") : "—")</small></td><td>@order.Recipient</td><td class="text-nowrap">@order.Total.ToString("N0", money) ₫</td><td>@OrderStatus.Label(order.Status)</td></tr>
+        }
+        @if (Model.RecentOrders.Count == 0) { <tr><td colspan="4" class="text-muted text-center py-4">Chưa có đơn hàng. Đơn mới sẽ xuất hiện tại đây.</td></tr> }
+        </tbody></table></div>
+    </section></div>
+    <div class="col-xl-4"><section class="admin-panel h-100"><h2 class="h5 mb-3">Biến thể sắp hết hàng</h2>
+        @foreach (var stock in Model.LowStock)
+        {
+            <div class="admin-stock-item"><div><a href="@Url.Action("Inventory", "Inventory", new { q = stock.Sku })">@stock.Sku</a><small class="d-block text-muted">@stock.ProductName</small></div><span class="badge @(stock.Quantity == 0 ? "text-bg-danger" : "text-bg-warning")">@stock.Quantity</span></div>
+        }
+        @if (Model.LowStock.Count == 0) { <p class="text-muted">Chưa có biến thể nào dưới ngưỡng cảnh báo.</p> }
+    </section></div>
+</div>

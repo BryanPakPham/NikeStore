@@ -1,5 +1,5 @@
-@model NikeStore.ViewModels.Admin.UserForm
-@{ ViewBag.Title = "Thêm tài khoản"; }
+﻿@model NikeStore.ViewModels.Admin.UserForm
+@{ ViewBag.Title = Model.EmployeesOnly ? "Thêm nhân viên" : "Thêm tài khoản"; }
 <h1 class="h3 mb-3">@ViewBag.Title</h1>
 @using (Html.BeginForm("Create", "User", null, FormMethod.Post, new { @class = "col-lg-8" }))
 {

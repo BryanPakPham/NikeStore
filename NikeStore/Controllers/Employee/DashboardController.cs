@@ -40,10 +40,15 @@ namespace NikeStore.Controllers.Employee
 
         private bool IsStaff()
         {
-            string role = Convert.ToString(Session["Role"] ?? Session["RoleName"]);
-            return CurrentUserId.HasValue
-                && (string.Equals(role, "Employee", StringComparison.OrdinalIgnoreCase)
-                    || string.Equals(role, "Admin", StringComparison.OrdinalIgnoreCase));
+            int? id = CurrentUserId;
+            if (!id.HasValue) return false;
+            var account = db.users.Where(u => u.user_id == id.Value && u.is_active == true)
+                .Select(u => new { Role = u.role.role_name, Name = u.full_name }).SingleOrDefault();
+            if (account == null || !(string.Equals(account.Role, "Employee", StringComparison.OrdinalIgnoreCase)
+                || string.Equals(account.Role, "Admin", StringComparison.OrdinalIgnoreCase))) return false;
+            Session["Role"] = account.Role;
+            Session["FullName"] = account.Name;
+            return true;
         }
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)

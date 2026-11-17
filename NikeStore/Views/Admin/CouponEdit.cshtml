@@ -1,4 +1,4 @@
-@model NikeStore.Models.coupon
+﻿@model NikeStore.Models.coupon
 @{ ViewBag.Title = "Chỉnh sửa mã giảm giá"; }
 <h1 class="h3 mb-3">@ViewBag.Title</h1>
 @using (Html.BeginForm("Edit", "Coupon", new { id = Model.coupon_id }, FormMethod.Post, new { @class = "col-lg-8" }))

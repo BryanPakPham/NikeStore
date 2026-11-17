@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Routing;
@@ -31,6 +31,7 @@ namespace NikeStore.Infrastructure
                 }
                 session["Role"] = account.Role;
                 session["FullName"] = account.Name;
+                context.Controller.ViewBag.AdminSettings = AdminSettingsStore.Current().Load();
             }
         }
     }

@@ -8,6 +8,7 @@ namespace NikeStore
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            filters.Add(new Infrastructure.AccountStateFilter(), -1000);
         }
     }
 }
