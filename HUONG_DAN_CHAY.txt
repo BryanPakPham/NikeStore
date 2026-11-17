@@ -1,0 +1,53 @@
+﻿NIKESTORE — CHẠY TRÊN VISUAL STUDIO 2022
+
+1. Giải nén toàn bộ ZIP vào một thư mục, ví dụ D:\DoAn\NikeStore. Giữ thư mục packages cạnh NikeStore.sln. Mở NikeStore.sln.
+2. Chọn Debug / Any CPU và IIS Express trên thanh công cụ. Nhấn Ctrl+F5 để chạy, hoặc F5 để đặt breakpoint. Trang đầu là cửa hàng.
+3. Ở lần chạy Debug đầu, ứng dụng dùng Windows Authentication kết nối (LocalDB)\MSSQLLocalDB, tự tạo NikeStoreDemo cùng dữ liệu mẫu. Những lần mở sau giữ các thay đổi của bạn.
+4. Để vào Admin, giữ nguyên địa chỉ localhost và cổng mà Visual Studio vừa mở, đổi phần đường dẫn thành /Admin/Account/Login.
+
+Tài khoản thử trong database NikeStoreDemo
+  Admin       admin@nikestore.test       NikeDemo!2026
+  Nhân viên   staff@nikestore.test       NikeStaff!2026
+  Nhân viên đăng nhập ở /Customer/Account/Login. Để thử khách hàng, chọn Register và tạo tài khoản.
+
+Chức năng để thử
+  • Admin → Danh mục → Sửa; Tài khoản → Thêm / Chỉnh sửa; Mã giảm giá → Tạo / Chỉnh sửa.
+  • Admin → Tồn kho → tìm theo SKU, ghi nhận nhập hoặc điều chỉnh và bấm SKU để xem lịch sử.
+  • Ở trang khách hàng, chọn màu và cỡ giày, thêm vào giỏ và đặt đơn. Vào Admin → Đơn hàng để xác nhận và kiểm tra tồn kho.
+  • Dữ liệu mẫu có 20 mẫu giày, 120 ảnh và 420 biến thể. Đây là dữ liệu thử tạo từ model và ảnh có trong dự án.
+
+Nếu Visual Studio yêu cầu thành phần hoặc LocalDB chưa có
+  • Visual Studio Installer → Modify → chọn ASP.NET and web development.
+  • Trong Individual components, kiểm tra .NET Framework 4.7.2 targeting pack và SQL Server Express LocalDB. Hoàn tất cài đặt, mở lại solution rồi chạy.
+  • Kiểm tra instance từ Developer PowerShell bằng lệnh: SqlLocalDB info MSSQLLocalDB
+  • Nếu trình duyệt mở URL kết thúc bằng .cshtml, xóa phần đường dẫn sau cổng để về trang chủ, hoặc nhập /Admin/Account/Login.
+  • Nếu Windows đánh dấu các DLL từ Internet và MSBuild báo file bị chặn, mở Properties của ZIP, chọn Unblock nếu có, rồi giải nén lại.
+
+Dùng database thật của nhóm
+  Mở NikeStore\Web.config. Trong connection string NikeStoreDBEntities, sửa data source thành tên SQL Server của bạn và initial catalog thành database hiện có của nhóm. Giữ nguyên phần metadata của Entity Framework.
+  Phần khởi tạo mẫu chỉ chạy ở bản Debug khi kết nối đúng (LocalDB)\MSSQLLocalDB và tên NikeStoreDemo bằng Windows Authentication. Tài khoản thử trong hướng dẫn chỉ có trong CSDL mẫu.
+  File NikeStore\App_Data\NikeStoreDemo.sql chứa 16 bảng và dữ liệu dùng thử. Ứng dụng chạy file này trong transaction ở lần đầu, không cần chạy SQL thủ công.
+
+Bản sửa dựa trên ZIP có commit 2aa9a2b. Đã giữ các phần Customer, Employee và Admin trong cùng solution.
+
+BẢN SỬA MÃ HÓA TIẾNG VIỆT VÀ FONT
+  • Giải nén bản này vào thư mục mới, mở đúng NikeStore.sln trong thư mục vừa giải nén.
+  • Trong Visual Studio 2022, chọn Debug / Any CPU, Build → Rebuild Solution, rồi nhấn F5.
+  • Nếu đang mở trang cũ, dừng lần chạy cũ trước và mở địa chỉ localhost của lần chạy mới.
+  • Mã nguồn của ứng dụng được lưu bằng UTF-8 có BOM; .editorconfig giữ cách lưu này.
+  • Web.config quy định UTF-8 khi đọc file, nhận yêu cầu và trả trang. Trình biên dịch C# dùng code page 65001.
+  • Content/Typography.css dùng chung font Arial cho Admin, nhân viên, khách hàng và các trang độc lập.
+  • Cấu hình LocalDB, dữ liệu demo, tài khoản và các chức năng sẵn có được giữ nguyên.
+  • Để tự push: chép mã nguồn đã sửa vào thư mục repo đã clone trên máy bạn, kiểm tra git status,
+    rồi commit và push trên nhánh của bạn. ZIP không chứa thư mục .git.
+
+CHỨC NĂNG ADMIN BỔ SUNG
+  • Tổng quan: sản phẩm đang bán, nhân viên hoạt động, khách hàng, đơn chờ xác nhận, giá trị đơn hoàn tất trong tháng và cảnh báo tồn kho.
+  • Tài khoản: tìm theo tên/email/điện thoại, lọc theo vai trò/trạng thái, phân trang, thêm, sửa, khóa và mở khóa.
+  • Nhân viên: danh sách riêng và biểu mẫu tạo nhân viên có sẵn vai trò Employee.
+  • Phân quyền: xem phạm vi của Admin, Employee và Customer; đổi quyền bằng biểu mẫu chỉnh sửa tài khoản.
+  • Hệ thống: đổi tên khu vực quản trị, số dòng danh sách và ngưỡng cảnh báo tồn kho.
+  • Không thể tự khóa/tự gỡ quyền Admin. Hệ thống bảo vệ quản trị viên đang hoạt động cuối cùng.
+  • Cấu hình quản trị được tạo trong NikeStore\App_Data\AdminSettings.json sau lần lưu đầu. Giữ file này nếu muốn giữ thiết lập khi cập nhật mã nguồn.
+  • Dữ liệu LocalDB hiện có vẫn được giữ khi chạy lại. Việc sửa giao diện và bổ sung Admin không yêu cầu xóa hay tạo lại database.
+  • Xem KET_QUA_KIEM_TRA.txt để biết phạm vi biên dịch và kiểm tra đã thực hiện.

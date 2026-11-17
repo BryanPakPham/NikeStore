@@ -1,0 +1,27 @@
+﻿KẾT QUẢ KIỂM TRA BẢN UTF-8 VÀ ADMIN
+
+Các thay đổi chính
+• Chuẩn hóa mã nguồn ứng dụng thành UTF-8 có BOM, khai báo UTF-8 cho ASP.NET và trình biên dịch C#.
+• Font Arial dùng chung trên các trang khách hàng, nhân viên và Admin.
+• Giao diện Admin có menu bên, hỗ trợ màn hình nhỏ, trang tổng quan số liệu và đơn hàng gần đây.
+• Quản lý nhân viên riêng, tìm kiếm/lọc/phân trang tài khoản, khóa/mở khóa bằng biểu mẫu POST có chống CSRF.
+• Trang phân quyền hiển thị vai trò và phạm vi quyền. Chặn tự khóa, tự gỡ quyền Admin và giữ ít nhất một Admin hoạt động.
+• Kiểm tra trạng thái tài khoản khi có phiên đăng nhập; quyền nhân viên được kiểm tra lại khi truy cập.
+• Cấu hình tên khu vực quản trị, số tài khoản mỗi trang và ngưỡng cảnh báo tồn kho, được lưu qua các lần chạy.
+
+Kiểm tra đã thực hiện
+• Biên dịch 51 file C# với Roslyn, dùng bộ reference assemblies chính thức của .NET Framework 4.7.2: đạt.
+• Phân tích và biên dịch đủ 46 trang Razor, gồm các trang Admin mới: đạt.
+• 30 kiểm tra hồi quy cho bảo vệ Admin, phân trang, lưu cấu hình, kiểm tra dữ liệu và thuộc tính phân quyền/CSRF: đạt.
+• Đọc trang sản phẩm bằng bộ đọc có bảng mã dự phòng Windows-1252: BOM vẫn giữ đúng chữ tiếng Việt.
+• Kiểm tra chuỗi tiếng Việt trong mã Razor sinh ra và trong assembly sau biên dịch: đạt.
+• Đối chiếu cấu hình LocalDB, SQL mẫu, model và toàn bộ ảnh/video/thư viện với ZIP đầu vào: được giữ nguyên về nội dung.
+
+Phạm vi kiểm tra
+Việc biên dịch và kiểm tra ở trên được thực hiện trong môi trường Linux với Mono.
+Chưa chạy trực tiếp Visual Studio 2022, IIS Express hoặc SQL Server LocalDB trên Windows trong lượt này.
+Các kiểm tra không thay thế việc chạy thử nghiệp vụ trực tiếp với CSDL trên máy Windows.
+
+Cách chạy
+Giải nén vào thư mục mới, mở NikeStore.sln, chọn Debug / Any CPU, Rebuild Solution rồi F5.
+Đọc HUONG_DAN_CHAY.txt để xem tài khoản demo và yêu cầu cài đặt.

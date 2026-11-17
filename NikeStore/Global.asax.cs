@@ -12,6 +12,9 @@ namespace NikeStore
     {
         protected void Application_Start()
         {
+#if DEBUG
+            Infrastructure.LocalDemoDatabase.EnsureCreated();
+#endif
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

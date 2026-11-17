@@ -1,0 +1,19 @@
+﻿@using NikeStore.Infrastructure
+@model IEnumerable<NikeStore.ViewModels.Admin.RoleSummary>
+@{ ViewBag.Title = "Phân quyền"; }
+<div class="admin-page-heading"><div><h1>Phân quyền</h1><p>Quản lý tài khoản theo ba vai trò đang được hệ thống hỗ trợ.</p></div></div>
+<div class="row g-3 mb-4">
+@foreach (var role in Model)
+{
+    <div class="col-md-4"><div class="admin-panel h-100"><h2 class="h5">@AdminAccountPolicy.RoleLabel(role.Name)</h2><p class="text-muted">@role.Description</p><p><strong>@role.ActiveAccounts</strong> đang hoạt động / @role.Accounts tài khoản</p><a class="btn btn-outline-dark btn-sm" href="@Url.Action("Index", "User", new { roleId = role.Id })">Xem tài khoản</a></div></div>
+}
+</div>
+<section class="admin-panel"><h2 class="h5 mb-3">Phạm vi quyền hạn</h2><div class="table-responsive"><table class="table align-middle">
+<thead><tr><th>Chức năng</th><th>Quản trị viên</th><th>Nhân viên</th><th>Khách hàng</th></tr></thead>
+<tbody>
+<tr><td>Tài khoản, nhân viên và phân quyền</td><td>Có</td><td>Không</td><td>Không</td></tr>
+<tr><td>Cấu hình quản trị, sản phẩm, danh mục, mã giảm giá, tồn kho</td><td>Có</td><td>Không</td><td>Không</td></tr>
+<tr><td>Xử lý đơn hàng và hỗ trợ khách hàng</td><td>Có</td><td>Có</td><td>Không</td></tr>
+<tr><td>Mua hàng và xem đơn hàng cá nhân</td><td>Theo tài khoản</td><td>Theo tài khoản</td><td>Có</td></tr>
+</tbody></table></div>
+<p class="mb-0 text-muted">Đổi quyền tại <strong>Tài khoản → Chỉnh sửa → Vai trò</strong>. Quyền Admin và nhân viên được kiểm tra lại ở mỗi yêu cầu. Hệ thống chặn tự khóa, tự gỡ quyền Admin và bảo vệ quản trị viên hoạt động cuối cùng.</p></section>

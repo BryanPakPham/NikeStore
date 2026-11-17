@@ -1,6 +1,6 @@
 ﻿body {
 	margin: 0;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: var(--nike-font-family, Arial, Helvetica, sans-serif);
 	background-color: #ffffff;
 	color: #111111;
 }

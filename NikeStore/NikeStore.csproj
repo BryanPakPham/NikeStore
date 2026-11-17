@@ -16,6 +16,7 @@
     <RootNamespace>NikeStore</RootNamespace>
     <AssemblyName>NikeStore</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <CodePage>65001</CodePage>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -130,6 +131,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Infrastructure\AccountPassword.cs" />
+    <Compile Include="Infrastructure\LocalDemoDatabase.cs" />
     <Compile Include="Infrastructure\AdminOnlyAttribute.cs" />
     <Compile Include="ViewModels\Admin\InventoryPage.cs" />
     <Compile Include="ViewModels\Admin\UserForm.cs" />
@@ -244,6 +246,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\Typography.css" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -332,7 +335,8 @@
     <Content Include="Views\Shared\_EmployeeLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Content Include="App_Data\NikeStoreDemo.sql" />
+    <Content Include="Content\Images\Products\**\*.jpg" />
     <Folder Include="Content\Images\Products\AJ1LOW-M\black\" />
     <Folder Include="Content\Images\Products\AJ1LOW-M\red\" />
     <Folder Include="Content\Images\Products\AJ1LOW-M\white\" />
@@ -430,6 +434,17 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Infrastructure\AdminAccountPolicy.cs" />
+    <Compile Include="Infrastructure\AccountStateFilter.cs" />
+    <Compile Include="ViewModels\Admin\AdminPages.cs" />
+    <Compile Include="Infrastructure\AdminSettingsStore.cs" />
+    <Compile Include="Controllers\Admin\SystemController.cs" />
+    <Compile Include="Controllers\Admin\RoleController.cs" />
+    <Content Include="Views\Admin\Roles.cshtml" />
+    <Content Include="Views\Admin\System.cshtml" />
+    <Content Include="Content\Admin.css" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />

@@ -1,4 +1,4 @@
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace NikeStore.ViewModels.Admin
 {
@@ -20,5 +20,6 @@ namespace NikeStore.ViewModels.Admin
 
         public int RoleId { get; set; }
         public bool Active { get; set; }
+        public bool EmployeesOnly { get; set; }
     }
 }

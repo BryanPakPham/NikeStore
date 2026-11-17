@@ -1,36 +1,61 @@
+﻿@using NikeStore.ViewModels.Admin
+@{
+    var settings = ViewBag.AdminSettings as AdminSettings ?? new AdminSettings();
+    string controller = Convert.ToString(ViewContext.RouteData.Values["controller"]);
+    string action = Convert.ToString(ViewContext.RouteData.Values["action"]);
+    var links = new[] {
+        new { Controller = "Dashboard", Action = "Index", Label = "Tổng quan" },
+        new { Controller = "User", Action = "Index", Label = "Tài khoản" },
+        new { Controller = "User", Action = "Employees", Label = "Nhân viên" },
+        new { Controller = "Role", Action = "Index", Label = "Phân quyền" },
+        new { Controller = "Product", Action = "Products", Label = "Sản phẩm" },
+        new { Controller = "Category", Action = "Categories", Label = "Danh mục" },
+        new { Controller = "Order", Action = "Index", Label = "Đơn hàng" },
+        new { Controller = "Coupon", Action = "Index", Label = "Mã giảm giá" },
+        new { Controller = "Inventory", Action = "Inventory", Label = "Tồn kho" },
+        new { Controller = "System", Action = "Index", Label = "Cấu hình hệ thống" }
+    };
+}
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>@ViewBag.Title · NikeStore Admin</title>
+    <title>@ViewBag.Title · @settings.DisplayName</title>
     <link rel="stylesheet" href="@Url.Content("~/Content/bootstrap.min.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/Admin.css?v=20261117")" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/Typography.css?v=20261117")" />
 </head>
-<body>
-    <nav class="navbar navbar-dark bg-dark" aria-label="Quản trị NikeStore">
-        <div class="container-fluid gap-2 px-3">
-            <a class="navbar-brand fw-bold" href="@Url.Action("Index", "Dashboard")">NikeStore Admin</a>
-            <div class="d-flex flex-wrap align-items-center gap-3 me-auto">
-                <a class="link-light" href="@Url.Action("Products", "Product")">Sản phẩm</a>
-                <a class="link-light" href="@Url.Action("Categories", "Category")">Danh mục</a>
-                <a class="link-light" href="@Url.Action("Index", "User")">Tài khoản</a>
-                <a class="link-light" href="@Url.Action("Index", "Order")">Đơn hàng</a>
-                <a class="link-light" href="@Url.Action("Index", "Coupon")">Mã giảm giá</a>
-                <a class="link-light" href="@Url.Action("Inventory", "Inventory")">Tồn kho</a>
-            </div>
-            @using (Html.BeginRouteForm("Admin", new { controller = "Account", action = "Logout" }, FormMethod.Post, new { @class = "d-flex align-items-center gap-2" }))
+<body class="admin-body">
+    <header class="admin-topbar">
+        <a class="admin-brand" href="@Url.RouteUrl("Admin", new { controller = "Dashboard", action = "Index" })">@settings.DisplayName</a>
+        <button class="btn btn-outline-light btn-sm d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#adminMenu" aria-expanded="false" aria-controls="adminMenu">Menu</button>
+        @using (Html.BeginRouteForm("Admin", new { controller = "Account", action = "Logout" }, FormMethod.Post, new { @class = "d-flex align-items-center gap-3 ms-auto m-0" }))
+        {
+            @Html.AntiForgeryToken()
+            <span class="d-none d-sm-inline">@Session["FullName"]</span>
+            <button type="submit" class="btn btn-outline-light btn-sm">Đăng xuất</button>
+        }
+    </header>
+    <div class="admin-shell">
+        <aside class="admin-sidebar collapse d-lg-block" id="adminMenu">
+            <p class="admin-menu-label">QUẢN TRỊ CỬA HÀNG</p>
+            <nav aria-label="Quản trị NikeStore">
+            @foreach (var item in links)
             {
-                @Html.AntiForgeryToken()
-                <span class="text-light">@Session["FullName"]</span>
-                <button type="submit" class="btn btn-outline-light btn-sm">Đăng xuất</button>
+                bool active = string.Equals(controller, item.Controller, StringComparison.OrdinalIgnoreCase)
+                    && (controller != "User" || (item.Action == "Employees" ? action == "Employees" : action != "Employees"));
+                <a class="admin-nav-link @(active ? "active" : "")" href="@Url.RouteUrl("Admin", new { controller = item.Controller, action = item.Action })" aria-current="@(active ? "page" : null)">@item.Label</a>
             }
-        </div>
-    </nav>
-    <main class="container-xxl py-4">
-        @if (TempData["Success"] != null) { <div class="alert alert-success" role="status">@TempData["Success"]</div> }
-        @if (TempData["Error"] != null) { <div class="alert alert-danger" role="alert">@TempData["Error"]</div> }
-        @RenderBody()
-    </main>
+            </nav>
+            <a class="admin-store-link" href="@Url.Content("~/")">Mở cửa hàng ↗</a>
+        </aside>
+        <main class="admin-main">
+            @if (TempData["Success"] != null) { <div class="alert alert-success" role="status">@TempData["Success"]</div> }
+            @if (TempData["Error"] != null) { <div class="alert alert-danger" role="alert">@TempData["Error"]</div> }
+            @RenderBody()
+        </main>
+    </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

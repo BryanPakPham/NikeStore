@@ -1,0 +1,17 @@
+﻿@model NikeStore.ViewModels.Admin.AdminSettings
+@{ ViewBag.Title = "Cấu hình hệ thống"; }
+<div class="admin-page-heading"><div><h1>Cấu hình hệ thống</h1><p>Điều chỉnh giao diện quản trị, danh sách tài khoản và cảnh báo tồn kho.</p></div></div>
+@using (Html.BeginForm("Index", "System", FormMethod.Post, new { @class = "admin-panel admin-settings-form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+    <div class="mb-3">@Html.LabelFor(m => m.DisplayName, "Tên khu vực quản trị", new { @class = "form-label" })
+        @Html.TextBoxFor(m => m.DisplayName, new { @class = "form-control", maxlength = "60", required = "required" })</div>
+    <div class="mb-3">@Html.LabelFor(m => m.LowStockThreshold, "Ngưỡng cảnh báo tồn kho", new { @class = "form-label" })
+        @Html.TextBoxFor(m => m.LowStockThreshold, new { @class = "form-control", type = "number", min = "0", max = "1000", step = "1", required = "required" })
+        <div class="form-text">Trang tổng quan hiển thị biến thể đang bán có số lượng nhỏ hơn hoặc bằng ngưỡng này.</div></div>
+    <div class="mb-4">@Html.LabelFor(m => m.RowsPerPage, "Số tài khoản mỗi trang", new { @class = "form-label" })
+        @Html.TextBoxFor(m => m.RowsPerPage, new { @class = "form-control", type = "number", min = "10", max = "50", step = "1", required = "required" })
+        <div class="form-text">Áp dụng cho danh sách tài khoản và danh sách nhân viên.</div></div>
+    <button class="btn btn-dark" type="submit">Lưu cấu hình</button>
+}

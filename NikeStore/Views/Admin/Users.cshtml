@@ -1,26 +1,64 @@
-@using System.Linq
-@model IEnumerable<NikeStore.Models.user>
-@{ ViewBag.Title = "Quản lý tài khoản"; }
-<div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
-    <h1 class="h3 mb-0">Tài khoản</h1>
-    @Html.ActionLink("Thêm tài khoản", "Create", null, new { @class = "btn btn-dark" })
+﻿@using NikeStore.Infrastructure
+@model NikeStore.ViewModels.Admin.UserListPage
+@{
+    ViewBag.Title = Model.EmployeesOnly ? "Quản lý nhân viên" : "Quản lý tài khoản";
+    string listAction = Model.EmployeesOnly ? "Employees" : "Index";
+}
+<div class="admin-page-heading">
+    <div><h1>@ViewBag.Title</h1><p>@Model.TotalCount kết quả · Tìm kiếm, phân quyền và quản lý trạng thái đăng nhập.</p></div>
+    <a class="btn btn-dark" href="@Url.Action("Create", "User", new { employees = Model.EmployeesOnly })">@(Model.EmployeesOnly ? "Thêm nhân viên" : "Thêm tài khoản")</a>
 </div>
-<form method="get" action="@Url.Action("Index", "User")" class="d-flex flex-wrap align-items-end gap-2 mb-3">
-    <div><label for="q" class="form-label">Tìm theo tên, email hoặc số điện thoại</label>
-        <input id="q" name="q" type="search" value="@ViewBag.Query" class="form-control" /></div>
-    <button class="btn btn-outline-dark">Tìm</button>
-</form>
-<div class="table-responsive">
-<table class="table table-hover align-middle">
-    <thead><tr><th>Họ tên</th><th>Email</th><th>Điện thoại</th><th>Vai trò</th><th>Trạng thái</th><th></th></tr></thead>
-    <tbody>
-    @foreach (var u in Model)
+<form method="get" action="@Url.Action(listAction, "User")" class="admin-panel row g-3 align-items-end mb-4">
+    <div class="col-lg-5"><label for="q" class="form-label">Tên, email hoặc số điện thoại</label>
+        <input id="q" name="q" type="search" value="@Model.Query" maxlength="200" class="form-control" placeholder="Nhập thông tin cần tìm" /></div>
+    @if (!Model.EmployeesOnly)
     {
-        <tr><td>@u.full_name</td><td>@u.email</td><td>@u.phone</td><td>@(u.role == null ? "—" : u.role.role_name)</td>
-            <td>@(u.is_active == true ? "Hoạt động" : "Đã khóa")</td>
-            <td>@Html.ActionLink("Chỉnh sửa", "Edit", new { id = u.user_id })</td></tr>
+        <div class="col-lg-3"><label for="RoleId" class="form-label">Vai trò</label>
+            @Html.DropDownListFor(m => m.RoleId, Model.Roles, "Tất cả vai trò", new { @class = "form-select" })</div>
     }
-    @if (!Model.Any()) { <tr><td colspan="6" class="text-muted">Không có tài khoản phù hợp.</td></tr> }
+    <div class="col-lg-2"><label for="Active" class="form-label">Trạng thái</label>
+        @Html.DropDownListFor(m => m.Active, new[] {
+            new SelectListItem { Value = "true", Text = "Hoạt động" },
+            new SelectListItem { Value = "false", Text = "Đã khóa" }
+        }, "Tất cả", new { @class = "form-select" })</div>
+    <div class="col-auto"><button class="btn btn-dark">Lọc</button> <a class="btn btn-outline-secondary" href="@Url.Action(listAction, "User")">Xóa lọc</a></div>
+</form>
+<div class="admin-panel p-0 overflow-hidden">
+<div class="table-responsive"><table class="table table-hover align-middle mb-0">
+    <thead><tr><th>Họ tên</th><th>Liên hệ</th><th>Vai trò</th><th>Trạng thái</th><th>Ngày tạo</th><th>Thao tác</th></tr></thead>
+    <tbody>
+    @foreach (var u in Model.Items)
+    {
+        <tr>
+            <td class="fw-semibold">@u.Name @if (u.Id == Model.CurrentUserId) { <span class="badge text-bg-light">Bạn</span> }</td>
+            <td><div>@u.Email</div><small class="text-muted">@(string.IsNullOrEmpty(u.Phone) ? "Chưa có số điện thoại" : u.Phone)</small></td>
+            <td>@AdminAccountPolicy.RoleLabel(u.Role)</td>
+            <td><span class="badge @(u.Active ? "text-bg-success" : "text-bg-secondary")">@(u.Active ? "Hoạt động" : "Đã khóa")</span></td>
+            <td>@(u.CreatedAt.HasValue ? u.CreatedAt.Value.ToString("dd/MM/yyyy") : "—")</td>
+            <td><div class="d-flex flex-wrap gap-2">
+                <a class="btn btn-sm btn-outline-dark" href="@Url.Action("Edit", "User", new { id = u.Id, employees = Model.EmployeesOnly })">Chỉnh sửa</a>
+                @if (u.Id != Model.CurrentUserId)
+                {
+                    using (Html.BeginForm("SetActive", "User", FormMethod.Post, new { @class = "m-0", onsubmit = "return confirm('Xác nhận thay đổi trạng thái đăng nhập của tài khoản này?');" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="id" value="@u.Id" />
+                        <input type="hidden" name="active" value="@((!u.Active).ToString().ToLowerInvariant())" />
+                        <input type="hidden" name="employees" value="@Model.EmployeesOnly.ToString().ToLowerInvariant()" />
+                        <button type="submit" class="btn btn-sm @(u.Active ? "btn-outline-danger" : "btn-outline-success")">@(u.Active ? "Khóa" : "Mở khóa")</button>
+                    }
+                }
+            </div></td>
+        </tr>
+    }
+    @if (Model.Items.Count == 0) { <tr><td colspan="6" class="text-center text-muted py-5">Không có tài khoản phù hợp với bộ lọc.</td></tr> }
     </tbody>
-</table>
+</table></div>
+<div class="d-flex justify-content-between align-items-center gap-2 p-3">
+    <span class="text-muted">Trang @Model.Page / @Model.TotalPages</span>
+    <nav class="d-flex gap-2" aria-label="Phân trang tài khoản">
+        @if (Model.Page > 1) { <a class="btn btn-sm btn-outline-dark" href="@Url.Action(listAction, "User", new { q = Model.Query, roleId = Model.RoleId, active = Model.Active, page = Model.Page - 1 })">Trang trước</a> }
+        @if (Model.Page < Model.TotalPages) { <a class="btn btn-sm btn-outline-dark" href="@Url.Action(listAction, "User", new { q = Model.Query, roleId = Model.RoleId, active = Model.Active, page = Model.Page + 1 })">Trang sau</a> }
+    </nav>
+</div>
 </div>
